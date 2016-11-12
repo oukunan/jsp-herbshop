@@ -22,7 +22,7 @@
             <div class="row">
                 <div class="col-md-4 text-center">
                     <img src="#" alt="pic1" width="300" height="300" /><br>
-                    <a href="#" class="btn btn-default navbar-btn btn-primary">Herb (สมุนไพร)</a>
+                    <a href="typeHerb.jsp" class="btn btn-default navbar-btn btn-primary">Herb (สมุนไพร)</a>
                 </div>
                 <div class="col-md-4 text-center">
                     <img src="#" alt="pic2"  width="300" height="300" /><br>
