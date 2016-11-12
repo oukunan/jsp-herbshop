@@ -18,7 +18,7 @@ import model.Herb;
  *
  * @author theca
  */
-public class SearchHerbServlet extends HttpServlet {
+public class HerbListingByTypeServlet extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -31,40 +31,20 @@ public class SearchHerbServlet extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        String searchType = request.getParameter("searchType");
-        String searchText1 = request.getParameter("searchText1");
-        String target = "/...";
-        if (searchText1 == null || searchText1.trim().length() == 0) {
-            request.setAttribute("message", "");
-        } else {
-            if (searchType.equalsIgnoreCase("price")) {
-                String searchText2 = request.getParameter("searchText2");
-                try {
-                    double lower = Double.parseDouble(searchText1);
-                    double upper = Double.parseDouble(searchText2);
-                    List<Herb> herbs = Herb.searchHerbByPrice(lower, upper);
-                    if (herbs == null) {
-                        request.setAttribute("message", "Products for specific price does not exist !!");
-                    }
-                    request.getSession().setAttribute("herbs", herbs); // put products to session scope
-                } catch (Exception e) {
-                    request.setAttribute("message", "Please enter price range with decimal number ONLY !!!");
-                }
-            } else if (searchType.equalsIgnoreCase("name")){
-                List<Herb> herbs = Herb.searchHerbByName(searchText1);
-                if (herbs == null) {
-                    request.setAttribute("message", "Products for specific name does not exist !!");
-                }
-                request.getSession().setAttribute("herbs", herbs);   // put products to session scope
-
-            }else if(searchType.equalsIgnoreCase("type")){
-                String type = request.getParameter("type");
-                List<Herb> herbs = Herb.listingHerbByType(type);
-                request.getSession().setAttribute("herbs", herbs);
-            }
+        String type = request.getParameter("type");
+        String target;
+        if(type.equalsIgnoreCase("fruit")){
+            target = "/fruit.jsp";
+        }else{
+            target = "/vegetable.jsp";
         }
-
+        
+        List<Herb> herbs = Herb.listingHerbByType(type);
+        
+        request.setAttribute("lists", herbs);
+        
         getServletContext().getRequestDispatcher(target).forward(request, response);
+        
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
