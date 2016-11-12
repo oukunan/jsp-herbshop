@@ -72,6 +72,10 @@
         <servlet-name>ViewProfileServlet</servlet-name>
         <servlet-class>controller.ViewProfileServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>SearchHerbTypeFruitServlet</servlet-name>
+        <servlet-class>controller.SearchHerbTypeFruitServlet</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>LoginServlet</servlet-name>
         <url-pattern>/Login</url-pattern>
@@ -115,6 +119,10 @@
     <servlet-mapping>
         <servlet-name>ViewProfileServlet</servlet-name>
         <url-pattern>/ViewProfile</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>SearchHerbTypeFruitServlet</servlet-name>
+        <url-pattern>/SearchHerbTypeFruit</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
