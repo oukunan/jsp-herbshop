@@ -40,6 +40,10 @@
         <servlet-name>ProcessOrderServlet</servlet-name>
         <servlet-class>controller.ProcessOrderServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>SearchDiseaseServlet</servlet-name>
+        <servlet-class>controller.SearchDiseaseServlet</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>LoginServlet</servlet-name>
         <url-pattern>/Login</url-pattern>
@@ -75,6 +79,10 @@
     <servlet-mapping>
         <servlet-name>ProcessOrderServlet</servlet-name>
         <url-pattern>/ProcessOrder</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>SearchDiseaseServlet</servlet-name>
+        <url-pattern>/SearchDisease</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
