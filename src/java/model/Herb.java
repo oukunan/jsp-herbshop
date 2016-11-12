@@ -29,6 +29,8 @@ public class Herb {
     private String herbDetail;
     private final static String SQL_SEARCH_HERB_BY_NAME = "SELECT * FROM HERB WHERE LOWER(herbName) LIKE ?";
     private final static String SQL_FIND_BY_ID = "SELECT * FROM HERB WHERE herbId = ?";
+    private final static String SQL_SEARCH_HERB_BY_PRICE = "SELECT * FROM HERB WHERE herbPrice > ? AND herbPrice < ?";
+    private final static String SQL_LISTING_HERB_BY_TYPE = "SELECT * FROM HERB WHERE herbType LIKE ?";
     
     public Herb() {
     }
@@ -98,6 +100,59 @@ public class Herb {
         try {
             PreparedStatement ps = con.prepareStatement(SQL_SEARCH_HERB_BY_NAME);
             ps.setString(1, "%" + name.toLowerCase() + "%");
+            rs = ps.executeQuery();
+            if (rs != null) {
+                if (herbs == null) {
+                    herbs = new ArrayList<Herb>();
+                }
+                h = new Herb();
+                h.ORM(rs, h);
+                herbs.add(h);
+            }
+            rs.close();
+            con.close();
+            ps.close();
+        } catch (SQLException ex) {
+            Logger.getLogger(Herb.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return herbs;
+    }
+    
+    public static List<Herb> searchHerbByPrice(double upper,double lower){
+         List<Herb> herbs = null;
+        ResultSet rs = null;
+        Herb h = null;
+        Connection con = ConnectionBuilder.getConnection();
+        try {
+            PreparedStatement ps = con.prepareStatement(SQL_SEARCH_HERB_BY_PRICE);
+            ps.setDouble(1, lower);
+            ps.setDouble(2, upper);
+            rs = ps.executeQuery();
+            if (rs != null) {
+                if (herbs == null) {
+                    herbs = new ArrayList<Herb>();
+                }
+                h = new Herb();
+                h.ORM(rs, h);
+                herbs.add(h);
+            }
+            rs.close();
+            con.close();
+            ps.close();
+        } catch (SQLException ex) {
+            Logger.getLogger(Herb.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return herbs;
+    }
+    
+    public static List<Herb> listingHerbByType(String type) {
+        List<Herb> herbs = null;
+        ResultSet rs = null;
+        Herb h = null;
+        Connection con = ConnectionBuilder.getConnection();
+        try {
+            PreparedStatement ps = con.prepareStatement(SQL_LISTING_HERB_BY_TYPE);
+            ps.setString(1, "%" + type + "%");
             rs = ps.executeQuery();
             if (rs != null) {
                 if (herbs == null) {
