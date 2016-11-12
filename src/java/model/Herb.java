@@ -118,7 +118,7 @@ public class Herb {
         }
         return herbs;
     }
-    
+    /*
     public static List<Herb> searchHerbByPrice(double upper,double lower,String type){
          List<Herb> herbs = null;
         ResultSet rs = null;
@@ -146,7 +146,7 @@ public class Herb {
         }
         return herbs;
     }
-    
+    */
     public static List<Herb> listingHerbByType(String type) {
         List<Herb> herbs = null;
         ResultSet rs = null;

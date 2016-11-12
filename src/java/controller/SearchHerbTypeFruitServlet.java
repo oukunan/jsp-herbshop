@@ -38,7 +38,7 @@ public class SearchHerbTypeFruitServlet extends HttpServlet {
         if (searchText1 == null || searchText1.trim().length() == 0) {
             request.setAttribute("message", "");
         } else {
-            if (searchType.equalsIgnoreCase("price")) {
+            /*if (searchType.equalsIgnoreCase("price")) {
                 String searchText2 = request.getParameter("searchText2");
                 try {
                     double lower = Double.parseDouble(searchText1);
@@ -51,7 +51,8 @@ public class SearchHerbTypeFruitServlet extends HttpServlet {
                 } catch (Exception e) {
                     request.setAttribute("message", "Please enter price range with decimal number ONLY !!!");
                 }
-            } else if (searchType.equalsIgnoreCase("name")){
+            } */
+            if (searchType.equalsIgnoreCase("name")){
                 List<Herb> herbs = Herb.searchHerbByName(searchText1,type);
                 if (herbs == null) {
                     request.setAttribute("message", "Fruits for specific name does not exist !!");
