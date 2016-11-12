@@ -34,7 +34,7 @@ public class SearchHerbTypeVegetableServlet extends HttpServlet {
         String searchType = request.getParameter("searchType");
         String searchText1 = request.getParameter("searchText1");
         final String type = "vegetable";
-        String target = "/...";
+        String target = "/vegetable.jsp";
         if (searchText1 == null || searchText1.trim().length() == 0) {
             request.setAttribute("message", "");
         } else {
@@ -45,7 +45,7 @@ public class SearchHerbTypeVegetableServlet extends HttpServlet {
                     double upper = Double.parseDouble(searchText2);
                     List<Herb> herbs = Herb.searchHerbByPrice(lower, upper,type);
                     if (herbs == null) {
-                        request.setAttribute("message", "Products for specific price does not exist !!");
+                        request.setAttribute("message", "Vegetables for specific price does not exist !!");
                     }
                     request.getSession().setAttribute("herbs", herbs); // put products to session scope
                 } catch (Exception e) {
@@ -54,7 +54,7 @@ public class SearchHerbTypeVegetableServlet extends HttpServlet {
             } else if (searchType.equalsIgnoreCase("name")){
                 List<Herb> herbs = Herb.searchHerbByName(searchText1,type);
                 if (herbs == null) {
-                    request.setAttribute("message", "Products for specific name does not exist !!");
+                    request.setAttribute("message", "Vegetables for specific name does not exist !!");
                 }
                 request.getSession().setAttribute("herbs", herbs);   // put products to session scope
             }

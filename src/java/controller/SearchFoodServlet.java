@@ -12,13 +12,14 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import model.Food;
 import model.Herb;
 
 /**
  *
  * @author theca
  */
-public class SearchHerbTypeFruitServlet extends HttpServlet {
+public class SearchFoodServlet extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -31,33 +32,17 @@ public class SearchHerbTypeFruitServlet extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        String searchType = request.getParameter("searchType");
-        String searchText1 = request.getParameter("searchText1");
-        final String type = "fruit";
-        String target = "/fruit.jsp";
-        if (searchText1 == null || searchText1.trim().length() == 0) {
+        String searchText = request.getParameter("searchText");
+        String target = "/food.jsp";
+        if (searchText == null || searchText.trim().length() == 0) {
             request.setAttribute("message", "");
         } else {
-            if (searchType.equalsIgnoreCase("price")) {
-                String searchText2 = request.getParameter("searchText2");
-                try {
-                    double lower = Double.parseDouble(searchText1);
-                    double upper = Double.parseDouble(searchText2);
-                    List<Herb> herbs = Herb.searchHerbByPrice(lower, upper,type);
-                    if (herbs == null) {
-                        request.setAttribute("message", "Fruits for specific price does not exist !!");
-                    }
-                    request.getSession().setAttribute("herbs", herbs); // put products to session scope
-                } catch (Exception e) {
-                    request.setAttribute("message", "Please enter price range with decimal number ONLY !!!");
-                }
-            } else if (searchType.equalsIgnoreCase("name")){
-                List<Herb> herbs = Herb.searchHerbByName(searchText1,type);
-                if (herbs == null) {
-                    request.setAttribute("message", "Fruits for specific name does not exist !!");
-                }
-                request.getSession().setAttribute("herbs", herbs);   // put products to session scope
+            List<Food> foods = Food.searchFoodByName(searchText);
+            if (foods == null) {
+                request.setAttribute("message", "Foods for specific name does not exist !!");
             }
+            request.getSession().setAttribute("foods", foods);   // put products to session scope
+
         }
 
         getServletContext().getRequestDispatcher(target).forward(request, response);

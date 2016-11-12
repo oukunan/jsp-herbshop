@@ -24,6 +24,18 @@
         <servlet-name>HerbListingByTypeServlet</servlet-name>
         <servlet-class>controller.HerbListingByTypeServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>SearchFoodServlet</servlet-name>
+        <servlet-class>controller.SearchFoodServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>AddToCartServlet</servlet-name>
+        <servlet-class>controller.AddToCartServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>UpdateCartServlet</servlet-name>
+        <servlet-class>controller.UpdateCartServlet</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>LoginServlet</servlet-name>
         <url-pattern>/Login</url-pattern>
@@ -43,6 +55,18 @@
     <servlet-mapping>
         <servlet-name>HerbListingByTypeServlet</servlet-name>
         <url-pattern>/HerbListingByType</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>SearchFoodServlet</servlet-name>
+        <url-pattern>/SearchFood</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>AddToCartServlet</servlet-name>
+        <url-pattern>/AddToCart</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>UpdateCartServlet</servlet-name>
+        <url-pattern>/UpdateCart</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
