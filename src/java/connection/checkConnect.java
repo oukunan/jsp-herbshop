@@ -22,7 +22,7 @@ public class checkConnect {
 
     public static boolean isDbConnected() {
         Connection conn = ConnectionBuilder.getConnection();
-        final String CHECK_SQL_QUERY = "SELECT * from customer where custId = 1";
+        final String CHECK_SQL_QUERY = "SELECT * from customer";
         boolean isConnected = false;
         try {
             final PreparedStatement statement = conn.prepareStatement(CHECK_SQL_QUERY);
