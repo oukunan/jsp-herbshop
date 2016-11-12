@@ -3,10 +3,16 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
+<<<<<<< HEAD
             <file>file:/D:/Web%20Programming%20Project/HerbShop/web/WEB-INF/web.xml</file>
             <file>file:/D:/Web%20Programming%20Project/HerbShop/web/login.jsp</file>
             <file>file:/D:/Web%20Programming%20Project/HerbShop/src/java/model/Cart.java</file>
             <file>file:/D:/Web%20Programming%20Project/HerbShop/src/java/model/CartDetail.java</file>
+=======
+            <file>file:/C:/Users/KN/Documents/NetBeansProjects/HerbShop/web/WEB-INF/header/header.jsp</file>
+            <file>file:/C:/Users/KN/Documents/NetBeansProjects/HerbShop/web/index.jsp</file>
+            <file>file:/C:/Users/KN/Documents/NetBeansProjects/HerbShop/web/WEB-INF/web.xml</file>
+>>>>>>> 0c937f0302102ba2c0e1408fbab593547b3a5cc7
         </group>
     </open-files>
 </project-private>

@@ -6,6 +6,9 @@
 package filter;
 
 import java.io.IOException;
+import java.io.PrintStream;
+import java.io.PrintWriter;
+import java.io.StringWriter;
 import javax.servlet.Filter;
 import javax.servlet.FilterChain;
 import javax.servlet.FilterConfig;
@@ -17,11 +20,11 @@ import javax.servlet.http.HttpSession;
 
 /**
  *
- * @author theca
+ * @author KN
  */
 public class AuthenticationFilter implements Filter {
 
-    FilterConfig fg;
+      FilterConfig fg;
 
     @Override
     public void init(FilterConfig filterConfig) throws ServletException {
@@ -41,5 +44,4 @@ public class AuthenticationFilter implements Filter {
     @Override
     public void destroy() {
     }
-
 }
