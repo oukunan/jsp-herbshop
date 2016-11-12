@@ -7,16 +7,18 @@ package controller;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.List;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import model.Customer;
 
 /**
  *
- * @author KN
+ * @author int303
  */
-public class testServlet extends HttpServlet {
+public class LoginServlet extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -29,19 +31,37 @@ public class testServlet extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        response.setContentType("text/html;charset=UTF-8");
-        try (PrintWriter out = response.getWriter()) {
-            /* TODO output your page here. You may use following sample code. */
-            out.println("<!DOCTYPE html>");
-            out.println("<html>");
-            out.println("<head>");
-            out.println("<title>Servlet testServlet</title>");            
-            out.println("</head>");
-            out.println("<body>");
-            out.println("<h1>Servlet testServlet at " + request.getContextPath() + "</h1>");
-            out.println("</body>");
-            out.println("</html>");
+        String userName = request.getParameter("userName");
+        String password = request.getParameter("password");
+        String message = "";
+        
+        String target = "/index.jsp";
+        if (request.getParameter("target") != null) {
+            target = request.getParameter("target");
         }
+
+        if (userName != null && password != null) {
+            if (userName.length() >= 3) {
+                List<Customer> cs = Customer.findByUserName(userName);
+                if (cs != null) {
+                    Customer c = cs.get(0);
+                    if (password.equals(c.getCustPassword())) {
+                        request.getSession().setAttribute("user", c);
+                        getServletContext().getRequestDispatcher(target).forward(request, response); //<---------
+                        return;
+                    } else {
+                        message = "Invalid password, try again";
+                    }
+                } else {
+                    message = "User " + userName + " does not exist ";
+                }
+            } else {
+                message = "Invalid User name ";
+            }
+
+        }
+         request.setAttribute("message", message);
+        getServletContext().getRequestDispatcher("/login.jsp").forward(request, response);
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
