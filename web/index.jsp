@@ -13,6 +13,12 @@
     </head>
     <body>
         <jsp:include page="/WEB-INF/header/header.jsp"/>
-        <h3>Index page</h3>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4  ">
+                    <h3 class="text-primary">Index Page</h3>
+                </div>
+            </div>
+        </div>
     </body>
 </html>
