@@ -106,6 +106,9 @@ public class Herb {
                 h.ORM(rs, h);
                 herbs.add(h);
             }
+            rs.close();
+            con.close();
+            ps.close();
         } catch (SQLException ex) {
             Logger.getLogger(Herb.class.getName()).log(Level.SEVERE, null, ex);
         }

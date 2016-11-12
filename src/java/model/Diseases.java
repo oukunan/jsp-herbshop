@@ -95,6 +95,9 @@ public class Diseases {
                 dise.ORM(rs, dise);
                 dises.add(dise);
             }
+            rs.close();
+            con.close();
+            ps.close();
         } catch (SQLException ex) {
             Logger.getLogger(Herb.class.getName()).log(Level.SEVERE, null, ex);
         }
