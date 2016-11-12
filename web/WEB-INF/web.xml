@@ -4,6 +4,30 @@
         <filter-name>AuthenticationFilter</filter-name>
         <filter-class>filter.AuthenticationFilter</filter-class>
     </filter>
+    <filter-mapping>
+        <filter-name>AuthenticationFilter</filter-name>
+        <servlet-name>AddToCartServlet</servlet-name>
+        <dispatcher>REQUEST</dispatcher>
+        <dispatcher>FORWARD</dispatcher>
+    </filter-mapping>
+    <filter-mapping>
+        <filter-name>AuthenticationFilter</filter-name>
+        <servlet-name>UpdateCartServlet</servlet-name>
+        <dispatcher>REQUEST</dispatcher>
+        <dispatcher>FORWARD</dispatcher>
+    </filter-mapping>
+    <filter-mapping>
+        <filter-name>AuthenticationFilter</filter-name>
+        <servlet-name>ViewProfileServlet</servlet-name>
+        <dispatcher>REQUEST</dispatcher>
+        <dispatcher>FORWARD</dispatcher>
+    </filter-mapping>
+    <filter-mapping>
+        <filter-name>AuthenticationFilter</filter-name>
+        <servlet-name>ProcessOrderServlet</servlet-name>
+        <dispatcher>REQUEST</dispatcher>
+        <dispatcher>FORWARD</dispatcher>
+    </filter-mapping>
     <servlet>
         <servlet-name>LoginServlet</servlet-name>
         <servlet-class>controller.LoginServlet</servlet-class>
@@ -12,6 +36,46 @@
         <servlet-name>LogoutServlet</servlet-name>
         <servlet-class>controller.LogoutServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>SearchHerbServlet</servlet-name>
+        <servlet-class>controller.SearchHerbTypeFruitServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>SearchHerbTypeVegetableServlet</servlet-name>
+        <servlet-class>controller.SearchHerbTypeVegetableServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>HerbListingByTypeServlet</servlet-name>
+        <servlet-class>controller.HerbListingByTypeServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>SearchFoodServlet</servlet-name>
+        <servlet-class>controller.SearchFoodServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>AddToCartServlet</servlet-name>
+        <servlet-class>controller.AddToCartServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>UpdateCartServlet</servlet-name>
+        <servlet-class>controller.UpdateCartServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ProcessOrderServlet</servlet-name>
+        <servlet-class>controller.ProcessOrderServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>SearchDiseaseServlet</servlet-name>
+        <servlet-class>controller.SearchDiseaseServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ViewProfileServlet</servlet-name>
+        <servlet-class>controller.ViewProfileServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>SearchHerbTypeFruitServlet</servlet-name>
+        <servlet-class>controller.SearchHerbTypeFruitServlet</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>LoginServlet</servlet-name>
         <url-pattern>/Login</url-pattern>
@@ -19,6 +83,46 @@
     <servlet-mapping>
         <servlet-name>LogoutServlet</servlet-name>
         <url-pattern>/Logout</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>SearchHerbServlet</servlet-name>
+        <url-pattern>/SearchHerb</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>SearchHerbTypeVegetableServlet</servlet-name>
+        <url-pattern>/SearchHerbTypeVegetable</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>HerbListingByTypeServlet</servlet-name>
+        <url-pattern>/HerbListingByType</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>SearchFoodServlet</servlet-name>
+        <url-pattern>/SearchFood</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>AddToCartServlet</servlet-name>
+        <url-pattern>/AddToCart</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>UpdateCartServlet</servlet-name>
+        <url-pattern>/UpdateCart</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ProcessOrderServlet</servlet-name>
+        <url-pattern>/ProcessOrder</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>SearchDiseaseServlet</servlet-name>
+        <url-pattern>/SearchDisease</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ViewProfileServlet</servlet-name>
+        <url-pattern>/ViewProfile</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>SearchHerbTypeFruitServlet</servlet-name>
+        <url-pattern>/SearchHerbTypeFruit</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

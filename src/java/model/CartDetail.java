@@ -19,9 +19,13 @@ public class CartDetail {
     public CartDetail() {
     }
 
-    public CartDetail(Herb herb,int quantityOfHerb) {
-        this.herb = herb;
-        this.quantityOfHerb = quantityOfHerb;
+    public CartDetail(int herbId) {
+        this(herbId,1);
+    }
+    
+    public CartDetail(int herbId, int quantity){
+        quantityOfHerb = quantity;
+        herb = Herb.findById(herbId);
         calculatePrice();
     }
 
