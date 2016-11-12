@@ -5,9 +5,14 @@
  */
 package model;
 
-import java.io.Serializable;
+import connection.ConnectionBuilder;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -19,8 +24,13 @@ public class Cart {
     private double totalMoney = 0;
     private double vatAmount = 0;
     private double subTotalMoney = 0;
+    private static String SQL_INSERT = "INSERT INTO CART(totalMoney,vatAmount,subTotalMoney,Customer_custId)"
+            + "VALUES (?,?,?,?)";
 
     public double getTotalMoney() {
+        for (CartDetail cd : items.values()) {
+            totalMoney += cd.getPrice();
+        }
         return totalMoney;
     }
 
@@ -29,6 +39,7 @@ public class Cart {
     }
 
     public double getVatAmount() {
+        vatAmount = totalMoney*7/100;
         return vatAmount;
     }
 
@@ -37,6 +48,7 @@ public class Cart {
     }
 
     public double getSubTotalMoney() {
+        subTotalMoney = totalMoney-vatAmount;
         return subTotalMoney;
     }
 
@@ -64,6 +76,7 @@ public class Cart {
         } else {
             ct.setQuantityOfHerb(ct.getQuantityOfHerb() + 1);
         }
+        calculate();
     }
 
     public void updateItem(int productId, int qty) {
@@ -73,18 +86,11 @@ public class Cart {
         } else {
             cd.setQuantityOfHerb(qty);
         }
+        calculate();
     }
 
     public void remove(int productId) {
         items.remove(productId);
-    }
-
-    public double getTotalPrice() {
-        double totalPrice = 0;
-        for (CartDetail cd : items.values()) {
-            totalPrice += cd.getPrice();
-        }
-        return totalPrice;
     }
 
     public Map<Integer, CartDetail> getItems() {
@@ -93,6 +99,28 @@ public class Cart {
 
     public void setItems(Map<Integer, CartDetail> items) {
         this.items = items;
+    }
+    
+    public void calculate(){
+        getTotalMoney();
+        getVatAmount();
+        getSubTotalMoney();
+    }
+    
+    public static void storeHistory(Cart c,Customer cust){
+        Connection con = ConnectionBuilder.getConnection();
+        try {
+            PreparedStatement ps = con.prepareStatement(SQL_INSERT);
+            ps.setDouble(1, c.getTotalMoney());
+            ps.setDouble(2, c.vatAmount);
+            ps.setDouble(3, c.subTotalMoney);
+            ps.setInt(4, cust.getCustId());
+            ps.execute();
+        } catch (SQLException ex) {
+            Logger.getLogger(Cart.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+        
     }
 
 }
