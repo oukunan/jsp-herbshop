@@ -28,6 +28,7 @@ public class Herb {
     private String herbType;
     private String herbDetail;
     private final static String SQL_SEARCH_HERB_BY_NAME = "SELECT * FROM HERB WHERE LOWER(herbName) LIKE ?";
+    private final static String SQL_FIND_BY_ID = "SELECT * FROM HERB WHERE herbId = ?";
     
     public Herb() {
     }
@@ -113,6 +114,26 @@ public class Herb {
             Logger.getLogger(Herb.class.getName()).log(Level.SEVERE, null, ex);
         }
         return herbs;
+    }
+    
+    public static Herb findById(int id){
+        Herb h = null;
+        ResultSet rs = null;
+        Connection con = ConnectionBuilder.getConnection();
+        try {
+            PreparedStatement ps = con.prepareStatement(SQL_FIND_BY_ID);
+            ps.setInt(1, id);
+            rs = ps.executeQuery();
+            if(rs!=null){
+                h.ORM(rs, h);
+            }
+            rs.close();
+            con.close();
+            ps.close();
+        } catch (SQLException ex) {
+            Logger.getLogger(Herb.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return h;
     }
     
     public static void ORM(ResultSet rs, Herb h) throws SQLException {
