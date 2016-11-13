@@ -33,6 +33,7 @@
                        <img src='/images/food/${f.foodId}.jpg' alt="pic" height="200">
                        <p> Name : ${f.foodName} </p>
                        <p> Recipe :  ${f.foodRecipe} </p>
+                        <a href="ViewFoodDetail?id=${f.foodId}"><p class="btn btn-primary ">Detail</p></a>
                     </div>
                 </c:forEach>
             </div>
