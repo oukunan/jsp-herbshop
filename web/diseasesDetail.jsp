@@ -15,34 +15,41 @@
     <body>
         <jsp:include page="/WEB-INF/header/header.jsp"/>
         <div class="container">
-            <h3>Disease Detail</h3>
-            <table>
-                <tr>
-                    <td>Disease ID :  &nbsp; </td>
-                    <td><input type="text" class="form-control" name="diseId" value="${d.diseId}" ></td>
-                </tr>
-                <tr>
-                    <td>Name :  &nbsp; </td>
-                    <td><input type="text" class="form-control" name="diseName" value="${d.diseName}" ></td>
-                </tr>
-                <tr>
-                    <td>Type :  &nbsp; </td>
-                    <td><input type="text" class="form-control" name="diseType" value="${d.diseType}" ></td>
-                </tr>
-                <tr>
-                    <td>Position :  &nbsp; </td>
-                    <td><input type="text" class="form-control" name="positionInBody" value="${d.positionInBody}" ></td>
-                </tr>
-                <tr>
-                    <td>Detail :  &nbsp; </td>
-                    <td><textarea  style="width: 500px" rows="4" class="form-control">${d.diseDetail}</textarea>  </td>
-                </tr>
-                    <tr>
-                    <td>Herb :  &nbsp; </td>
-                    <td>ช่องนี่นาจา</td>
-                </tr>
-            </table><br><br>
-            <button class="btn btn-inverse" onclick="history.back()">Back </button>
+            <div class="row">
+                <div class="col-md-8">
+                    <h3>Disease Detail</h3>
+                    <table>
+                        <tr>
+                            <td>Disease ID :  &nbsp; </td>
+                            <td><input type="text" class="form-control" name="diseId" value="${d.diseId}" ></td>
+                        </tr>
+                        <tr>
+                            <td>Name :  &nbsp; </td>
+                            <td><input type="text" class="form-control" name="diseName" value="${d.diseName}" ></td>
+                        </tr>
+                        <tr>
+                            <td>Type :  &nbsp; </td>
+                            <td><input type="text" class="form-control" name="diseType" value="${d.diseType}" ></td>
+                        </tr>
+                        <tr>
+                            <td>Position :  &nbsp; </td>
+                            <td><input type="text" class="form-control" name="positionInBody" value="${d.positionInBody}" ></td>
+                        </tr>
+                        <tr>
+                            <td>Detail :  &nbsp; </td>
+                            <td><textarea  style="width: 500px" rows="4" class="form-control">${d.diseDetail}</textarea>  </td>
+                        </tr>
+                        <tr>
+                            <td>Herb :  &nbsp; </td>
+                            <td>ช่องนี่นาจา</td>
+                        </tr>
+                    </table><br><br>
+                    <button class="btn btn-inverse" onclick="history.back()">Back </button>
+                </div>
+                <div class="col-md-4">
+                    <img src="#" alt="pic" height="400">
+                </div>
+            </div>
         </div>
     </body>
 </html>
