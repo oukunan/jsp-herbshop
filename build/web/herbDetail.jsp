@@ -42,7 +42,11 @@
                         </tr><br>
                         <tr>
                             <td>Disease :</td>
-                            <td>ช่องโรค</td>
+                            <td>
+                                <c:forEach items="${dise}" var="d">
+                                    <a href='ViewDiseasesDetail?id=${d.diseId}'>${d.diseName}</a>,
+                                </c:forEach>
+                            </td>
                         </tr>
                         <tr>
                             <td>Food :</td>
@@ -52,7 +56,7 @@
                     <button class="btn btn-inverse" onclick="history.back()">Back </button>
                 </div>
                 <div class="col-md-4 text-center">
-                    <img src="#" alt="pic" height="400">
+                    <img src='images/${h.herbType.toLowerCase()}/${h.herbId}.jpg' alt="pic" height="400">
                 </div>
             </div>
         </div>
