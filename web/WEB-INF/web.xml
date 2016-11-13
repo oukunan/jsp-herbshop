@@ -76,6 +76,18 @@
         <servlet-name>SearchHerbTypeFruitServlet</servlet-name>
         <servlet-class>controller.SearchHerbTypeFruitServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>ViewHerbDetailServlet</servlet-name>
+        <servlet-class>controller.ViewHerbDetailServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ViewFoodDetailServlet</servlet-name>
+        <servlet-class>controller.ViewFoodDetailServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ViewDiseasesDetailServlet</servlet-name>
+        <servlet-class>controller.ViewDiseasesDetailServlet</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>LoginServlet</servlet-name>
         <url-pattern>/Login</url-pattern>
@@ -123,6 +135,18 @@
     <servlet-mapping>
         <servlet-name>SearchHerbTypeFruitServlet</servlet-name>
         <url-pattern>/SearchHerbTypeFruit</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ViewHerbDetailServlet</servlet-name>
+        <url-pattern>/ViewHerbDetail</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ViewFoodDetailServlet</servlet-name>
+        <url-pattern>/ViewFoodDetail</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ViewDiseasesDetailServlet</servlet-name>
+        <url-pattern>/ViewDiseasesDetail</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

@@ -27,6 +27,7 @@ public class Diseases {
     private String positionInBody;
     private String diseDetail;
     private final static String SQL_SEARCH_DISEASES_BY_NAME = "SELECT * FROM DISEASES WHERE LOWER(diseName) LIKE ?";
+    private final static String SQL_FIND_DISEASES_BY_ID = "SELECT * FROM DISEASES WHERE diseId = ?";
 
     public Diseases() {
     }
@@ -105,6 +106,28 @@ public class Diseases {
             Logger.getLogger(Herb.class.getName()).log(Level.SEVERE, null, ex);
         }
         return dises;
+    }
+    
+    public static Diseases findDiseasesById(int id){
+        Diseases dise = null;
+        ResultSet rs = null;
+        Connection con = ConnectionBuilder.getConnection();
+        try {
+            PreparedStatement ps = con.prepareStatement(SQL_FIND_DISEASES_BY_ID);
+            ps.setInt(1, id);
+            rs = ps.executeQuery();
+            if (rs != null) {
+                while (rs.next()) {
+                    dise.ORM(rs, dise);
+                }
+            }
+            rs.close();
+            con.close();
+            ps.close();
+        } catch (SQLException ex) {
+            Logger.getLogger(Herb.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return dise;
     }
 
     public static void ORM(ResultSet rs, Diseases d) throws SQLException {

@@ -25,7 +25,7 @@ public class CartDetail {
     
     public CartDetail(int herbId, int quantity){
         quantityOfHerb = quantity;
-        herb = Herb.findById(herbId);
+        herb = Herb.findHerbById(herbId);
         calculatePrice();
     }
 

@@ -26,6 +26,7 @@ public class Food {
     private String foodRecipe;
     private String foodDetail;
     private final static String SQL_SEARCH_FOOD_BY_NAME = "SELECT * FROM FOOD WHERE LOWER(foodName) LIKE ?";
+    private final static String SQL_FIND_FOOD_BY_ID = "SELECT * FROM FOOD WHERE foodId = ?";
 
     public Food() {
     }
@@ -95,6 +96,28 @@ public class Food {
             Logger.getLogger(Herb.class.getName()).log(Level.SEVERE, null, ex);
         }
         return foods;
+    }
+    
+    public static Food findFoodById(int id){
+        Food f = null;
+        ResultSet rs = null;
+        Connection con = ConnectionBuilder.getConnection();
+        try {
+            PreparedStatement ps = con.prepareStatement(SQL_FIND_FOOD_BY_ID);
+            ps.setInt(1, id);
+            rs = ps.executeQuery();
+            if (rs != null) {
+                while (rs.next()) {
+                    f.ORM(rs, f);
+                }
+            }
+            rs.close();
+            con.close();
+            ps.close();
+        } catch (SQLException ex) {
+            Logger.getLogger(Herb.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return f;
     }
 
     public static void ORM(ResultSet rs, Food f) throws SQLException {

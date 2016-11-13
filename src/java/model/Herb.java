@@ -28,7 +28,7 @@ public class Herb {
     private String herbType;
     private String herbDetail;
     private final static String SQL_SEARCH_HERB_BY_NAME = "SELECT * FROM HERB WHERE UPPER(herbName) LIKE ? AND UPPER(herbType) LIKE ?";
-    private final static String SQL_FIND_BY_ID = "SELECT * FROM HERB WHERE herbId = ?";
+    private final static String SQL_FIND_HERB_BY_ID = "SELECT * FROM HERB WHERE herbId = ?";
     private final static String SQL_SEARCH_HERB_BY_PRICE = "SELECT * FROM HERB WHERE herbPrice > ? AND herbPrice < ? AND herbType LIKE ?";
     private final static String SQL_LISTING_HERB_BY_TYPE = "SELECT * FROM HERB WHERE herbType LIKE ?";
 
@@ -178,12 +178,12 @@ public class Herb {
         return herbs;
     }
 
-    public static Herb findById(int id) {
+    public static Herb findHerbById(int id) {
         Herb h = null;
         ResultSet rs = null;
         Connection con = ConnectionBuilder.getConnection();
         try {
-            PreparedStatement ps = con.prepareStatement(SQL_FIND_BY_ID);
+            PreparedStatement ps = con.prepareStatement(SQL_FIND_HERB_BY_ID);
             ps.setInt(1, id);
             rs = ps.executeQuery();
             if (rs != null) {
