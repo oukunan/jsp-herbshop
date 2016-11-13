@@ -31,9 +31,9 @@
                     <h2> Login  | </h2><br>
                     <form action="Login" method="post">
                         <input type="text" class="form-control pad" name="userName" value="" placeholder="User Name">
-                        <input type="password" class="form-control pad" name="password" value="" placeholder="Password">
-                        <a href="register.jsp"><input type="submit" value="Login" class="btn btn-inverse"></a>
-                        <a href="register.jsp"><input type="button" value="Register" class="btn btn-inverse"></a>
+                        <input type="password" class="form-control pad" name="password" value="" placeholder="Password"><br>
+                        <button type="submit" class="btn btn-primary">Login</button>
+                        <a href="register.jsp"><button type="button" class="btn btn-inverse">Register</button></a>
                     </form>
                     
                 </div>
