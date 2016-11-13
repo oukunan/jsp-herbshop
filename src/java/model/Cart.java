@@ -21,6 +21,23 @@ import java.util.logging.Logger;
 public class Cart {
 
     Map<Integer, CartDetail> items = null;
+    private int cartId;
+
+    public int getCartId() {
+        return cartId;
+    }
+
+    public void setCartId(int cartId) {
+        this.cartId = cartId;
+    }
+
+    public static String getSQL_INSERT() {
+        return SQL_INSERT;
+    }
+
+    public static void setSQL_INSERT(String SQL_INSERT) {
+        Cart.SQL_INSERT = SQL_INSERT;
+    }
     private double totalMoney = 0;
     private double vatAmount = 0;
     private double subTotalMoney = 0;
@@ -107,7 +124,7 @@ public class Cart {
         getSubTotalMoney();
     }
     
-    public static void storeHistory(Cart c,Customer cust){
+    public static void storeCartHistory(Cart c,Customer cust){
         Connection con = ConnectionBuilder.getConnection();
         try {
             PreparedStatement ps = con.prepareStatement(SQL_INSERT);
