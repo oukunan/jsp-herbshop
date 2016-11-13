@@ -37,6 +37,10 @@
                     <td>Detail :  &nbsp; </td>
                     <td><textarea  style="width: 500px" rows="4" class="form-control">${h.herbDetail}</textarea>  </td>
                 </tr>
+                <tr>
+                    <td>Disease :  &nbsp; </td>
+                    <td>ช่องนี่นาจา</td>
+                </tr>
             </table><br><br>
             <button class="btn btn-inverse" onclick="history.back()">Back </button>
         </div>
