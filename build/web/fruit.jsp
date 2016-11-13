@@ -41,7 +41,7 @@
                                     <p> Price :  <fmt:formatNumber value="${f.herbPrice}" type="currency" /> </p>
                                     <a href="ViewHerbDetail?id=${f.herbId}"><p class="btn btn-success "> Detail</p></a>
                                     <button class="btn btn-inverse"><input type="hidden" name="pid" value="${f.herbId}">Add to Cart</button>                                    
-                                    <input type="hidden" name="type" value="vegetable"> 
+                                    <input type="hidden" name="type" value="fruit"> 
                                 </div>
                             </c:forEach>
                         </form>

@@ -41,7 +41,7 @@ public class Cart {
     private double totalMoney = 0;
     private double vatAmount = 0;
     private double money = 0;
-    private static String SQL_INSERT = "INSERT INTO CART(totalMoney,vatAmount,subTotalMoney,Customer_custId)"
+    private static String SQL_INSERT = "INSERT INTO CART(money,vatAmount,totalMoney,Customer_custId)"
             + "VALUES (?,?,?,?)";
 
     public double getMoney() {
