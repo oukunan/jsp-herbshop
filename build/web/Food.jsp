@@ -11,7 +11,7 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page</title>
+        <title>.:: Food ::.</title>
     </head>
     <body>
         <jsp:include page="/WEB-INF/header/header.jsp"/>
@@ -19,7 +19,7 @@
             <div class="row">
                 <form action="SearchFood" method="post" class="form-inline">
                     <div class="form-group">
-                        <label for="name">Search : </label>
+                        <label for="name">Food Name : </label>
                         <input type="text" class="form-control" id="name" placeholder="Search">
                     </div>
                     <button type="submit" class="btn btn-primary">Go</button>

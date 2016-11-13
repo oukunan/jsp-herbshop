@@ -19,7 +19,7 @@
             <div class="row">
                 <form action="SearchHerbTypeVegetable" method="post" class="form-inline">
                     <div class="form-group">
-                        <label for="name">Search : </label>
+                        <label for="name">Vegetable Name : </label>
                         <input type="text" class="form-control" id="name" placeholder="Search">
                     </div>
                     <button type="submit" class="btn btn-primary">Go</button>

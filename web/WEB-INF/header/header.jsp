@@ -11,7 +11,7 @@
     </head>
 
     <body>
-         <c:set var="loginOrLogout" value="${sessionScope.user==null?'Login' : 'Logout'}"/>
+        <c:set var="loginOrLogout" value="${sessionScope.user==null?'Login' : 'Logout'}"/>
         <nav role="navigation" class="navbar navbar-default">
             <div class="navbar-header">
                 <button data-target="#navbar-collapse-08" data-toggle="collapse" class="navbar-toggle" type="button">
@@ -19,6 +19,9 @@
                 <a href="index.jsp" class="navbar-brand">IT21- HerbShop</a>
             </div>
             <div class="col-md-2 col-md-offset-8">
+                <c:if test="${CART != null}">
+                    <a href="ViewCart.jsp">( ${CART.size} )</a><br>
+                </c:if>
                 <a href="${loginOrLogout}" class="btn btn-default navbar-btn btn-primary">${loginOrLogout}</a>
                 <p class="navbar-text navbar">Hello, <c:out value="${user.custName}" default="Guest" />
             </div>       
