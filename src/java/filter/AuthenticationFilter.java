@@ -34,8 +34,12 @@ public class AuthenticationFilter implements Filter {
     @Override
     public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain) throws IOException, ServletException {
         HttpSession s = ((HttpServletRequest)request).getSession(false);
+        
+         String target = ((HttpServletRequest) request).getRequestURI();      
+         target = target.substring(target.indexOf("/", 1));
+        
         if(s == null || s.getAttribute("user") == null){
-            fg.getServletContext().getRequestDispatcher("/login.jsp").forward(request, response);
+            fg.getServletContext().getRequestDispatcher("/login.jsp?target="+ target).forward(request, response);
         }else{
             chain.doFilter(request, response);
         }

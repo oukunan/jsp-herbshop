@@ -193,7 +193,6 @@ public class Customer {
         try {
             st = con.createStatement();
             rs = st.executeQuery("SELECT custUsername FROM CUSTOMER");
-            st.close();
         } catch (SQLException ex) {
             Logger.getLogger(Customer.class.getName()).log(Level.SEVERE, null, ex);
         }

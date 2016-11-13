@@ -58,7 +58,7 @@ public final class index_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("        <div class=\"container animated fadeIn\" id=\"edit\">\r\n");
       out.write("            <div class=\"row\">\r\n");
       out.write("                <div class=\"col-md-4 col-md-offset-4 wow\">\r\n");
-      out.write("                    <h1 class=\"text-primary\">HERB_SHOP</h1>\r\n");
+      out.write("                    <h1 class=\"\">HERB_SHOP</h1>\r\n");
       out.write("                </div>\r\n");
       out.write("            </div><br>\r\n");
       out.write("            <div class=\"row\">\r\n");
