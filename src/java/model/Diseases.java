@@ -117,6 +117,7 @@ public class Diseases {
             ps.setInt(1, id);
             rs = ps.executeQuery();
             if (rs != null) {
+                dise = new Diseases();
                 while (rs.next()) {
                     dise.ORM(rs, dise);
                 }

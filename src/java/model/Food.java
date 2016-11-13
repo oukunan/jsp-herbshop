@@ -107,6 +107,7 @@ public class Food {
             ps.setInt(1, id);
             rs = ps.executeQuery();
             if (rs != null) {
+                f = new Food();
                 while (rs.next()) {
                     f.ORM(rs, f);
                 }

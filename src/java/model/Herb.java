@@ -187,6 +187,7 @@ public class Herb {
             ps.setInt(1, id);
             rs = ps.executeQuery();
             if (rs != null) {
+                h = new Herb();
                 while (rs.next()) {
                     h.ORM(rs, h);
                 }

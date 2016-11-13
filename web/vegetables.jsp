@@ -31,7 +31,7 @@
                     <div class="col-md-4 text-center">
                         <p> Name : ${v.herbName} </p>
                         <p> Price :  <fmt:formatNumber value="${v.herbPrice}" type="currency" /> </p>
-                        <a href="ViewHerbDetail?id=${f.herbId}"><p class="btn btn-success "> Detail</p></a>
+                        <a href="ViewHerbDetail?id=${v.herbId}"><p class="btn btn-success "> Detail</p></a>
                         <p class="btn btn-inverse">Add to Cart &nbsp;<input type="checkbox"  name="pid" value="${v.herbId}" title="Add to Cart"/> </p>
                     </div>
                 </c:forEach>
