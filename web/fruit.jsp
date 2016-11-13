@@ -19,7 +19,7 @@
         <jsp:include page="/WEB-INF/header/header.jsp"/>
         <div class="container">
             <div class="row animated fadeIn">
-                <form action="SearchHerbTypeVegetable" method="post" class="form-inline">
+                <form action="SearchHerbTypeFruit" method="post" class="form-inline">
                     <div class="form-group">
 
                         <label for="name">Fruit Name : </label>
@@ -40,7 +40,7 @@
                                     <p> Name : ${f.herbName} </p>
                                     <p> Price :  <fmt:formatNumber value="${f.herbPrice}" type="currency" /> </p>
                                     <a href="ViewHerbDetail?id=${f.herbId}"><p class="btn btn-success "> Detail</p></a>
-                                    <button class="btn btn-inverse"><input type="hidden" name="pid" value="${f.herbId}">Add to Cart</button>                                    
+                                    <button class="btn btn-inverse" type="submit" name="pid" value="${f.herbId}">Add to Cart</button>                                    
                                     <input type="hidden" name="type" value="fruit"> 
                                 </div>
                             </c:forEach>
