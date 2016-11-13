@@ -16,38 +16,45 @@
     <body>
         <jsp:include page="/WEB-INF/header/header.jsp"/>
         <div class="container">
-            <h3>Herb Detail</h3>
-            <table>
-                <tr>
-                    <td>Herb ID :  &nbsp; </td>
-                    <td><input type="text" class="form-control" name="herbId" value="${h.herbId}" ></td>
-                </tr>
-                <tr>
-                    <td>Name :  &nbsp; </td>
-                    <td><input type="text" class="form-control" name="herbName" value="${h.herbName}" ></td>
-                </tr>
-                <tr>
-                    <td> Price :  &nbsp; </td>
-                    <td><input type="text" class="form-control" name="herbPrice" value="<fmt:formatNumber value="${h.herbPrice}" type="currency" />" ></td>
-                </tr>
-                <tr>
-                    <td>Type :  &nbsp; </td>
-                    <td><input type="text" class="form-control" name="herbType" value="${h.herbType}" ></td>
-                </tr>
-                <tr>
-                    <td>Detail :  &nbsp; </td>
-                    <td><textarea  style="width: 500px" rows="4" class="form-control">${h.herbDetail}</textarea>  </td>
-                </tr>
-                <tr>
-                    <td>Disease :  &nbsp; </td>
-                    <td>
-                        <c:forEach items="${dise}" var="d">
-                            <a href='ViewDiseasesDetail?id=${d.diseId}'>${d.diseName}</a>,
-                        </c:forEach>
-                    </td>
-                </tr>
-            </table><br><br>
-            <button class="btn btn-inverse" onclick="history.back()">Back </button>
+            <div class="row">
+                <div class="col-md-8">
+                    <h3>Herb Detail</h3>
+                    <table>
+                        <tr>
+                            <td>Herb ID :  &nbsp; </td>
+                            <td><input type="text" class="form-control" name="herbId" value="${h.herbId}" ></td>
+                        </tr>
+                        <tr>
+                            <td>Name :  &nbsp; </td>
+                            <td><input type="text" class="form-control" name="herbName" value="${h.herbName}" ></td>
+                        </tr>
+                        <tr>
+                            <td> Price :  &nbsp; </td>
+                            <td><input type="text" class="form-control" name="herbPrice" value="<fmt:formatNumber value="${h.herbPrice}" type="currency" />" ></td>
+                        </tr>
+                        <tr>
+                            <td>Type :  &nbsp; </td>
+                            <td><input type="text" class="form-control" name="herbType" value="${h.herbType}" ></td>
+                        </tr>
+                        <tr>
+                            <td>Detail :  &nbsp; </td>
+                            <td><textarea  style="width: 500px" rows="3" class="form-control">${h.herbDetail}</textarea>  </td>
+                        </tr><br>
+                        <tr>
+                            <td>Disease :</td>
+                            <td>ช่องโรค</td>
+                        </tr>
+                        <tr>
+                            <td>Food :</td>
+                            <td>ช่องอาหาร</td>
+                        </tr>
+                    </table><br><br>
+                    <button class="btn btn-inverse" onclick="history.back()">Back </button>
+                </div>
+                <div class="col-md-4 text-center">
+                    <img src="#" alt="pic" height="400">
+                </div>
+            </div>
         </div>
     </body>
 </html>
