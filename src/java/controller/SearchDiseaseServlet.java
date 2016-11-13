@@ -33,7 +33,7 @@ public class SearchDiseaseServlet extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         String searchText = request.getParameter("searchText");
-        String target = "/disease.jsp";
+        String target = "/diseases.jsp";
         if (searchText == null) {
             searchText = "";
         }

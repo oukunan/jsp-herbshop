@@ -31,6 +31,7 @@
                        <p> Name : ${d.diseName} </p>
                        <p> Type :  ${d.diseType} </p>
                        <p> Postion : ${d.positionInBody} </p>
+                        <a href="ViewDiseasesDetail?id=${d.diseId}"><p class="btn btn-primary ">Detail</p></a>
                     </div>
                 </c:forEach>
             </div>
