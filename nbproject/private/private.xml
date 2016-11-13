@@ -3,15 +3,13 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
+            <file>file:/D:/Web%20Programming%20Project/HerbShop/web/vegetable.jsp</file>
             <file>file:/D:/Web%20Programming%20Project/HerbShop/web/index.jsp</file>
-            <file>file:/D:/Web%20Programming%20Project/HerbShop/web/viewCart.jsp</file>
             <file>file:/D:/Web%20Programming%20Project/HerbShop/src/java/controller/ProcessOrderServlet.java</file>
-            <file>file:/D:/Web%20Programming%20Project/HerbShop/src/java/connection/NormalConnection.java</file>
             <file>file:/D:/Web%20Programming%20Project/HerbShop/src/java/model/Cart.java</file>
             <file>file:/D:/Web%20Programming%20Project/HerbShop/src/java/controller/AddToCartServlet.java</file>
-            <file>file:/D:/Web%20Programming%20Project/HerbShop/src/java/controller/LoginServlet.java</file>
-            <file>file:/D:/Web%20Programming%20Project/HerbShop/src/java/model/CartDetail.java</file>
-            <file>file:/D:/Web%20Programming%20Project/HerbShop/src/java/model/Customer.java</file>
+            <file>file:/D:/Web%20Programming%20Project/HerbShop/web/fruit.jsp</file>
+            <file>file:/D:/Web%20Programming%20Project/HerbShop/src/java/controller/HerbListingByTypeServlet.java</file>
         </group>
     </open-files>
 </project-private>
