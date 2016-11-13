@@ -16,8 +16,8 @@
                <div class="container"> 
                    <div class="row">
                        <div class="col-md-4 col-md-offset-4 text-center">
-                           <a href="#" class="btn btn-default navbar-btn btn-primary">ฺ Vegetable (ผัก)</a><br>
-                           <a href="#" class="btn btn-default navbar-btn btn-primary"> Fruit (ผลไม้)</a>
+                           <a href="SearchHerbTypeVegetable" class="btn btn-default navbar-btn btn-primary">ฺ Vegetable (ผัก)</a><br>
+                           <a href="SearchHerbTypeFruit" class="btn btn-default navbar-btn btn-primary"> Fruit (ผลไม้)</a>
                        </div>
                    </div>
                </div>
