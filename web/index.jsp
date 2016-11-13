@@ -22,15 +22,15 @@
             </div><br>
             <div class="row">
                 <div class="col-md-4 text-center">
-                    <img src="#" alt="pic1" width="300" height="300" /><br>
+                    <img src="images/6.png"  height="250 alt="pic1" /><br><br>
                     <a href="typeHerb.jsp" class="btn btn-default navbar-btn btn-primary">Herb (สมุนไพร)</a>
                 </div>
                 <div class="col-md-4 text-center">
-                    <img src="" alt="pic2"  width="300" height="300" /><br>
+                    <img src="images/3.png" height="250  alt="pic2"  width="300" height="300" /><br><br>
                     <a href="SearchDisease" class="btn btn-default navbar-btn btn-primary">Diseases (อาการ)</a>
                 </div>
                 <div class="col-md-4 text-center">
-                    <img src="#" alt="pic3" width="300" height="300" /><br>
+                    <img src="images/5.png" height="250  alt="pic3" width="300" height="300" /><br><br>
                     <a href="SearchFood" class="btn btn-default navbar-btn btn-primary">Food (อาหาร)</a>
                 </div>
             </div>
