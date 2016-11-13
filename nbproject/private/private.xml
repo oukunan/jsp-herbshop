@@ -5,7 +5,14 @@
         <group>
             <file>file:/D:/Web%20Programming%20Project/HerbShop/web/vegetable.jsp</file>
             <file>file:/D:/Web%20Programming%20Project/HerbShop/web/index.jsp</file>
+            <file>file:/D:/Web%20Programming%20Project/HerbShop/src/java/controller/ViewHerbDetailServlet.java</file>
+            <file>file:/D:/Web%20Programming%20Project/HerbShop/src/java/model/Diseases.java</file>
+            <file>file:/D:/Web%20Programming%20Project/HerbShop/web/herbDetail.jsp</file>
+            <file>file:/D:/Web%20Programming%20Project/HerbShop/src/java/controller/ViewDiseasesDetailServlet.java</file>
+            <file>file:/D:/Web%20Programming%20Project/HerbShop/web/register.jsp</file>
             <file>file:/D:/Web%20Programming%20Project/HerbShop/src/java/controller/RegisterMemberServlet.java</file>
+            <file>file:/D:/Web%20Programming%20Project/HerbShop/src/java/model/Customer.java</file>
+            <file>file:/D:/Web%20Programming%20Project/HerbShop/web/typeHerb.jsp</file>
         </group>
     </open-files>
 </project-private>

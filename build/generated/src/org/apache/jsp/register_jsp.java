@@ -4,7 +4,7 @@ import javax.servlet.*;
 import javax.servlet.http.*;
 import javax.servlet.jsp.*;
 
-public final class index_jsp extends org.apache.jasper.runtime.HttpJspBase
+public final class register_jsp extends org.apache.jasper.runtime.HttpJspBase
     implements org.apache.jasper.runtime.JspSourceDependent {
 
   private static final JspFactory _jspxFactory = JspFactory.getDefaultFactory();
@@ -48,39 +48,32 @@ public final class index_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("<html>\r\n");
       out.write("    <head>\r\n");
       out.write("        <meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\">\r\n");
-      out.write("        <title>IT21-HerbShop</title>\r\n");
-      out.write("        <link rel=\"stylesheet\" href=\"css/animate.css\">\r\n");
+      out.write("        <title>JSP Page</title>\r\n");
       out.write("    </head>\r\n");
       out.write("    <body>\r\n");
       out.write("        ");
       org.apache.jasper.runtime.JspRuntimeLibrary.include(request, response, "/WEB-INF/header/header.jsp", out, false);
       out.write("\r\n");
-      out.write("        <div class=\"container animated fadeIn\" id=\"edit\">\r\n");
+      out.write("        <div class=\"container\">\r\n");
       out.write("            <div class=\"row\">\r\n");
-      out.write("                <div class=\"col-md-4 col-md-offset-4 wow\">\r\n");
-      out.write("                    <h1 class=\"text-primary\">HERB_SHOP</h1>\r\n");
-      out.write("                </div>\r\n");
-      out.write("            </div><br>\r\n");
-      out.write("            <div class=\"row\">\r\n");
-      out.write("                <div class=\"col-md-4 text-center\">\r\n");
-      out.write("                    <img src=\"images/6.png\"  height=\"250 alt=\"pic1\" /><br><br>\r\n");
-      out.write("                    <a href=\"typeHerb.jsp\" class=\"btn btn-default navbar-btn btn-primary\">Herb (สมุนไพร)</a>\r\n");
-      out.write("                </div>\r\n");
-      out.write("                <div class=\"col-md-4 text-center\">\r\n");
-      out.write("                    <img src=\"images/3.png\" height=\"250  alt=\"pic2\"  width=\"300\" height=\"300\" /><br><br>\r\n");
-      out.write("                    <a href=\"SearchDisease\" class=\"btn btn-default navbar-btn btn-primary\">Diseases (อาการ)</a>\r\n");
-      out.write("                </div>\r\n");
-      out.write("                <div class=\"col-md-4 text-center\">\r\n");
-      out.write("                    <img src=\"images/5.png\" height=\"250  alt=\"pic3\" width=\"300\" height=\"300\" /><br><br>\r\n");
-      out.write("                    <a href=\"SearchFood\" class=\"btn btn-default navbar-btn btn-primary\">Food (อาหาร)</a>\r\n");
+      out.write("                <div class=\"col-md-4 col-md-offset-4\">\r\n");
+      out.write("                    <h1>Register</h1>\r\n");
+      out.write("                    <form action=\"RegisterMember\" method=\"post\" class=\"for\" >\r\n");
+      out.write("                        Username <input type=\"text\" class=\"form-control\" name=\"username\" >\r\n");
+      out.write("                        Password <input type=\"password\" class=\"form-control\"  name=\"password\">\r\n");
+      out.write("                        Name<input type=\"text\" class=\"form-control\" id=\"name\" name=\"name\">\r\n");
+      out.write("                        Surname <input type=\"text\" class=\"form-control\"  name=\"surname\">\r\n");
+      out.write("                        Address <input type=\"text\" class=\"form-control\"  name=\"address\">\r\n");
+      out.write("                        State <input type=\"text\" class=\"form-control\"  name=\"state\">\r\n");
+      out.write("                        City <input type=\"text\" class=\"form-control\" name=\"city\">\r\n");
+      out.write("                        Postal <input type=\"text\" class=\"form-control\"  name=\"postals\">\r\n");
+      out.write("                        Tel <input type=\"number\" class=\"form-control\"  name=\"tel\"><br>\r\n");
+      out.write("                        <input type=\"submit\" class=\"btn btn-primary text-center\"  name=\"Register\">\r\n");
+      out.write("                    </form>\r\n");
+      out.write("                    <br>\r\n");
       out.write("                </div>\r\n");
       out.write("            </div>\r\n");
       out.write("        </div>\r\n");
-      out.write("        \r\n");
-      out.write("        <script src=\"js/wow.min.js\"></script>\r\n");
-      out.write("        <script>\r\n");
-      out.write("            new WOW().init();\r\n");
-      out.write("        </script>\r\n");
       out.write("    </body>\r\n");
       out.write("</html>\r\n");
     } catch (Throwable t) {

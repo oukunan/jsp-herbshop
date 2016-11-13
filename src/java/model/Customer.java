@@ -29,8 +29,8 @@ public class Customer {
     private String custAddress;
     private String custState;
     private String custCity;
-    private int custPostal;
-    private int custTel;
+    private long custPostal;
+    private long custTel;
     private final static String SQL_ADD_MEMBER = "INSERT INTO CUSTOMER(custUsername,custPassword,custName,custSurname,custAddress,custState,custCity,custPostal,custTel)"
             + " VALUES(?,?,?,?,?,?,?,?,?)";
 
@@ -43,8 +43,8 @@ public class Customer {
         this.custAddress = rs.getString("custAddress");
         this.custState = rs.getString("custState");
         this.custCity = rs.getString("custCity");
-        this.custPostal = rs.getInt("custPostal");
-        this.custTel = rs.getInt("custTel");
+        this.custPostal = rs.getLong("custPostal");
+        this.custTel = rs.getLong("custTel");
     }
     
     public Customer(){
@@ -115,19 +115,19 @@ public class Customer {
         this.custCity = custCity;
     }
 
-    public int getCustPostal() {
+    public long getCustPostal() {
         return custPostal;
     }
 
-    public void setCustPostal(int custPostal) {
+    public void setCustPostal(long custPostal) {
         this.custPostal = custPostal;
     }
 
-    public int getCustTel() {
+    public long getCustTel() {
         return custTel;
     }
 
-    public void setCustTel(int custTel) {
+    public void setCustTel(long custTel) {
         this.custTel = custTel;
     }
 
@@ -166,9 +166,10 @@ public class Customer {
             ps.setString(5, c.getCustAddress());
             ps.setString(6, c.getCustState());
             ps.setString(7, c.getCustCity());
-            ps.setInt(8, c.getCustPostal());
-            ps.setInt(0, c.getCustTel());
-            ps.executeUpdate();
+            ps.setLong(8, c.getCustPostal());
+            ps.setLong(9, c.getCustTel());
+            int it = ps.executeUpdate();
+            System.out.println(it);
             ps.close();
             con.close();
         } catch (SQLException ex) {

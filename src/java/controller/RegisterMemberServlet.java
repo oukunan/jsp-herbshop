@@ -37,8 +37,8 @@ public class RegisterMemberServlet extends HttpServlet {
         String add = request.getParameter("address");
         String state = request.getParameter("state");
         String city = request.getParameter("city");
-        int postal = Integer.parseInt(request.getParameter("postal"));
-        int tel = Integer.parseInt(request.getParameter("tel"));
+        long postal = Long.parseLong(request.getParameter("postal"));
+        long tel = Long.parseLong(request.getParameter("tel"));
         Customer cust = new Customer();
         cust.setCustUsername(user);
         cust.setCustPassword(pass);

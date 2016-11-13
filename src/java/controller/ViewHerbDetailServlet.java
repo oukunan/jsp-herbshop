@@ -36,7 +36,7 @@ public class ViewHerbDetailServlet extends HttpServlet {
         Herb h = Herb.findHerbById(Integer.parseInt(id));
         List<Diseases> lists = Diseases.findDiseasesByHerbId(Integer.parseInt(id));
         request.setAttribute("h", h);
-        request.setAttribute("d", lists);
+        request.setAttribute("dise", lists);
         getServletContext().getRequestDispatcher("/herbDetail.jsp").forward(request, response);
     }
 

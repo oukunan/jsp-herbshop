@@ -28,8 +28,7 @@ public class Diseases {
     private String diseDetail;
     private final static String SQL_SEARCH_DISEASES_BY_NAME = "SELECT * FROM DISEASES WHERE LOWER(diseName) LIKE ?";
     private final static String SQL_FIND_DISEASES_BY_ID = "SELECT * FROM DISEASES WHERE diseId = ?";
-    private final static String SQL_FIND_DISEASES_BY_HERB_ID = "SELECT diseId,diseName FROM DISEASES d JOIN HERBFORDISEASE h ON "
-            + "d.herbId = h.Diseases_diseId AND Herb_herbId = ?";
+    private final static String SQL_FIND_DISEASES_BY_HERB_ID = "SELECT diseId,diseName FROM DISEASES d JOIN HERBFORDISEASE h ON d.diseId = h.Diseases_diseId AND Herb_herbId = ?";
 
     public Diseases() {
     }
@@ -144,11 +143,13 @@ public class Diseases {
             rs = ps.executeQuery();
             if (rs != null) {
                 while (rs.next()) {
+                    System.out.println("PASSSSSSS");
                     if (dises == null) {
                         dises = new ArrayList<Diseases>();
                     }
                     dise = new Diseases();
-                    dise.ORM(rs, dise);
+                    dise.setDiseId(rs.getInt("diseId"));
+                    dise.setDiseName(rs.getString("diseName"));
                     dises.add(dise);
                 }
             }

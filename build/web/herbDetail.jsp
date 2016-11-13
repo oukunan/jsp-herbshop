@@ -4,6 +4,7 @@
     Author     : KN
 --%>
 
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -39,7 +40,11 @@
                 </tr>
                 <tr>
                     <td>Disease :  &nbsp; </td>
-                    <td>ช่องนี่นาจา</td>
+                    <td>
+                        <c:forEach items="${dise}" var="d">
+                            <a href='ViewDiseasesDetail?id=${d.diseId}'>${d.diseName}</a>,
+                        </c:forEach>
+                    </td>
                 </tr>
             </table><br><br>
             <button class="btn btn-inverse" onclick="history.back()">Back </button>

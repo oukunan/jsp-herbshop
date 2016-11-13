@@ -25,7 +25,7 @@
                         Address <input type="text" class="form-control"  name="address">
                         State <input type="text" class="form-control"  name="state">
                         City <input type="text" class="form-control" name="city">
-                        Postal <input type="text" class="form-control"  name="postals">
+                        Postal <input type="text" class="form-control"  name="postal">
                         Tel <input type="number" class="form-control"  name="tel"><br>
                         <input type="submit" class="btn btn-primary text-center"  name="Register">
                     </form>
