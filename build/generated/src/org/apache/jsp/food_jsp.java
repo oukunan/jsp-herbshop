@@ -117,13 +117,18 @@ public final class food_jsp extends org.apache.jasper.runtime.HttpJspBase
         do {
           out.write("\r\n");
           out.write("                    <div class=\"col-md-4 text-center\">\r\n");
-          out.write("                        <img src=\"#\" alt=\"pic\" height=\"200\">\r\n");
-          out.write("                        <p> Name : ");
+          out.write("                       <img src='/images/food/");
+          out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${f.foodId}", java.lang.String.class, (PageContext)_jspx_page_context, null));
+          out.write(".jpg' alt=\"pic\" height=\"200\">\r\n");
+          out.write("                       <p> Name : ");
           out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${f.foodName}", java.lang.String.class, (PageContext)_jspx_page_context, null));
           out.write(" </p>\r\n");
-          out.write("                        <p> Recipe :  ");
+          out.write("                       <p> Recipe :  ");
           out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${f.foodRecipe}", java.lang.String.class, (PageContext)_jspx_page_context, null));
           out.write(" </p>\r\n");
+          out.write("                        <a href=\"ViewFoodDetail?id=");
+          out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${f.foodId}", java.lang.String.class, (PageContext)_jspx_page_context, null));
+          out.write("\"><p class=\"btn btn-primary \">Detail</p></a>\r\n");
           out.write("                    </div>\r\n");
           out.write("                ");
           int evalDoAfterBody = _jspx_th_c_forEach_0.doAfterBody();

@@ -26,6 +26,7 @@
                         <input type="text" class="form-control" id="name" name="searchText" placeholder="Search">
                     </div>
                     <button type="submit" class="btn btn-primary">Go</button>
+                    <a href="typeHerb.jsp" <button type="button" class="btn btn-inverse">Back</button></a>
                 </form>
             </div>
 

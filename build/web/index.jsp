@@ -17,7 +17,7 @@
         <div class="container animated fadeIn" id="edit">
             <div class="row">
                 <div class="col-md-4 col-md-offset-4 wow">
-                    <h1 class="text-primary">HERB_SHOP</h1>
+                    <h1 class="">HERB_SHOP</h1>
                 </div>
             </div><br>
             <div class="row">

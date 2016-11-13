@@ -9,17 +9,21 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <link rel="stylesheet" href="css/animate.css">
+
         <title>.:: HERB TYPE ::.</title>
     </head>
     <body>
         <jsp:include page="/WEB-INF/header/header.jsp"/>
-        <div class="container"> 
+        <div class="container"> <br><br>
             <div class="row">
-                <div class="col-md-6">
-                    <a href="SearchHerbTypeVegetable" class="btn btn-default navbar-btn btn-primary">Vegetable (ผัก)</a><br>
+                <div class="col-md-6 text-center animated bounceIn">
+                    <img src="images/1.png"   alt="veget" height="250"><br><br>
+                    <a href="SearchHerbTypeVegetable" class="btn btn-default navbar-btn btn-inverse">Vegetable (ผัก)</a><br>
                 </div>
-                <div class="col-md-6">
-                    <a href="SearchHerbTypeFruit" class="btn btn-default navbar-btn btn-primary"> Fruit (ผลไม้)</a>
+                <div class="col-md-6 text-center animated bounceIn">
+                    <img src="images/2.png" alt="fruit"  height="250"><br><br>
+                    <a href="SearchHerbTypeFruit" class="btn btn-default navbar-btn btn-inverse"> Fruit (ผลไม้)</a>
                 </div>
             </div>
         </div>
