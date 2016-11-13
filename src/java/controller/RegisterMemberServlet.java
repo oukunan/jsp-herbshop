@@ -49,10 +49,16 @@ public class RegisterMemberServlet extends HttpServlet {
         cust.setCustCity(city);
         cust.setCustPostal(postal);
         cust.setCustTel(tel);
-        
-        Customer.addMember(cust);
-        
-        getServletContext().getRequestDispatcher("/index.jsp").forward(request, response);
+
+        int affect = Customer.addMember(cust);
+        if (affect == 0) {
+            request.setAttribute("mes", "username has already been taken");
+            request.setAttribute("cust", cust);
+            getServletContext().getRequestDispatcher("/register.jsp").forward(request, response);
+            return;
+        } else {
+            getServletContext().getRequestDispatcher("/index.jsp").forward(request, response);
+        }
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

@@ -10,6 +10,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.logging.Level;
@@ -46,9 +47,9 @@ public class Customer {
         this.custPostal = rs.getLong("custPostal");
         this.custTel = rs.getLong("custTel");
     }
-    
-    public Customer(){
-        
+
+    public Customer() {
+
     }
 
     public int getCustId() {
@@ -155,8 +156,9 @@ public class Customer {
         return customer;
     }
 
-    public static void addMember(Customer c) {
+    public static int addMember(Customer c) {
         Connection con = ConnectionBuilder.getConnection();
+        int affect = 0;
         try {
             PreparedStatement ps = con.prepareStatement(SQL_ADD_MEMBER);
             ps.setString(1, c.getCustUsername());
@@ -168,13 +170,33 @@ public class Customer {
             ps.setString(7, c.getCustCity());
             ps.setLong(8, c.getCustPostal());
             ps.setLong(9, c.getCustTel());
-            int it = ps.executeUpdate();
-            System.out.println(it);
+            ResultSet rs = getAllUsername();
+            if(rs!=null){
+                while(rs.next()){
+                    if(rs.getString("custUsername").equalsIgnoreCase(c.getCustUsername())!=true){
+                        affect = ps.executeUpdate();
+                    }
+                }
+            }
             ps.close();
             con.close();
         } catch (SQLException ex) {
             Logger.getLogger(Customer.class.getName()).log(Level.SEVERE, null, ex);
         }
+        return affect;
+    }
 
+    public static ResultSet getAllUsername() {
+        ResultSet rs = null;
+        Connection con = ConnectionBuilder.getConnection();
+        Statement st;
+        try {
+            st = con.createStatement();
+            rs = st.executeQuery("SELECT custUsername FROM CUSTOMER");
+            st.close();
+        } catch (SQLException ex) {
+            Logger.getLogger(Customer.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return rs;
     }
 }

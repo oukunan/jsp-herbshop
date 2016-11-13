@@ -63,15 +63,15 @@ public final class index_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("            </div><br>\r\n");
       out.write("            <div class=\"row\">\r\n");
       out.write("                <div class=\"col-md-4 text-center\">\r\n");
-      out.write("                    <img src=\"images/6.png\"  height=\"250 alt=\"pic1\" /><br><br>\r\n");
+      out.write("                    <img src=\"images/6.png\"  height=\"250\" alt=\"pic1\" /><br><br>\r\n");
       out.write("                    <a href=\"typeHerb.jsp\" class=\"btn btn-default navbar-btn btn-primary\">Herb (สมุนไพร)</a>\r\n");
       out.write("                </div>\r\n");
       out.write("                <div class=\"col-md-4 text-center\">\r\n");
-      out.write("                    <img src=\"images/3.png\" height=\"250  alt=\"pic2\"  width=\"300\" height=\"300\" /><br><br>\r\n");
+      out.write("                    <img src=\"images/3.png\" height=\"250\"  alt=\"pic2\"  width=\"300\" height=\"300\" /><br><br>\r\n");
       out.write("                    <a href=\"SearchDisease\" class=\"btn btn-default navbar-btn btn-primary\">Diseases (อาการ)</a>\r\n");
       out.write("                </div>\r\n");
       out.write("                <div class=\"col-md-4 text-center\">\r\n");
-      out.write("                    <img src=\"images/5.png\" height=\"250  alt=\"pic3\" width=\"300\" height=\"300\" /><br><br>\r\n");
+      out.write("                    <img src=\"images/5.png\" height=\"250\"  alt=\"pic3\" width=\"300\" height=\"300\" /><br><br>\r\n");
       out.write("                    <a href=\"SearchFood\" class=\"btn btn-default navbar-btn btn-primary\">Food (อาหาร)</a>\r\n");
       out.write("                </div>\r\n");
       out.write("            </div>\r\n");

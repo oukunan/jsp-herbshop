@@ -30,7 +30,7 @@
             <div class="row">
                 <c:forEach items="${food}" var="f">
                     <div class="col-md-4 text-center">
-                       <img src="#" alt="pic" height="200">
+                       <img src='/images/food/${f.foodId}.jpg' alt="pic" height="200">
                        <p> Name : ${f.foodName} </p>
                        <p> Recipe :  ${f.foodRecipe} </p>
                     </div>
