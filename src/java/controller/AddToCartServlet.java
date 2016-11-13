@@ -40,7 +40,7 @@ public class AddToCartServlet extends HttpServlet {
         int quantity = Integer.parseInt(request.getParameter("quantity"));
         cart.addItem(pid,quantity);
         
-        getServletContext().getRequestDispatcher("/????.jsp").forward(request, response);
+        getServletContext().getRequestDispatcher("/typeHerb.jsp").forward(request, response);
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
