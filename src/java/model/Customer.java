@@ -31,8 +31,10 @@ public class Customer {
     private String custCity;
     private int custPostal;
     private int custTel;
+    private final static String SQL_ADD_MEMBER = "INSERT INTO CUSTOMER(custUsername,custPassword,custName,custSurname,custAddress,custState,custCity,custPostal,custTel)"
+            + " VALUES(?,?,?,?,?,?,?,?,?)";
 
-    private Customer(ResultSet rs) throws SQLException {
+    public Customer(ResultSet rs) throws SQLException {
         this.custId = rs.getInt("custId");
         this.custUsername = rs.getString("custUsername");
         this.custPassword = rs.getString("custPassword");
@@ -43,6 +45,10 @@ public class Customer {
         this.custCity = rs.getString("custCity");
         this.custPostal = rs.getInt("custPostal");
         this.custTel = rs.getInt("custTel");
+    }
+    
+    public Customer(){
+        
     }
 
     public int getCustId() {
@@ -124,7 +130,7 @@ public class Customer {
     public void setCustTel(int custTel) {
         this.custTel = custTel;
     }
-    
+
     public static List<Customer> findByUserName(String name) {
         List<Customer> customer = null;
         Customer c = null;
@@ -133,9 +139,9 @@ public class Customer {
             PreparedStatement pstm = con.prepareStatement("select * from customer where custUsername like ?");
             pstm.setString(1, name + "%");
             ResultSet rs = pstm.executeQuery();
-            while(rs.next()) {
+            while (rs.next()) {
                 c = new Customer(rs);
-                if(customer == null) {
+                if (customer == null) {
                     customer = new ArrayList();
                 }
                 customer.add(c);
@@ -148,6 +154,26 @@ public class Customer {
         }
         return customer;
     }
-    
-    
+
+    public static void addMember(Customer c) {
+        Connection con = ConnectionBuilder.getConnection();
+        try {
+            PreparedStatement ps = con.prepareStatement(SQL_ADD_MEMBER);
+            ps.setString(1, c.getCustUsername());
+            ps.setString(2, c.getCustPassword());
+            ps.setString(3, c.getCustName());
+            ps.setString(4, c.getCustSurname());
+            ps.setString(5, c.getCustAddress());
+            ps.setString(6, c.getCustState());
+            ps.setString(7, c.getCustCity());
+            ps.setInt(8, c.getCustPostal());
+            ps.setInt(0, c.getCustTel());
+            ps.executeUpdate();
+            ps.close();
+            con.close();
+        } catch (SQLException ex) {
+            Logger.getLogger(Customer.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
+    }
 }
