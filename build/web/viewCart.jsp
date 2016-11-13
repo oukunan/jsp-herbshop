@@ -65,7 +65,11 @@
                                             <a href="ProcessOrder"><input type="button" value="Checkout"/></a>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
                                             <a href="typeHerb.jsp"><input type="button" value="Continue Shopping"/></a>
                                         </td>
-                                        <td colspan="2" style="text-align: right">Total All :  </td>
+                                        <td colspan="1" style="text-align: right">Money :  </td>
+                                        <td style="text-align: right"> <fmt:formatNumber value="${CART.money}"/></td>
+                                        <td colspan="1" style="text-align: right">VAT 7% :  </td>
+                                        <td style="text-align: right"> <fmt:formatNumber value="${CART.vatAmount}"/></td>
+                                        <td colspan="1" style="text-align: right">Total All :  </td>
                                         <td style="text-align: right"> <fmt:formatNumber value="${CART.totalMoney}"/></td>
                                         <td></td>
                                     </tr>

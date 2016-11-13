@@ -40,24 +40,24 @@ public class Cart {
     }
     private double totalMoney = 0;
     private double vatAmount = 0;
-    private double subTotalMoney = 0;
+    private double money = 0;
     private static String SQL_INSERT = "INSERT INTO CART(totalMoney,vatAmount,subTotalMoney,Customer_custId)"
             + "VALUES (?,?,?,?)";
 
-    public double getTotalMoney() {
-        totalMoney = 0;
+    public double getMoney() {
+        money = 0;
         for (CartDetail cd : items.values()) {
-            totalMoney += cd.getPrice();
+            money += cd.getPrice();
         }
-        return totalMoney;
+        return money;
     }
 
-    public void setTotalMoney(double totalMoney) {
-        this.totalMoney = totalMoney;
+    public void setMoney(double Money) {
+        this.money = Money;
     }
 
     public double getVatAmount() {
-        vatAmount = totalMoney * 7 / 100;
+        vatAmount = money * 7 / 100;
         return vatAmount;
     }
 
@@ -65,13 +65,13 @@ public class Cart {
         this.vatAmount = vatAmount;
     }
 
-    public double getSubTotalMoney() {
-        subTotalMoney = totalMoney - vatAmount;
-        return subTotalMoney;
+    public double getTotalMoney() {
+        totalMoney = money + vatAmount;
+        return totalMoney;
     }
 
-    public void setSubTotalMoney(double subTotalMoney) {
-        this.subTotalMoney = subTotalMoney;
+    public void setTotalMoney(double TotalMoney) {
+        this.totalMoney = totalMoney;
     }
 
     public Cart() {
@@ -120,18 +120,18 @@ public class Cart {
     }
 
     public void calculate() {
-        getTotalMoney();
+        getMoney();
         getVatAmount();
-        getSubTotalMoney();
+        getTotalMoney();
     }
 
     public static void storeCartHistory(Cart c, Customer cust) {
         Connection con = ConnectionBuilder.getConnection();
         try {
             PreparedStatement ps = con.prepareStatement(SQL_INSERT);
-            ps.setDouble(1, c.getTotalMoney());
+            ps.setDouble(1, c.getMoney());
             ps.setDouble(2, c.vatAmount);
-            ps.setDouble(3, c.subTotalMoney);
+            ps.setDouble(3, c.totalMoney);
             ps.setInt(4, cust.getCustId());
             ps.executeUpdate();
             CartDetail.storeCartDetailHistory(c);
