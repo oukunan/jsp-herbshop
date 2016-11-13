@@ -11,13 +11,15 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <link rel="stylesheet" href="css/animate.css">
+
         <title>JSP Page</title>
     </head>
     <body>
         <jsp:include page="/WEB-INF/header/header.jsp"/>
         <div class="container">
-            <div class="row">
-                <form action="SearchHerbTypeFruit" method="post" class="form-inline">
+            <div class="row animated fadeIn">
+                <form action="SearchHerbTypeVegetable" method="post" class="form-inline">
                     <div class="form-group">
 
                         <label for="name">Fruit Name : </label>
@@ -28,23 +30,28 @@
             </div>
 
             <c:if test="${fruit != null}">
-                <div class="row">
+                <div class="row wow fadeIn">
                     <br>
                     <div class="row">
                         <form action="AddToCart" method="post">
                             <c:forEach items="${fruit}" var="f">
+
                                 <div class="col-md-4 text-center">
                                     <p> Name : ${f.herbName} </p>
                                     <p> Price :  <fmt:formatNumber value="${f.herbPrice}" type="currency" /> </p>
                                     <a href="ViewHerbDetail?id=${f.herbId}"><p class="btn btn-success "> Detail</p></a>
-                                    <p class="btn btn-inverse">Add to Cart &nbsp;<input type="checkbox"  name="pid" value="${f.herbId}" title="Add to Cart"/> </p>
-                                    <input type="submit"  class="btn btn-info" value="Add to Cart"/>
+                                    <button class="btn btn-inverse"><input type="hidden" name="pid" value="${f.herbId}">Add to Cart</button>                                    
                                     <input type="hidden" name="type" value="vegetable"> 
                                 </div>
                             </c:forEach>
                         </form>
                     </div>
                 </c:if>   
-            </div>
+            </div>  
+
+            <script src="js/wow.min.js"></script>
+            <script>
+                new WOW().init();
+            </script>
     </body>
 </html>
