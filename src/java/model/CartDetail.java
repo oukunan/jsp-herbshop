@@ -23,7 +23,7 @@ public class CartDetail {
 
     private Herb herb;
     private int cartDetailId;
-    private int quantityOfHerb;
+    private double quantityOfHerb;
     private double price;
     private final static String SQL_STORE_HISTORY = "INSERT INTO CARTDETAIL(quantityOfHerb,price,Cart_cartId,Herb_herbId)"
             + " VALUES(?,?,?,?);";
@@ -35,7 +35,7 @@ public class CartDetail {
         this(herbId, 1);
     }
 
-    public CartDetail(int herbId, int quantity) {
+    public CartDetail(int herbId, double quantity) {
         quantityOfHerb = quantity;
         herb = Herb.findHerbById(herbId);
         calculatePrice();
@@ -49,7 +49,7 @@ public class CartDetail {
         return cartDetailId;
     }
 
-    public int getQuantityOfHerb() {
+    public double getQuantityOfHerb() {
         return quantityOfHerb;
     }
 
@@ -65,7 +65,7 @@ public class CartDetail {
         this.cartDetailId = cartDetailId;
     }
 
-    public void setQuantityOfHerb(int quantityOfHerb) {
+    public void setQuantityOfHerb(double quantityOfHerb) {
         this.quantityOfHerb = quantityOfHerb;
         calculatePrice();
     }
@@ -85,7 +85,7 @@ public class CartDetail {
             PreparedStatement ps = con.prepareStatement(SQL_STORE_HISTORY);
             tmp = c.getItems();
             for (CartDetail cd : tmp.values()) {
-                ps.setInt(1, cd.getQuantityOfHerb());
+                ps.setDouble(1, cd.getQuantityOfHerb());
                 ps.setDouble(2, cd.getPrice());
                 ps.setInt(3, getLastCartId());
                 ps.setInt(4, cd.getHerb().getHerbId());

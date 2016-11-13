@@ -97,7 +97,7 @@ public class Cart {
         calculate();
     }
 
-    public void updateItem(int productId, int qty) {
+    public void updateItem(int productId, double qty) {
         CartDetail cd = items.get(productId);
         if (cd == null) {
             items.put(productId, new CartDetail(productId, qty));
