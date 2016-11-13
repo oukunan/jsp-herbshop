@@ -66,12 +66,12 @@ public final class index_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("                    <a href=\"typeHerb.jsp\" class=\"btn btn-default navbar-btn btn-primary\">Herb (สมุนไพร)</a>\r\n");
       out.write("                </div>\r\n");
       out.write("                <div class=\"col-md-4 text-center\">\r\n");
-      out.write("                    <img src=\"#\" alt=\"pic2\"  width=\"300\" height=\"300\" /><br>\r\n");
-      out.write("                    <a href=\"#\" class=\"btn btn-default navbar-btn btn-primary\">Diseases (อาการ)</a>\r\n");
+      out.write("                    <img src=\"\" alt=\"pic2\"  width=\"300\" height=\"300\" /><br>\r\n");
+      out.write("                    <a href=\"SearchDisease\" class=\"btn btn-default navbar-btn btn-primary\">Diseases (อาการ)</a>\r\n");
       out.write("                </div>\r\n");
       out.write("                <div class=\"col-md-4 text-center\">\r\n");
       out.write("                    <img src=\"#\" alt=\"pic3\" width=\"300\" height=\"300\" /><br>\r\n");
-      out.write("                    <a href=\"#\" class=\"btn btn-default navbar-btn btn-primary\">Food (อาหาร)</a>\r\n");
+      out.write("                    <a href=\"SearchFood\" class=\"btn btn-default navbar-btn btn-primary\">Food (อาหาร)</a>\r\n");
       out.write("                </div>\r\n");
       out.write("            </div>\r\n");
       out.write("        </div>\r\n");
