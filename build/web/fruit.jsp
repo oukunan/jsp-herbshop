@@ -37,6 +37,7 @@
                             <c:forEach items="${fruit}" var="f">
 
                                 <div class="col-md-4 text-center">
+                                    <img src="#" alt="pic" height="200">
                                     <p> Name : ${f.herbName} </p>
                                     <p> Price :  <fmt:formatNumber value="${f.herbPrice}" type="currency" /> </p>
                                     <a href="ViewHerbDetail?id=${f.herbId}"><p class="btn btn-success "> Detail</p></a>
