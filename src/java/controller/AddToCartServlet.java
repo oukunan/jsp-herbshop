@@ -35,12 +35,14 @@ public class AddToCartServlet extends HttpServlet {
         if (session.getAttribute("CART") == null) {
             session.setAttribute("CART", new Cart());
         }
+        String type = request.getParameter("type");
+        System.out.println("TYPEEEEEEEEEE"+type);
         Cart cart = (Cart) session.getAttribute("CART") ;
         int pid = Integer.parseInt(request.getParameter("pid")) ;
         int quantity = 1;
         cart.addItem(pid,quantity);
         
-        getServletContext().getRequestDispatcher("/typeHerb.jsp").forward(request, response);
+        getServletContext().getRequestDispatcher("/"+type+".jsp").forward(request, response);
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

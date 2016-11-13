@@ -43,7 +43,7 @@ public class SearchHerbTypeVegetableServlet extends HttpServlet {
         }
         request.getSession().setAttribute(type, herbs);   // put products to session scope
 
-        getServletContext().getRequestDispatcher("/vegetables.jsp").forward(request, response);
+        getServletContext().getRequestDispatcher("/vegetable.jsp").forward(request, response);
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

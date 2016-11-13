@@ -29,21 +29,23 @@
 
             <c:if test="${vegetable != null}">
                 <div class="row">
-                    <div class="col-md-4 col-md-offset-8 text-right">
-                        <form action="AddToCart" method="post">
-                            <input type="submit"  class="btn btn-info" value="Add to Cart"/>
-                        </form>
-                    </div>
+
                     <br>
                     <div class="row">
-                        <c:forEach items="${vegetable}" var="v">
-                            <div class="col-md-4 text-center">
-                                <p> Name : ${v.herbName} </p>
-                                <p> Price :  <fmt:formatNumber value="${v.herbPrice}" type="currency" /> </p>
-                                <a href="ViewHerbDetail?id=${v.herbId}"><p class="btn btn-success "> Detail</p></a>
-                                <p class="btn btn-inverse">Add to Cart &nbsp;<input type="checkbox"  name="pid" value="${v.herbId}" title="Add to Cart"/> </p>
-                            </div>
-                        </c:forEach>
+                        <form action="AddToCart" method="post">
+                            <c:forEach items="${vegetable}" var="v">
+
+                                <div class="col-md-4 text-center">
+                                    <p> Name : ${v.herbName} </p>
+                                    <p> Price :  <fmt:formatNumber value="${v.herbPrice}" type="currency" /> </p>
+                                    <a href="ViewHerbDetail?id=${v.herbId}"><p class="btn btn-success "> Detail</p></a>
+                                    <p class="btn btn-inverse">Add to Cart &nbsp;<input type="checkbox"  name="pid" value="${v.herbId}" title="Add to Cart"/> </p>
+                                    <input type="submit"  class="btn btn-info" value="Add to Cart"/>
+                                    <input type="hidden" name="type" value="vegetable"> 
+                                </div>
+
+                            </c:forEach>
+                        </form>
                     </div>
                 </c:if>   
             </div>

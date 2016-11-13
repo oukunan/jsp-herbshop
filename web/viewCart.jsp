@@ -42,17 +42,17 @@
                                     <c:forEach items="${CART.items}" var="it" varStatus="vs">
                                         <tr>
                                             <td> ${vs.count} </td>
-                                            <td> ${it.value.herbs.herbName} </td>
-                                            <td  style="text-align: right; padding-right: 50px"> <fmt:formatNumber value="${it.value.herbs.herbPrice}" pattern="#,###.00"/></td>
+                                            <td> ${it.value.herb.herbName} </td>
+                                            <td  style="text-align: right; padding-right: 50px"> <fmt:formatNumber value="${it.value.herb.herbPrice}" pattern="#,###.00"/></td>
                                             <td> 
-                                                <input type="number" min="1" value="${it.value.herbAmount}" name="_${it.key}" 
+                                                <input type="number" min="1" value="${it.value.herb.herbAmount}" name="_${it.key}" 
                                                        style="width: 50px; text-align: center"/> 
                                             </td>
                                             <td style="text-align: right">
-                                                <fmt:formatNumber value="${it.value.total}" pattern="#,###.00"/>  
+                                                <fmt:formatNumber value="${it.value.price}" pattern="#,###.00"/>  
                                             </td>
                                             <td style="text-align: center">
-                                                <input type="checkbox" value="${it.value.herbs.herbId}" name="deleteItem"/>
+                                                <input type="checkbox" value="${it.value.herb.herbId}" name="deleteItem"/>
                                             </td>
                                         </tr>
                                     </c:forEach>
@@ -66,7 +66,7 @@
                                             <a href="typeHerb.jsp"><input type="button" value="Continue Shopping"/></a>
                                         </td>
                                         <td colspan="2" style="text-align: right">Total All :  </td>
-                                        <td style="text-align: right"> <fmt:formatNumber value="${CART.totalPrice}" pattern="#,###.00"/></td>
+                                        <td style="text-align: right"> <fmt:formatNumber value="${CART.totalMoney}" pattern="#,###.00"/></td>
                                         <td></td>
                                     </tr>
                                 </table>
