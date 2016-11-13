@@ -10,12 +10,13 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>IT21-HerbShop</title>
+        <link rel="stylesheet" href="css/animate.css">
     </head>
     <body>
         <jsp:include page="/WEB-INF/header/header.jsp"/>
-        <div class="container">
+        <div class="container animated fadeIn" id="edit">
             <div class="row">
-                <div class="col-md-4 col-md-offset-4  ">
+                <div class="col-md-4 col-md-offset-4 wow">
                     <h1 class="text-primary">HERB_SHOP</h1>
                 </div>
             </div><br>
@@ -34,5 +35,10 @@
                 </div>
             </div>
         </div>
+        
+        <script src="js/wow.min.js"></script>
+        <script>
+            new WOW().init();
+        </script>
     </body>
 </html>

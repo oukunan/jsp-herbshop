@@ -23,7 +23,7 @@
                  <c:if test="${CART != null}">
                     <a href="viewCart.jsp" class="btn">items ( ${CART.size} )
                     </c:if>
-                <a href="${loginOrLogout}" class="btn btn-default navbar-btn btn-primary">${loginOrLogout}</a>
+                <a href="${loginOrLogout}" class="btn btn-default navbar-btn btn-inverse">${loginOrLogout}</a>
                 <p class="navbar-text navbar">Hello, <c:out value="${user.custName}" default="Guest" /> 
             </div>
         </nav>

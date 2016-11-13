@@ -49,14 +49,15 @@ public final class index_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("    <head>\r\n");
       out.write("        <meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\">\r\n");
       out.write("        <title>IT21-HerbShop</title>\r\n");
+      out.write("        <link rel=\"stylesheet\" href=\"css/animate.css\">\r\n");
       out.write("    </head>\r\n");
       out.write("    <body>\r\n");
       out.write("        ");
       org.apache.jasper.runtime.JspRuntimeLibrary.include(request, response, "/WEB-INF/header/header.jsp", out, false);
       out.write("\r\n");
-      out.write("        <div class=\"container\">\r\n");
+      out.write("        <div class=\"container animated fadeIn\" id=\"edit\">\r\n");
       out.write("            <div class=\"row\">\r\n");
-      out.write("                <div class=\"col-md-4 col-md-offset-4  \">\r\n");
+      out.write("                <div class=\"col-md-4 col-md-offset-4 wow\">\r\n");
       out.write("                    <h1 class=\"text-primary\">HERB_SHOP</h1>\r\n");
       out.write("                </div>\r\n");
       out.write("            </div><br>\r\n");
@@ -75,6 +76,11 @@ public final class index_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("                </div>\r\n");
       out.write("            </div>\r\n");
       out.write("        </div>\r\n");
+      out.write("        \r\n");
+      out.write("        <script src=\"js/wow.min.js\"></script>\r\n");
+      out.write("        <script>\r\n");
+      out.write("            new WOW().init();\r\n");
+      out.write("        </script>\r\n");
       out.write("    </body>\r\n");
       out.write("</html>\r\n");
     } catch (Throwable t) {
