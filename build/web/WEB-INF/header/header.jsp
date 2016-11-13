@@ -18,8 +18,7 @@
                 </button>
                 <a href="index.jsp" class="navbar-brand">IT21- HerbShop</a>
             </div>
-
-            <div class="col-md-3 col-md-offset-7">
+            <div class="col-md-2 col-md-offset-8">
                 <a href="${loginOrLogout}" class="btn btn-default navbar-btn btn-primary">${loginOrLogout}</a>
                 <p class="navbar-text navbar">Hello, <c:out value="${user.custName}" default="Guest" />
             </div>       
