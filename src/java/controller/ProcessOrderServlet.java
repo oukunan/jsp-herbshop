@@ -38,7 +38,7 @@ public class ProcessOrderServlet extends HttpServlet {
         Customer cust = (Customer)ses.getAttribute("user");
         Cart.storeCartHistory(c, cust);
         ses.removeAttribute("CART");
-        getServletContext().getRequestDispatcher("/index.jsp").forward(request, response);
+        getServletContext().getRequestDispatcher("/thankYou.jsp").forward(request, response);
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

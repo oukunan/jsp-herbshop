@@ -13,7 +13,7 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <link rel="stylesheet" href="css/animate.css">
 
-        <title>JSP Page</title>
+        <title>Search Vegetable </title>
     </head>
     <body>
         <jsp:include page="/WEB-INF/header/header.jsp"/>
