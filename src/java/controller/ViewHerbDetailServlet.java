@@ -7,10 +7,12 @@ package controller;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.List;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import model.Diseases;
 import model.Herb;
 
 /**
@@ -32,7 +34,9 @@ public class ViewHerbDetailServlet extends HttpServlet {
             throws ServletException, IOException {
         String id = request.getParameter("id");
         Herb h = Herb.findHerbById(Integer.parseInt(id));
+        List<Diseases> lists = Diseases.findDiseasesByHerbId(Integer.parseInt(id));
         request.setAttribute("h", h);
+        request.setAttribute("d", lists);
         getServletContext().getRequestDispatcher("/herbDetail.jsp").forward(request, response);
     }
 

@@ -28,6 +28,8 @@ public class Diseases {
     private String diseDetail;
     private final static String SQL_SEARCH_DISEASES_BY_NAME = "SELECT * FROM DISEASES WHERE LOWER(diseName) LIKE ?";
     private final static String SQL_FIND_DISEASES_BY_ID = "SELECT * FROM DISEASES WHERE diseId = ?";
+    private final static String SQL_FIND_DISEASES_BY_HERB_ID = "SELECT diseId,diseName FROM DISEASES d JOIN HERBFORDISEASE h ON "
+            + "d.herbId = h.Diseases_diseId AND Herb_herbId = ?";
 
     public Diseases() {
     }
@@ -129,6 +131,34 @@ public class Diseases {
             Logger.getLogger(Herb.class.getName()).log(Level.SEVERE, null, ex);
         }
         return dise;
+    }
+    
+    public static List<Diseases> findDiseasesByHerbId(int id){
+        List<Diseases> dises = null;
+        ResultSet rs = null;
+        Diseases dise = null;
+        Connection con = ConnectionBuilder.getConnection();
+        try {
+            PreparedStatement ps = con.prepareStatement(SQL_FIND_DISEASES_BY_HERB_ID);
+            ps.setInt(1, id);
+            rs = ps.executeQuery();
+            if (rs != null) {
+                while (rs.next()) {
+                    if (dises == null) {
+                        dises = new ArrayList<Diseases>();
+                    }
+                    dise = new Diseases();
+                    dise.ORM(rs, dise);
+                    dises.add(dise);
+                }
+            }
+            rs.close();
+            con.close();
+            ps.close();
+        } catch (SQLException ex) {
+            Logger.getLogger(Herb.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return dises;
     }
 
     public static void ORM(ResultSet rs, Diseases d) throws SQLException {
