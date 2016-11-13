@@ -34,16 +34,14 @@ public class SearchFoodServlet extends HttpServlet {
             throws ServletException, IOException {
         String searchText = request.getParameter("searchText");
         String target = "/food.jsp";
-        if (searchText == null || searchText.trim().length() == 0) {
-            request.setAttribute("message", "");
-        } else {
-            List<Food> foods = Food.searchFoodByName(searchText);
-            if (foods == null) {
-                request.setAttribute("message", "Foods for specific name does not exist !!");
-            }
-            request.getSession().setAttribute("foods", foods);   // put products to session scope
-
+        if (searchText == null ){
+            searchText = "";
         }
+        List<Food> foods = Food.searchFoodByName(searchText);
+        if (foods == null) {
+            request.setAttribute("message", "Foods for specific name does not exist !!");
+        }
+        request.getSession().setAttribute("food", foods);   // put products to session scope
 
         getServletContext().getRequestDispatcher(target).forward(request, response);
     }

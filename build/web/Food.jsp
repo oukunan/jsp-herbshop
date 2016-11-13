@@ -20,13 +20,13 @@
                 <form action="SearchFood" method="post" class="form-inline">
                     <div class="form-group">
                         <label for="name">Search : </label>
-                        <input type="text" class="form-control" id="name" placeholder="Search">
+                        <input type="text" class="form-control" id="name" name="searchText" placeholder="Search">
                     </div>
                     <button type="submit" class="btn btn-primary">Go</button>
                 </form>
             </div><br><br>
             <div class="row">
-                <c:forEach items="${foods}" var="f">
+                <c:forEach items="${food}" var="f">
                     <div class="col-md-4 text-center">
                        <p> Name : ${f.foodName} </p>
                        <p> Recipe :  ${f.foodRecipe} </p>

@@ -20,17 +20,17 @@
                 <form action="SearchHerbTypeVegetable" method="post" class="form-inline">
                     <div class="form-group">
                         <label for="name">Search : </label>
-                        <input type="text" class="form-control" id="name" placeholder="Search">
+                        <input type="text" class="form-control" id="name" name="searchText" placeholder="Search">
                     </div>
                     <button type="submit" class="btn btn-primary">Go</button>
                 </form>
             </div><br><br>
             <div class="row">
-                <c:forEach items="${herbs}" var="h">
+                <c:forEach items="${vegetable}" var="v">
                     <div class="col-md-4 text-center">
-                       <p> Name : ${h.herbName} </p>
-                       <p> Price :  <fmt:formatNumber value="${h.herbPrice}" type="currency" /> </p>
-                       <p class="btn-inverse">Add to Cart &nbsp;<input type="checkbox"  name="pid" value="${h.herbId}" title="Add to Cart"/> </p>
+                       <p> Name : ${v.herbName} </p>
+                       <p> Price :  <fmt:formatNumber value="${v.herbPrice}" type="currency" /> </p>
+                       <p class="btn-inverse">Add to Cart &nbsp;<input type="checkbox"  name="pid" value="${v.herbId}" title="Add to Cart"/> </p>
                     </div>
                 </c:forEach>
             </div>

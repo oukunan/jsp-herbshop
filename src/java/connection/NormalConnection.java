@@ -19,7 +19,7 @@ public class NormalConnection {
         try {
             Connection con = ConnectionBuilder.getConnection();
             Statement st = con.createStatement();
-            String sql = "select * from customer";
+            String sql = "SELECT * FROM herb";
             ResultSet rs = st.executeQuery(sql);
             while(rs.next()) {
                 System.out.print(rs.getString(1) + ", ");

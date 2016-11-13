@@ -68,23 +68,25 @@ public class Food {
     public void setFoodDetail(String foodDetail) {
         this.foodDetail = foodDetail;
     }
-    
-    public static List<Food> searchFoodByName(String name){
+
+    public static List<Food> searchFoodByName(String name) {
         List<Food> foods = null;
         ResultSet rs = null;
         Food food = null;
         Connection con = ConnectionBuilder.getConnection();
         try {
             PreparedStatement ps = con.prepareStatement(SQL_SEARCH_FOOD_BY_NAME);
-            ps.setString(1, "%" + name.toLowerCase() + "%");
+            ps.setString(1, name.toLowerCase() + "%");
             rs = ps.executeQuery();
             if (rs != null) {
-                if (foods == null) {
-                    foods = new ArrayList<Food>();
+                while (rs.next()) {
+                    if (foods == null) {
+                        foods = new ArrayList<Food>();
+                    }
+                    food = new Food();
+                    food.ORM(rs, food);
+                    foods.add(food);
                 }
-                food = new Food();
-                food.ORM(rs, food);
-                foods.add(food);
             }
             rs.close();
             con.close();
@@ -101,5 +103,5 @@ public class Food {
         f.setFoodRecipe(rs.getString("foodRecipe"));
         f.setFoodDetail(rs.getString("foodDetail"));
     }
-   
+
 }

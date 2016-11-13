@@ -31,18 +31,17 @@ public class SearchHerbTypeFruitServlet extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        String searchText1 = request.getParameter("searchText1");
+        String searchText = request.getParameter("searchText");
         final String type = "fruit";
         String target = "/fruit.jsp";
-        if (searchText1 == null || searchText1.trim().length() == 0) {
-            request.setAttribute("message", "");
-        } else {
-            List<Herb> herbs = Herb.searchHerbByName(searchText1, type);
-            if (herbs == null) {
-                request.setAttribute("message", "Fruits for specific name does not exist !!");
-            }
-            request.getSession().setAttribute("herbs", herbs);   // put products to session scope
+        if (searchText == null) {
+            searchText = "";
         }
+        List<Herb> herbs = Herb.searchHerbByName(searchText, type);
+        if (herbs == null) {
+            request.setAttribute("message", "Fruits for specific name does not exist !!");
+        }
+        request.getSession().setAttribute(type, herbs);   // put products to session scope
 
         getServletContext().getRequestDispatcher("/fruit.jsp").forward(request, response);
     }

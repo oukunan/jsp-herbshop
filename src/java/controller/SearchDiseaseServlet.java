@@ -34,18 +34,17 @@ public class SearchDiseaseServlet extends HttpServlet {
             throws ServletException, IOException {
         String searchText = request.getParameter("searchText");
         String target = "/disease.jsp";
-        if (searchText == null || searchText.trim().length() == 0) {
-            request.setAttribute("message", "");
-        } else {
-            List<Diseases> diseases = Diseases.searchDiseasesByName(searchText);
-            if (diseases == null) {
-                request.setAttribute("message", "Foods for specific name does not exist !!");
-            }
-            request.getSession().setAttribute("diseases", diseases);   // put products to session scope
-
+        if (searchText == null) {
+            searchText = "";
         }
+        List<Diseases> diseases = Diseases.searchDiseasesByName(searchText);
+        if (diseases == null) {
+            request.setAttribute("message", "Foods for specific name does not exist !!");
+        }
+        request.getSession().setAttribute("diseases", diseases);   // put products to session scope
 
-        getServletContext().getRequestDispatcher(target).forward(request, response);
+        getServletContext()
+                .getRequestDispatcher(target).forward(request, response);
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

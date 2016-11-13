@@ -41,7 +41,7 @@ public class HerbListingByTypeServlet extends HttpServlet {
         
         List<Herb> herbs = Herb.listingHerbByType(type);
         
-        request.setAttribute("lists", herbs);
+        request.setAttribute(type, herbs);
         
         getServletContext().getRequestDispatcher(target).forward(request, response);
         
