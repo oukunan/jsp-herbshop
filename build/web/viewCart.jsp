@@ -48,23 +48,19 @@
                         </tr>
                     </c:forEach>
                     <tr>
-                        <td colspan="6"> <hr> </td>
-                    </tr>
-                    <tr>
-                        <td colspan="2">
-                            <input type="submit" value="Update Cart"/> &nbsp; 
-                            <a href="ProcessOrder"><input type="button" value="Checkout"/></a>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
-                            <a href="typeHerb.jsp"><input type="button" value="Continue Shopping"/></a>
-                        </td>
-                        <td colspan="1" style="text-align: right">Money :  </td>
-                        <td style="text-align: right"> <fmt:formatNumber value="${CART.money}"/></td>
-                        <td colspan="1" style="text-align: right">VAT 7% :  </td>
-                        <td style="text-align: right"> <fmt:formatNumber value="${CART.vatAmount}"/></td>
-                        <td colspan="1" style="text-align: right">Total All :  </td>
-                        <td style="text-align: right"> <fmt:formatNumber value="${CART.totalMoney}"/></td>
-                        <td></td>
+
                     </tr>
                 </table>
+                <div class="pull-right">
+                    Money:  &nbsp;&nbsp;<fmt:formatNumber value="${CART.money}"/> Baht<br>
+                        VAT 7%: &nbsp;&nbsp;+<fmt:formatNumber value="${CART.vatAmount}"/> Baht <br>
+                        Total All : &nbsp;&nbsp;<fmt:formatNumber value="${CART.totalMoney}"/> Baht<br><br>
+                </div>      
+                <input type="submit" class="btn btn-inverse " value="Update Cart"/> 
+                <a href="ProcessOrder"><input type="button" value="Checkout" class="btn btn-primary"/></a>
+                <a href="typeHerb.jsp"><input type="button" value="Continue Shopping" class="btn btn-info"/></a>
+
+
             </form>
         </div>    
     </body>
