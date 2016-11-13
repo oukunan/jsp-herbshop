@@ -28,12 +28,12 @@
                             <td><input type="text" class="form-control" name="diseName" value="${f.foodName}" ></td>
                         </tr>
                         <tr>
-                            <td>Type :  &nbsp; </td>
-                            <td><input type="text" class="form-control" name="diseType" value="${f.foodRecipe}" ></td>
+                            <td>Ingredient :  &nbsp; </td>
+                            <td><textarea  style="width: 500px" rows="10" class="form-control">${f.foodRecipe}</textarea></td>
                         </tr>
                         <tr>
                             <td>Detail :  &nbsp; </td>
-                            <td><textarea  style="width: 500px" rows="4" class="form-control">${f.foodDetail}</textarea>  </td>
+                            <td><textarea  style="width: 500px" rows="10" class="form-control">${f.foodDetail}</textarea>  </td>
                         </tr>
 
                     </table><br><br>

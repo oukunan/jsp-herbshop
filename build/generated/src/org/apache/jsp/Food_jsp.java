@@ -4,7 +4,7 @@ import javax.servlet.*;
 import javax.servlet.http.*;
 import javax.servlet.jsp.*;
 
-public final class Food_jsp extends org.apache.jasper.runtime.HttpJspBase
+public final class food_jsp extends org.apache.jasper.runtime.HttpJspBase
     implements org.apache.jasper.runtime.JspSourceDependent {
 
   private static final JspFactory _jspxFactory = JspFactory.getDefaultFactory();
@@ -51,40 +51,42 @@ public final class Food_jsp extends org.apache.jasper.runtime.HttpJspBase
       _jspx_out = out;
       _jspx_resourceInjector = (org.glassfish.jsp.api.ResourceInjector) application.getAttribute("com.sun.appserv.jsp.resource.injector");
 
-      out.write("\n");
-      out.write("\n");
-      out.write("\n");
-      out.write("\n");
-      out.write("\n");
-      out.write("<!DOCTYPE html>\n");
-      out.write("<html>\n");
-      out.write("    <head>\n");
-      out.write("        <meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\">\n");
-      out.write("        <title>JSP Page</title>\n");
-      out.write("    </head>\n");
-      out.write("    <body>\n");
+      out.write("\r\n");
+      out.write("\r\n");
+      out.write("\r\n");
+      out.write("\r\n");
+      out.write("\r\n");
+      out.write("<!DOCTYPE html>\r\n");
+      out.write("<html>\r\n");
+      out.write("    <head>\r\n");
+      out.write("        <meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\">\r\n");
+      out.write("        <title>.:: Food ::.</title>\r\n");
+      out.write("    </head>\r\n");
+      out.write("    <body>\r\n");
       out.write("        ");
       org.apache.jasper.runtime.JspRuntimeLibrary.include(request, response, "/WEB-INF/header/header.jsp", out, false);
-      out.write("\n");
-      out.write("        <div class=\"container\">\n");
-      out.write("            <div class=\"row\">\n");
-      out.write("                <form action=\"SearchFood\" method=\"post\" class=\"form-inline\">\n");
-      out.write("                    <div class=\"form-group\">\n");
-      out.write("                        <label for=\"name\">Search : </label>\n");
-      out.write("                        <input type=\"text\" class=\"form-control\" id=\"name\" placeholder=\"Search\">\n");
-      out.write("                    </div>\n");
-      out.write("                    <button type=\"submit\" class=\"btn btn-primary\">Go</button>\n");
-      out.write("                </form>\n");
-      out.write("            </div><br><br>\n");
-      out.write("            <div class=\"row\">\n");
+      out.write("\r\n");
+      out.write("        <div class=\"container\">\r\n");
+      out.write("            <div class=\"row\">\r\n");
+      out.write("                <form action=\"SearchFood\" method=\"post\" class=\"form-inline\">\r\n");
+      out.write("                    <div class=\"form-group\">\r\n");
+      out.write("\r\n");
+      out.write("                        <label for=\"name\">Food Name : </label>\r\n");
+      out.write("                        <input type=\"text\" class=\"form-control\" id=\"name\" name=\"searchText\" placeholder=\"Search\">\r\n");
+      out.write("\r\n");
+      out.write("                    </div>\r\n");
+      out.write("                    <button type=\"submit\" class=\"btn btn-primary\">Go</button>\r\n");
+      out.write("                </form>\r\n");
+      out.write("            </div><br><br>\r\n");
+      out.write("            <div class=\"row\">\r\n");
       out.write("                ");
       if (_jspx_meth_c_forEach_0(_jspx_page_context))
         return;
-      out.write("\n");
-      out.write("            </div>\n");
-      out.write("        </div>\n");
-      out.write("    </body>\n");
-      out.write("</html>\n");
+      out.write("\r\n");
+      out.write("            </div>\r\n");
+      out.write("        </div>\r\n");
+      out.write("    </body>\r\n");
+      out.write("</html>\r\n");
     } catch (Throwable t) {
       if (!(t instanceof SkipPageException)){
         out = _jspx_out;
@@ -106,22 +108,23 @@ public final class Food_jsp extends org.apache.jasper.runtime.HttpJspBase
     org.apache.taglibs.standard.tag.rt.core.ForEachTag _jspx_th_c_forEach_0 = (org.apache.taglibs.standard.tag.rt.core.ForEachTag) _jspx_tagPool_c_forEach_var_items.get(org.apache.taglibs.standard.tag.rt.core.ForEachTag.class);
     _jspx_th_c_forEach_0.setPageContext(_jspx_page_context);
     _jspx_th_c_forEach_0.setParent(null);
-    _jspx_th_c_forEach_0.setItems((java.lang.Object) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${foods}", java.lang.Object.class, (PageContext)_jspx_page_context, null));
+    _jspx_th_c_forEach_0.setItems((java.lang.Object) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${food}", java.lang.Object.class, (PageContext)_jspx_page_context, null));
     _jspx_th_c_forEach_0.setVar("f");
     int[] _jspx_push_body_count_c_forEach_0 = new int[] { 0 };
     try {
       int _jspx_eval_c_forEach_0 = _jspx_th_c_forEach_0.doStartTag();
       if (_jspx_eval_c_forEach_0 != javax.servlet.jsp.tagext.Tag.SKIP_BODY) {
         do {
-          out.write("\n");
-          out.write("                    <div class=\"col-md-4 text-center\">\n");
-          out.write("                       <p> Name : ");
+          out.write("\r\n");
+          out.write("                    <div class=\"col-md-4 text-center\">\r\n");
+          out.write("                        <img src=\"#\" alt=\"pic\" height=\"200\">\r\n");
+          out.write("                        <p> Name : ");
           out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${f.foodName}", java.lang.String.class, (PageContext)_jspx_page_context, null));
-          out.write(" </p>\n");
-          out.write("                       <p> Recipe :  ");
+          out.write(" </p>\r\n");
+          out.write("                        <p> Recipe :  ");
           out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${f.foodRecipe}", java.lang.String.class, (PageContext)_jspx_page_context, null));
-          out.write(" </p>\n");
-          out.write("                    </div>\n");
+          out.write(" </p>\r\n");
+          out.write("                    </div>\r\n");
           out.write("                ");
           int evalDoAfterBody = _jspx_th_c_forEach_0.doAfterBody();
           if (evalDoAfterBody != javax.servlet.jsp.tagext.BodyTag.EVAL_BODY_AGAIN)
