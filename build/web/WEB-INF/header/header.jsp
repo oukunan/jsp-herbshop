@@ -18,9 +18,9 @@
                 </button>
                 <a href="index.jsp" class="navbar-brand">IT21- HerbShop</a>
             </div>
-            <div class="col-md-2 col-md-offset-8">
+            <div class="col-md-3 col-md-offset-7">
                 <c:if test="${CART != null}">
-                    <a href="ViewCart.jsp">( ${CART.size} )</a><br>
+                    <a href="viewCart.jsp" class="btn">( ${CART.size} )</a><br>
                 </c:if>
                 <a href="${loginOrLogout}" class="btn btn-default navbar-btn btn-primary">${loginOrLogout}</a>
                 <p class="navbar-text navbar">Hello, <c:out value="${user.custName}" default="Guest" />
