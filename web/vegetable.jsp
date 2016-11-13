@@ -11,12 +11,14 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <link rel="stylesheet" href="css/animate.css">
+
         <title>JSP Page</title>
     </head>
     <body>
         <jsp:include page="/WEB-INF/header/header.jsp"/>
         <div class="container">
-            <div class="row">
+            <div class="row animated fadeIn">
                 <form action="SearchHerbTypeVegetable" method="post" class="form-inline">
                     <div class="form-group">
 
@@ -28,8 +30,7 @@
             </div>
 
             <c:if test="${vegetable != null}">
-                <div class="row">
-
+                <div class="row wow fadeIn">
                     <br>
                     <div class="row">
                         <form action="AddToCart" method="post">
@@ -39,15 +40,18 @@
                                     <p> Name : ${v.herbName} </p>
                                     <p> Price :  <fmt:formatNumber value="${v.herbPrice}" type="currency" /> </p>
                                     <a href="ViewHerbDetail?id=${v.herbId}"><p class="btn btn-success "> Detail</p></a>
-                                    <p class="btn btn-inverse">Add to Cart &nbsp;<input type="checkbox"  name="pid" value="${v.herbId}" title="Add to Cart"/> </p>
-                                    <input type="submit"  class="btn btn-info" value="Add to Cart"/>
+                                    <button class="btn btn-inverse"><input type="hidden" name="pid" value="${v.herbId}">Add to Cart</button>                                    
                                     <input type="hidden" name="type" value="vegetable"> 
                                 </div>
-
                             </c:forEach>
                         </form>
                     </div>
                 </c:if>   
-            </div>
+            </div>  
+
+            <script src="js/wow.min.js"></script>
+            <script>
+                new WOW().init();
+            </script>
     </body>
 </html>
