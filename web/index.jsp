@@ -25,12 +25,12 @@
                     <a href="typeHerb.jsp" class="btn btn-default navbar-btn btn-primary">Herb (สมุนไพร)</a>
                 </div>
                 <div class="col-md-4 text-center">
-                    <img src="#" alt="pic2"  width="300" height="300" /><br>
-                    <a href="#" class="btn btn-default navbar-btn btn-primary">Diseases (อาการ)</a>
+                    <img src="" alt="pic2"  width="300" height="300" /><br>
+                    <a href="SearchDisease" class="btn btn-default navbar-btn btn-primary">Diseases (อาการ)</a>
                 </div>
                 <div class="col-md-4 text-center">
                     <img src="#" alt="pic3" width="300" height="300" /><br>
-                    <a href="#" class="btn btn-default navbar-btn btn-primary">Food (อาหาร)</a>
+                    <a href="SearchFood" class="btn btn-default navbar-btn btn-primary">Food (อาหาร)</a>
                 </div>
             </div>
         </div>
