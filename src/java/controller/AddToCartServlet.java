@@ -37,7 +37,7 @@ public class AddToCartServlet extends HttpServlet {
         }
         Cart cart = (Cart) session.getAttribute("CART") ;
         int pid = Integer.parseInt(request.getParameter("pid")) ;
-        int quantity = Integer.parseInt(request.getParameter("quantity"));
+        int quantity = 1;
         cart.addItem(pid,quantity);
         
         getServletContext().getRequestDispatcher("/typeHerb.jsp").forward(request, response);
