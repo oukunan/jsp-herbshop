@@ -45,7 +45,7 @@
                                             <td> ${it.value.herb.herbName} </td>
                                             <td  style="text-align: right; padding-right: 50px"> <fmt:formatNumber value="${it.value.herb.herbPrice}" pattern="#,###.00"/></td>
                                             <td> 
-                                                <input type="number" min="1" value="${it.value.herb.herbAmount}" name="_${it.key}" 
+                                                <input type="number" min="1" value="${it.value.quantityOfHerb}" name="_${it.key}" 
                                                        style="width: 50px; text-align: center"/> 
                                             </td>
                                             <td style="text-align: right">
@@ -66,7 +66,7 @@
                                             <a href="typeHerb.jsp"><input type="button" value="Continue Shopping"/></a>
                                         </td>
                                         <td colspan="2" style="text-align: right">Total All :  </td>
-                                        <td style="text-align: right"> <fmt:formatNumber value="${CART.totalMoney}" pattern="#,###.00"/></td>
+                                        <td style="text-align: right"> <fmt:formatNumber value="${CART.totalMoney}"/></td>
                                         <td></td>
                                     </tr>
                                 </table>

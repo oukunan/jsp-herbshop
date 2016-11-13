@@ -45,6 +45,7 @@ public class Cart {
             + "VALUES (?,?,?,?)";
 
     public double getTotalMoney() {
+        totalMoney = 0;
         for (CartDetail cd : items.values()) {
             totalMoney += cd.getPrice();
         }
@@ -56,7 +57,7 @@ public class Cart {
     }
 
     public double getVatAmount() {
-        vatAmount = totalMoney*7/100;
+        vatAmount = totalMoney * 7 / 100;
         return vatAmount;
     }
 
@@ -65,7 +66,7 @@ public class Cart {
     }
 
     public double getSubTotalMoney() {
-        subTotalMoney = totalMoney-vatAmount;
+        subTotalMoney = totalMoney - vatAmount;
         return subTotalMoney;
     }
 
@@ -85,10 +86,10 @@ public class Cart {
         return items.get(productId);
     }
 
-    public void addItem(int productId, int quantity) {
+    public void addItem(int productId) {
         CartDetail ct = items.get(productId);
         if (ct == null) {
-            CartDetail tmp = new CartDetail(productId, quantity);
+            CartDetail tmp = new CartDetail(productId);
             items.put(productId, tmp);
         } else {
             ct.setQuantityOfHerb(ct.getQuantityOfHerb() + 1);
@@ -117,14 +118,14 @@ public class Cart {
     public void setItems(Map<Integer, CartDetail> items) {
         this.items = items;
     }
-    
-    public void calculate(){
+
+    public void calculate() {
         getTotalMoney();
         getVatAmount();
         getSubTotalMoney();
     }
-    
-    public static void storeCartHistory(Cart c,Customer cust){
+
+    public static void storeCartHistory(Cart c, Customer cust) {
         Connection con = ConnectionBuilder.getConnection();
         try {
             PreparedStatement ps = con.prepareStatement(SQL_INSERT);
@@ -132,12 +133,12 @@ public class Cart {
             ps.setDouble(2, c.vatAmount);
             ps.setDouble(3, c.subTotalMoney);
             ps.setInt(4, cust.getCustId());
-            ps.execute();
+            ps.executeUpdate();
+            CartDetail.storeCartDetailHistory(c);
         } catch (SQLException ex) {
             Logger.getLogger(Cart.class.getName()).log(Level.SEVERE, null, ex);
         }
-        
-        
+
     }
 
 }

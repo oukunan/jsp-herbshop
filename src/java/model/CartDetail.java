@@ -25,7 +25,7 @@ public class CartDetail {
     private int cartDetailId;
     private int quantityOfHerb;
     private double price;
-    private final static String SQL_STORE_HISTORY = "INSERT INTO CARTDETAIL('quantityOfHerb','price','Cart_cartId','Herb_herbId')"
+    private final static String SQL_STORE_HISTORY = "INSERT INTO CARTDETAIL(quantityOfHerb,price,Cart_cartId,Herb_herbId)"
             + " VALUES(?,?,?,?);";
 
     public CartDetail() {
@@ -89,7 +89,10 @@ public class CartDetail {
                 ps.setDouble(2, cd.getPrice());
                 ps.setInt(3, getLastCartId());
                 ps.setInt(4, cd.getHerb().getHerbId());
+                ps.executeUpdate();
             }
+            con.close();
+            ps.close();
         } catch (SQLException ex) {
             Logger.getLogger(CartDetail.class.getName()).log(Level.SEVERE, null, ex);
         }

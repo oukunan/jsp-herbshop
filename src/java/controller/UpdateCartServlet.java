@@ -42,16 +42,18 @@ public class UpdateCartServlet extends HttpServlet {
                 }
             }
             Enumeration<String> items = request.getParameterNames();
-            while (items.hasMoreElements()) {
+             while (items.hasMoreElements()) {
                 String x = items.nextElement();
-                int pid = Integer.parseInt(x.substring(1));
-                int qty = Integer.parseInt(request.getParameter(x));
-                if (cart.getItem(pid) != null) {
-                    cart.updateItem(pid, qty);
-                } 
+                if (x.charAt(0) == '_') {
+                    int pid = Integer.parseInt(x.substring(1));
+                    int qty = Integer.parseInt(request.getParameter(x));
+                    if (cart.getItem(pid) != null) {
+                        cart.updateItem(pid, qty);
+                    }
+                }
             }
         }
-        getServletContext().getRequestDispatcher("/ViewCart.jsp").forward(request, response);
+        getServletContext().getRequestDispatcher("/viewCart.jsp").forward(request, response);
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
