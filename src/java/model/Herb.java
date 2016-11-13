@@ -29,8 +29,8 @@ public class Herb {
     private String herbDetail;
     private final static String SQL_SEARCH_HERB_BY_NAME = "SELECT * FROM HERB WHERE UPPER(herbName) LIKE ? AND UPPER(herbType) LIKE ?";
     private final static String SQL_FIND_HERB_BY_ID = "SELECT * FROM HERB WHERE herbId = ?";
-    private final static String SQL_SEARCH_HERB_BY_PRICE = "SELECT * FROM HERB WHERE herbPrice > ? AND herbPrice < ? AND herbType LIKE ?";
     private final static String SQL_LISTING_HERB_BY_TYPE = "SELECT * FROM HERB WHERE herbType LIKE ?";
+    private final static String SQL_FIND_HERB_BY_DISEASES_ID = "SELECT herbId,herbName,herbType FROM HERB h JOIN HERBFORDISEASE hf ON h.herbId = hf.Herb_herbId AND Diseases_diseId = ?";
 
     public Herb() {
     }
@@ -121,35 +121,6 @@ public class Herb {
         return herbs;
     }
 
-    /*
-    public static List<Herb> searchHerbByPrice(double upper,double lower,String type){
-         List<Herb> herbs = null;
-        ResultSet rs = null;
-        Herb h = null;
-        Connection con = ConnectionBuilder.getConnection();
-        try {
-            PreparedStatement ps = con.prepareStatement(SQL_SEARCH_HERB_BY_PRICE);
-            ps.setDouble(1, lower);
-            ps.setDouble(2, upper);
-            ps.setString(3, type);
-            rs = ps.executeQuery();
-            if (rs != null) {
-                if (herbs == null) {
-                    herbs = new ArrayList<Herb>();
-                }
-                h = new Herb();
-                h.ORM(rs, h);
-                herbs.add(h);
-            }
-            rs.close();
-            con.close();
-            ps.close();
-        } catch (SQLException ex) {
-            Logger.getLogger(Herb.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        return herbs;
-    }
-     */
     public static List<Herb> listingHerbByType(String type) {
         List<Herb> herbs = null;
         ResultSet rs = null;
@@ -199,6 +170,36 @@ public class Herb {
             Logger.getLogger(Herb.class.getName()).log(Level.SEVERE, null, ex);
         }
         return h;
+    }
+    
+    public static List<Herb> findHerbByDiseasesId(int id){
+        List<Herb> herbs = null;
+        ResultSet rs = null;
+        Herb herb = null;
+        Connection con = ConnectionBuilder.getConnection();
+        try {
+            PreparedStatement ps = con.prepareStatement(SQL_FIND_HERB_BY_DISEASES_ID);
+            ps.setInt(1, id);
+            rs = ps.executeQuery();
+            if (rs != null) {
+                while (rs.next()) {
+                    if (herbs == null) {
+                        herbs = new ArrayList<Herb>();
+                    }
+                    herb = new Herb();
+                    herb.setHerbId(rs.getInt("herbId"));
+                    herb.setHerbName(rs.getString("herbName"));
+                    herb.setHerbType(rs.getString("herbType"));
+                    herbs.add(herb);
+                }
+            }
+            rs.close();
+            con.close();
+            ps.close();
+        } catch (SQLException ex) {
+            Logger.getLogger(Herb.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return herbs;
     }
 
     public static void ORM(ResultSet rs, Herb h) throws SQLException {

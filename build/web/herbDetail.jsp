@@ -50,7 +50,11 @@
                         </tr>
                         <tr>
                             <td>Food :</td>
-                            <td>ช่องอาหาร</td>
+                            <td>
+                                <c:forEach items="${food}" var="f">
+                                    <a href='ViewFoodDetail?id=${f.foodId}'>${f.foodName}</a>,
+                                </c:forEach>
+                            </td>
                         </tr>
                     </table><br><br>
                     <button class="btn btn-inverse" onclick="history.back()">Back </button>

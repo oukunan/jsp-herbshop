@@ -40,7 +40,7 @@
                     <button class="btn btn-inverse" onclick="history.back()">Back </button>
                 </div>
                 <div class="col-md-4">
-                    <img src="#" alt="pic" height="400">
+                    <img src='images/food/${f.foodId}.jpg' alt="pic" height="400">
                 </div>
             </div>
         </div>

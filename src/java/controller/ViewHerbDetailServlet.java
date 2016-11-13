@@ -13,6 +13,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import model.Diseases;
+import model.Food;
 import model.Herb;
 
 /**
@@ -34,9 +35,11 @@ public class ViewHerbDetailServlet extends HttpServlet {
             throws ServletException, IOException {
         String id = request.getParameter("id");
         Herb h = Herb.findHerbById(Integer.parseInt(id));
-        List<Diseases> lists = Diseases.findDiseasesByHerbId(Integer.parseInt(id));
+        List<Diseases> dises = Diseases.findDiseasesByHerbId(Integer.parseInt(id));
+        List<Food> foods = Food.findFoodByHerbId(Integer.parseInt(id));
         request.setAttribute("h", h);
-        request.setAttribute("dise", lists);
+        request.setAttribute("dise", dises);
+        request.setAttribute("food", foods);
         getServletContext().getRequestDispatcher("/herbDetail.jsp").forward(request, response);
     }
 

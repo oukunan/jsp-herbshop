@@ -28,7 +28,7 @@
             <div class="row">
                 <c:forEach items="${diseases}" var="d">
                     <div class="col-md-4 text-center">
-                        <img src="#" alt="pic" height="400">
+                        <img src='images/diseases/${d.diseId}.png' alt="pic" height="400">
                        <p> Name : ${d.diseName} </p>
                        <p> Type :  ${d.diseType} </p>
                        <p> Postion : ${d.positionInBody} </p>

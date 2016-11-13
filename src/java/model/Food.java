@@ -27,6 +27,7 @@ public class Food {
     private String foodDetail;
     private final static String SQL_SEARCH_FOOD_BY_NAME = "SELECT * FROM FOOD WHERE LOWER(foodName) LIKE ?";
     private final static String SQL_FIND_FOOD_BY_ID = "SELECT * FROM FOOD WHERE foodId = ?";
+    private final static String SQL_FIND_FOOD_BY_HERB_ID = "SELECT * FROM FOOD f JOIN HERBFORFOOD h ON h.Food_foodId = f.foodId AND h.Herb_herbId = ?";
 
     public Food() {
     }
@@ -119,6 +120,36 @@ public class Food {
             Logger.getLogger(Herb.class.getName()).log(Level.SEVERE, null, ex);
         }
         return f;
+    }
+    
+    public static List<Food> findFoodByHerbId(int id){
+        List<Food> foods = null;
+        ResultSet rs = null;
+        Food food = null;
+        Connection con = ConnectionBuilder.getConnection();
+        try {
+            PreparedStatement ps = con.prepareStatement(SQL_FIND_FOOD_BY_HERB_ID);
+            ps.setInt(1, id);
+            rs = ps.executeQuery();
+            if (rs != null) {
+                while (rs.next()) {
+                    System.out.println("PASSSSSSS");
+                    if (foods == null) {
+                        foods = new ArrayList<Food>();
+                    }
+                    food = new Food();
+                    food.setFoodId(rs.getInt("foodId"));
+                    food.setFoodName(rs.getString("foodName"));
+                    foods.add(food);
+                }
+            }
+            rs.close();
+            con.close();
+            ps.close();
+        } catch (SQLException ex) {
+            Logger.getLogger(Herb.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return foods;
     }
 
     public static void ORM(ResultSet rs, Food f) throws SQLException {
