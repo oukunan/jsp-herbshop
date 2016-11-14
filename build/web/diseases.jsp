@@ -13,7 +13,7 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <link rel="stylesheet" href="css/animate.css">
 
-        <title>Search Vegetable </title>
+        <title>Search diseases </title>
     </head>
     <body>
         <jsp:include page="/WEB-INF/header/header.jsp"/>
@@ -26,7 +26,7 @@
                         <input type="text" class="form-control" id="name" name="searchText" placeholder="Search">
                     </div>
                     <button type="submit" class="btn btn-primary">Go</button>
-                    <a href="typeHerb.jsp" <button type="button" class="btn btn-inverse">Back</button></a>
+                    <a href="index.jsp" <button type="button" class="btn btn-inverse">Back</button></a>
                 </form>
             </div>
 
