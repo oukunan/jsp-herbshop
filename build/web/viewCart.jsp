@@ -37,7 +37,7 @@
                             <td> ${it.value.herb.herbName} </td>
                             <td  style="text-align: right;"> <fmt:formatNumber value="${it.value.herb.herbPrice}" pattern="#,###.00"/></td>
                             <td> 
-                                <input type="number" min="1" step="0.1" value="${it.value.quantityOfHerb}" name="_${it.key}" /> 
+                                <input type="number" min="1" step="0.1" value="${it.value.quantityOfHerb}" name="_${it.key}" /> ${it.value.herb.herbUnit} 
                             </td>
                             <td style="text-align: right">
                                 <fmt:formatNumber value="${it.value.price}" pattern="#,###.00"/>  

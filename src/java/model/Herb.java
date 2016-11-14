@@ -27,6 +27,7 @@ public class Herb {
     private int herbAmount;
     private String herbType;
     private String herbDetail;
+    private String herbUnit;
     private final static String SQL_SEARCH_HERB_BY_NAME = "SELECT * FROM HERB WHERE UPPER(herbName) LIKE ? AND UPPER(herbType) LIKE ?";
     private final static String SQL_FIND_HERB_BY_ID = "SELECT * FROM HERB WHERE herbId = ?";
     private final static String SQL_LISTING_HERB_BY_TYPE = "SELECT * FROM HERB WHERE herbType LIKE ?";
@@ -35,13 +36,22 @@ public class Herb {
     public Herb() {
     }
 
-    public Herb(int herbId, String herbName, double herbPrice, int herbAmount, String herbType, String herbDetail) {
+    public String getHerbUnit() {
+        return herbUnit;
+    }
+
+    public void setHerbUnit(String herbUnit) {
+        this.herbUnit = herbUnit;
+    }
+
+    public Herb(int herbId, String herbName, double herbPrice, int herbAmount, String herbType, String herbDetail,String herbUnit) {
         this.herbId = herbId;
         this.herbName = herbName;
         this.herbPrice = herbPrice;
         this.herbAmount = herbAmount;
         this.herbType = herbType;
         this.herbDetail = herbDetail;
+        this.herbUnit = herbUnit;
     }
 
     public int getHerbId() {
@@ -209,5 +219,6 @@ public class Herb {
         h.setHerbAmount(rs.getInt("herbAmount"));
         h.setHerbType(rs.getString("herbType"));
         h.setHerbDetail(rs.getString("herbDetail"));
+        h.setHerbUnit(rs.getString("herbUnit"));
     }
 }
