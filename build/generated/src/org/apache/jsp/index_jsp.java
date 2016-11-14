@@ -50,6 +50,7 @@ public final class index_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("        <meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\">\r\n");
       out.write("        <title>IT21-HerbShop</title>\r\n");
       out.write("        <link rel=\"stylesheet\" href=\"css/animate.css\">\r\n");
+      out.write("        <link rel=\"stylesheet\" href=\"css/type.css\"\r\n");
       out.write("    </head>\r\n");
       out.write("    <body>\r\n");
       out.write("        ");
@@ -58,7 +59,7 @@ public final class index_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("        <div class=\"container animated fadeIn\" id=\"edit\">\r\n");
       out.write("            <div class=\"row\">\r\n");
       out.write("                <div class=\"col-md-4 col-md-offset-4 wow\">\r\n");
-      out.write("                    <h1 class=\"\">HERB_SHOP</h1>\r\n");
+      out.write("                    <div class=\"header\"></div>\r\n");
       out.write("                </div>\r\n");
       out.write("            </div><br>\r\n");
       out.write("            <div class=\"row\">\r\n");
@@ -76,8 +77,18 @@ public final class index_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("                </div>\r\n");
       out.write("            </div>\r\n");
       out.write("        </div>\r\n");
-      out.write("        \r\n");
+      out.write("\r\n");
       out.write("        <script src=\"js/wow.min.js\"></script>\r\n");
+      out.write("        <script src=\"http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js\"></script>\r\n");
+      out.write("        <script src=\"js/typed.js\" type=\"text/javascript\"></script>\r\n");
+      out.write("        <script>\r\n");
+      out.write("            $(function () {\r\n");
+      out.write("                $(\".header\").typed({\r\n");
+      out.write("                    strings: [\"WelCome To \", \"Herb_Shop.\"],\r\n");
+      out.write("                    typeSpeed: 0\r\n");
+      out.write("                });\r\n");
+      out.write("            });\r\n");
+      out.write("        </script>\r\n");
       out.write("        <script>\r\n");
       out.write("            new WOW().init();\r\n");
       out.write("        </script>\r\n");
