@@ -11,7 +11,7 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>IT21-HerbShop</title>
         <link rel="stylesheet" href="css/animate.css">
-        <link rel="stylesheet" href="css/type.css"
+        <link rel="stylesheet" href="css/type.css">
     </head>
     <body>
         <jsp:include page="/WEB-INF/header/header.jsp"/>

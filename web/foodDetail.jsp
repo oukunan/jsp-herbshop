@@ -20,15 +20,15 @@
                     <h3>Food Detail</h3>
                     <table>
                         <tr>
-                            <td>Name :  &nbsp; </td>
+                            <td><strong>Name</strong> :  &nbsp; </td>
                             <td><input type="text" class="form-control" name="diseName" value="${f.foodName}" ></td>
                         </tr>
                         <tr>
-                            <td>Ingredient :  &nbsp; </td>
-                            <td><textarea  style="width: 500px" rows="10" class="form-control">${f.foodIngredient}</textarea></td>
+                            <td><strong>Ingredient</strong> :  &nbsp; </td>
+                            <td><textarea  style="width: 500px" rows="10" class="form-control">${f.foodIngredient} </textarea></td>
                         </tr>
                         <tr>
-                            <td>Detail :  &nbsp; </td>
+                            <td><strong>Detail</strong> :  &nbsp; </td> 
                             <td><textarea  style="width: 500px" rows="10" class="form-control">${f.foodRecipe}</textarea>  </td>
                         </tr>
 
@@ -41,5 +41,6 @@
                 </div>
             </div>
         </div>
+        <br>
     </body>
 </html>

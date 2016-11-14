@@ -8,6 +8,12 @@
         <title></title>
         <link rel="stylesheet" href="css/bootstrap.min.css">
         <link rel="stylesheet" href="css/flat-ui.css">
+        <link href="https://fonts.googleapis.com/css?family=Athiti" rel="stylesheet">
+        <style>
+            div {
+                font-family: Athiti;
+            }
+        </style>
     </head>
 
     <body>
@@ -24,6 +30,6 @@
                     <a href="viewCart.jsp" class="btn">items ( ${CART.size} )
                     </c:if>
                     <a href="${loginOrLogout}" class="btn btn-default navbar-btn btn-inverse">${loginOrLogout}</a>
-                    <p class="navbar-text navbar">Hello, <c:out value="${user.custName}" default="Guest" /> 
+                    <p class="navbar-text navbar">Hello, <a href="ViewProfile"><c:out value="${user.custName}" default="Guest" /></a> 
                         </div>
                         </nav>
