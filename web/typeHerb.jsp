@@ -19,11 +19,11 @@
             <div class="row">
                 <div class="col-md-6 text-center animated bounceIn">
                     <img src="images/1.png"   alt="veget" height="250"><br><br>
-                    <a href="SearchHerbTypeVegetable" class="btn btn-default navbar-btn btn-inverse">Vegetable (ผัก)</a><br>
+                    <a href="SearchHerbTypeVegetable" class="btn btn btn-inverse btn-hg ">Vegetable (ผัก)</a><br>
                 </div>
                 <div class="col-md-6 text-center animated bounceIn">
                     <img src="images/2.png" alt="fruit"  height="250"><br><br>
-                    <a href="SearchHerbTypeFruit" class="btn btn-default navbar-btn btn-inverse"> Fruit (ผลไม้)</a>
+                    <a href="SearchHerbTypeFruit" class="btn btn-inverse btn-hg "> Fruit (ผลไม้)</a>
                 </div>
             </div>
         </div>

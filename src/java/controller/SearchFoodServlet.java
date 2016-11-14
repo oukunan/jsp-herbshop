@@ -33,7 +33,7 @@ public class SearchFoodServlet extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         String searchText = request.getParameter("searchText");
-        String target = "/food.jsp";
+        String target = "/Food.jsp";
         if (searchText == null ){
             searchText = "";
         }

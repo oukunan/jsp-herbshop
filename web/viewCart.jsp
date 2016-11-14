@@ -14,7 +14,7 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <link rel="stylesheet" href="css/bootstrap.min.css">
-
+        
         <title>JSP Page</title>
     </head>
     <body >
@@ -22,7 +22,7 @@
         <br>
         <div class="container">
             <form action="UpdateCart" method="post">
-                <table class="table table-bordered">
+                <table class="table table-bordered table-striped">
                     <tr>
                         <td>No</td>
                         <td>Herb Name</td>
@@ -57,7 +57,7 @@
                         Total All : &nbsp;&nbsp;<fmt:formatNumber value="${CART.totalMoney}"/> Baht<br><br>
                 </div>      
                 <input type="submit" class="btn btn-inverse " value="Update Cart"/> 
-                <a href="ProcessOrder"><input type="button" value="Checkout" class="btn btn-primary"/></a>
+                <a href="ProcessOrder" ><input type="button" value="Checkout" class="btn btn-primary"/></a>
                 <a href="typeHerb.jsp"><input type="button" value="Continue Shopping" class="btn btn-info"/></a>
 
 
