@@ -35,11 +35,11 @@
                         <tr>
                             <td> ${vs.count} </td>
                             <td> ${it.value.herb.herbName} </td>
-                            <td  style="text-align: right;"> <fmt:formatNumber value="${it.value.herb.herbPrice}" pattern="#,###.00"/></td>
+                            <td > <fmt:formatNumber value="${it.value.herb.herbPrice}" pattern="#,###.00"/></td>
                             <td> 
                                 <input type="number" min="1" step="${it.value.herb.herbUnit.equalsIgnoreCase("Fruit") ? 1 : 0.1}"   max="${it.value.herb.herbAmount}" value="${it.value.quantityOfHerb}" name="_${it.key}" /> ${it.value.herb.herbUnit} 
                             </td>
-                            <td style="text-align: right">
+                            <td>
                                 <fmt:formatNumber value="${it.value.price}" pattern="#,###.00"/>  
                             </td>
                             <td style="text-align: center">
@@ -52,9 +52,9 @@
                     </tr>
                 </table>
                 <div class="pull-right">
-                    Money:  &nbsp;&nbsp;<fmt:formatNumber value="${CART.money}"/> Baht<br>
-                        VAT 7%: &nbsp;&nbsp;+<fmt:formatNumber value="${CART.vatAmount}"/> Baht <br>
-                        Total All : &nbsp;&nbsp;<fmt:formatNumber value="${CART.totalMoney}"/> Baht<br><br>
+                    Money :  &nbsp;&nbsp;<fmt:formatNumber value="${CART.money}"/> Baht<br>
+                        VAT 7% : &nbsp;&nbsp;+<fmt:formatNumber value="${CART.vatAmount}"/> Baht <br>
+                        <span class="text-success"> <strong>Total All : &nbsp;&nbsp;<fmt:formatNumber value="${CART.totalMoney}"/> Baht</strong></span><br><br>
                 </div>      
                 <input type="submit" class="btn btn-inverse " value="Update Cart"/> 
                 <a href="ProcessOrder" ><input type="button" value="Checkout" class="btn btn-primary"/></a>
