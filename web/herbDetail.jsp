@@ -57,7 +57,7 @@
                 </div>
                 <div class="col-md-3 text-center">
                     <br><br><br>
-                    <img src='images/${h.herbType.toLowerCase()}/${h.herbId}.jpg' alt="pic" height="300" class="img-rounded">
+                    <img src='images/vegetable/${h.herbId}.jpg' alt="pic" height="300" class="img-rounded">
                 </div>
             </div>
         </div>
