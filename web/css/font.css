@@ -1,0 +1,7 @@
+@font-face {
+  font-family: 'thaisan';
+  src: url('../fonts/thaisanslite_r1.ttf');
+}
+body {
+    font-family: thaisan;
+}
