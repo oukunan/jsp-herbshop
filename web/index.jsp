@@ -31,7 +31,7 @@
         <br>
         <div class="row">
             <div class="col-md-4 text-center animated fadeIn">
-                <img src="images/6.png"  height="250" alt="pic1" /><br><br>
+                <img src="images/7.png"  height="250" alt="pic1" /><br><br>
                 <a href="typeHerb.jsp" class="btn  btn-primary btn-hg ">Herb (สมุนไพร)</a>
             </div>
             <div class="col-md-4 text-center animated fadeIn">

@@ -21,7 +21,7 @@
             <div class="row">
                 <form action="SearchFood" method="post" class="form-inline">
                     <div class="form-group">
-                        <label for="name">Food Name : </label>
+                        <label for="name"><strong>Food Name</strong> : </label>
                         <input type="text" class="form-control" id="name" name="searchText" placeholder="Search">
                     </div>
                     <button type="submit" class="btn btn-primary">Go</button>
@@ -30,7 +30,7 @@
             </div><br><br>
             <div class="row">
                 <c:forEach items="${food}" var="f">
-                    <div class="col-md-4 text-center">
+                    <div class="col-md-4 text-center" style="margin-bottom: 50px">
                         <img src='images/food/${f.foodId}.jpg' alt="pic" height="200" class="img-rounded"><br><br>
                         <p> Name : ${f.foodName} </p>
                         <a href="ViewFoodDetail?id=${f.foodId}"><p class="btn btn-primary ">Detail</p></a>
