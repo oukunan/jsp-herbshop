@@ -50,7 +50,7 @@
                 </div>
                 <div class="col-md-3">
                     <br><br><br>
-                    <img src='images/diseases/${d.diseId}.png' alt="pic" height="250" class="img-rounded">
+                    <img src='images/diseases/${d.diseId}.jpg' alt="pic" height="250" class="img-rounded">
                 </div>
             </div>
         </div>

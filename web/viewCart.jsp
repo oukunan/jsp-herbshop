@@ -27,7 +27,7 @@
                         <td>No</td>
                         <td>Herb Name</td>
                         <td>Unit Price</td>
-                        <td>Quantity(kg)</td>
+                        <td>Quantity</td>
                         <td>Total price</td>
                         <td>Delete</td>
                     </tr>
@@ -37,7 +37,7 @@
                             <td> ${it.value.herb.herbName} </td>
                             <td  style="text-align: right;"> <fmt:formatNumber value="${it.value.herb.herbPrice}" pattern="#,###.00"/></td>
                             <td> 
-                                <input type="number" min="1" step="${it.value.herb.herbType.equalsIgnoreCase("Fruit") ? 1 : 0.1}"   max="${it.value.herb.herbAmount}" value="${it.value.quantityOfHerb}" name="_${it.key}" /> ${it.value.herb.herbUnit} 
+                                <input type="number" min="1" step="${it.value.herb.herbUnit.equalsIgnoreCase("Fruit") ? 1 : 0.1}"   max="${it.value.herb.herbAmount}" value="${it.value.quantityOfHerb}" name="_${it.key}" /> ${it.value.herb.herbUnit} 
                             </td>
                             <td style="text-align: right">
                                 <fmt:formatNumber value="${it.value.price}" pattern="#,###.00"/>  
