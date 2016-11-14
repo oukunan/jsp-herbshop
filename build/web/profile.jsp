@@ -21,36 +21,36 @@
                     <h3>Profile</h3>
                     <table>
                         <tr>
-                            <td>ID  :  &nbsp; </td>
-                            <td><input type="text" class="form-control" name="custId" value="${user.custId}"></td>
+                            <td><strong>ID</strong>  :  &nbsp; </td>
+                            <td>${user.custId}</td>
                         </tr>
                         <tr>
-                            <td> Name :  &nbsp; </td>
-                            <td><input type="text" class="form-control" name="custName" value="${user.custName}"></td>
+                            <td><strong>Name</strong> :  &nbsp; </td>
+                            <td>${user.custName}</td>
                         </tr>
                         <tr>
-                            <td> Surname :  &nbsp; </td>
-                            <td><input type="text" class="form-control" name="custSurname" value="${user.custSurname}" ></td>
+                            <td><strong>Surname</strong> :  &nbsp; </td>
+                            <td>${user.custSurname}</td>
                         </tr>
                         <tr>
-                            <td>Address :  &nbsp; </td>
-                            <td><input type="text" class="form-control" name="custAddress" value="${user.custAddress}" >  </td>
+                            <td><strong>Address</strong> :  &nbsp; </td>
+                            <td>${user.custAddress}</td>
                         </tr>
                         <tr>
-                            <td>State :  &nbsp; </td>
-                            <td><input type="text" class="form-control" name="custState" value="${user.custState}" >  </td>
+                            <td><strong>State</strong> :  &nbsp; </td>
+                            <td>${user.custState}</td>
                         </tr>
                         <tr>
-                            <td>City :  &nbsp; </td>
-                            <td><input type="text" class="form-control" name="custCity" value="${user.custCity}" >  </td>
+                            <td><strong>City</strong> :  &nbsp; </td>
+                            <td>${user.custCity} </td>
                         </tr>
                         <tr>
-                            <td>Postal :  &nbsp; </td>
-                            <td><input type="text" class="form-control" name="custPostal" value="${user.custPostal}" >  </td>
+                            <td><strong>Postal</strong> :  &nbsp; </td>
+                            <td>${user.custPostal} </td>
                         </tr>
                         <tr>
-                            <td>Tel :  &nbsp; </td>
-                            <td><input type="text" class="form-control" name="custTel" value="${user.custTel}" >  </td>
+                            <td><strong>Tel</strong> :  &nbsp; </td>
+                            <td>${user.custTel}</td>
                         </tr>
                     </table><br><br>
                     <button class="btn btn-inverse" onclick="history.back()">Back </button>
