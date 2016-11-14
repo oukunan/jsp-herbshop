@@ -37,10 +37,10 @@
                         <form action="AddToCart" method="post">
                             <c:forEach items="${diseases}" var="d">
 
-                                <div class="col-md-4 text-center">
+                                <div class="col-md-4 text-center" style="margin-bottom: 50px;">
                                     <img src='images/diseases/${d.diseId}.jpg' alt="pic" height="200" class="img-rounded"><br><br>
                                     <p> Name : ${d.diseName} </p>
-                                    <p> Price :  <fmt:formatNumber value="${v.herbPrice}" type="currency" /> </p>
+                                    <p> Position : ${d.positionInBody} </p>
                                     <a href="ViewDiseasesDetail?id=${d.diseId}"><p class="btn btn-success "> Detail </p></a>
                                     <input type="hidden" name="type" value="vegetable"> 
                                 </div>

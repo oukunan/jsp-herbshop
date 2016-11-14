@@ -37,7 +37,7 @@
                         <form action="AddToCart" method="post">
                             <c:forEach items="${fruit}" var="f">
 
-                                <div class="col-md-4 text-center">
+                                <div class="col-md-4 text-center" style="margin-bottom: 50px;">
                                     <img src='images/vegetable/${f.herbId}.jpg' alt="pic" height="200">
                                     <p> Name : ${f.herbName} </p>
                                     <p> Price :  <fmt:formatNumber value="${f.herbPrice}" type="currency" /> </p>
