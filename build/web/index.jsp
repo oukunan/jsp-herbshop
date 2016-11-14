@@ -30,17 +30,17 @@
         </div>   
         <br>
         <div class="row">
-            <div class="col-md-4 text-center">
+            <div class="col-md-4 text-center animated fadeIn">
                 <img src="images/6.png"  height="250" alt="pic1" /><br><br>
-                <a href="typeHerb.jsp" class="btn btn-default navbar-btn btn-inverse">Herb (สมุนไพร)</a>
+                <a href="typeHerb.jsp" class="btn  btn-primary btn-hg ">Herb (สมุนไพร)</a>
             </div>
-            <div class="col-md-4 text-center">
+            <div class="col-md-4 text-center animated fadeIn">
                 <img src="images/3.png" height="250"  alt="pic2"  width="300" height="300" /><br><br>
-                <a href="SearchDisease" class="btn btn-default navbar-btn btn-inverse">Diseases (อาการ)</a>
+                <a href="SearchDisease" class="btn btn-primary btn-hg ">Diseases (อาการ)</a>
             </div>
-            <div class="col-md-4 text-center">
+            <div class="col-md-4 text-center animated fadeIn">
                 <img src="images/5.png" height="250"  alt="pic3" width="300" height="300" /><br><br>
-                <a href="SearchFood" class="btn btn-default navbar-btn btn-inverse">Food (อาหาร)</a>
+                <a href="SearchFood" class="btn btn-primary btn-hg ">Food (อาหาร)</a>
             </div>
         </div>
     </div>
