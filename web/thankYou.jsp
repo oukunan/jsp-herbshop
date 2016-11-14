@@ -17,7 +17,7 @@
              <br><br>
              <div class="container">
                  <div class="row">
-                     <div class="col-md-4 col-md-offset-4">
+                     <div class="col-md-6 col-md-offset-4">
                          <h1 class="animated fadeIn">THANK YOU FOR PURCHASING .... :)</h1><br><br>
                          <a href="index.jsp" class="text-info" >Return to First Page</a>
                      </div>
