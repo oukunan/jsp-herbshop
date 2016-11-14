@@ -27,6 +27,7 @@ public class CartDetail {
     private double price;
     private final static String SQL_STORE_HISTORY = "INSERT INTO CARTDETAIL(quantityOfHerb,price,Cart_cartId,Herb_herbId)"
             + " VALUES(?,?,?,?);";
+    private final static String SQL_UPDATE_HERB_AMOUNT = "UPDATE herb SET herbAmount=? WHERE herbId = ?";
 
     public CartDetail() {
     }
@@ -83,13 +84,19 @@ public class CartDetail {
         Map<Integer, CartDetail> tmp;
         try {
             PreparedStatement ps = con.prepareStatement(SQL_STORE_HISTORY);
+            PreparedStatement psUpdate = con.prepareStatement(SQL_UPDATE_HERB_AMOUNT);
+            Herb h;
             tmp = c.getItems();
             for (CartDetail cd : tmp.values()) {
+                h = Herb.findHerbById(cd.getHerb().getHerbId());
                 ps.setDouble(1, cd.getQuantityOfHerb());
                 ps.setDouble(2, cd.getPrice());
                 ps.setInt(3, getLastCartId());
                 ps.setInt(4, cd.getHerb().getHerbId());
+                psUpdate.setDouble(1, h.getHerbAmount() - cd.getQuantityOfHerb());
+                psUpdate.setInt(2, cd.getHerb().getHerbId());
                 ps.executeUpdate();
+                psUpdate.executeUpdate();
             }
             con.close();
             ps.close();

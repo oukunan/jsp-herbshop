@@ -24,7 +24,7 @@ public class Herb {
     private int herbId;
     private String herbName;
     private double herbPrice;
-    private int herbAmount;
+    private double herbAmount;
     private String herbType;
     private String herbDetail;
     private String herbUnit;
@@ -44,7 +44,7 @@ public class Herb {
         this.herbUnit = herbUnit;
     }
 
-    public Herb(int herbId, String herbName, double herbPrice, int herbAmount, String herbType, String herbDetail,String herbUnit) {
+    public Herb(int herbId, String herbName, double herbPrice, double herbAmount, String herbType, String herbDetail,String herbUnit) {
         this.herbId = herbId;
         this.herbName = herbName;
         this.herbPrice = herbPrice;
@@ -78,11 +78,11 @@ public class Herb {
         this.herbPrice = herbPrice;
     }
 
-    public int getHerbAmount() {
+    public double getHerbAmount() {
         return herbAmount;
     }
 
-    public void setHerbAmount(int herbAmount) {
+    public void setHerbAmount(double herbAmount) {
         this.herbAmount = herbAmount;
     }
 
