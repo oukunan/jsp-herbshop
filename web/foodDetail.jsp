@@ -16,13 +16,9 @@
         <jsp:include page="/WEB-INF/header/header.jsp"/>
         <div class="container">
             <div class="row">
-                <div class="col-md-8">
+                <div class="col-md-7">
                     <h3>Food Detail</h3>
                     <table>
-                        <tr>
-                            <td>Food ID :  &nbsp; </td>
-                            <td><input type="text" class="form-control" name="diseId" value="${f.foodId}" ></td>
-                        </tr>
                         <tr>
                             <td>Name :  &nbsp; </td>
                             <td><input type="text" class="form-control" name="diseName" value="${f.foodName}" ></td>
@@ -39,8 +35,9 @@
                     </table><br><br>
                     <button class="btn btn-inverse" onclick="history.back()">Back </button>
                 </div>
-                <div class="col-md-4">
-                    <img src='images/food/${f.foodId}.jpg' alt="pic" height="400">
+                <div class="col-md-3 text-center">
+                    <br><br><br>
+                    <img src='images/food/${f.foodId}.jpg' alt="pic" height="400" class="img-rounded">
                 </div>
             </div>
         </div>

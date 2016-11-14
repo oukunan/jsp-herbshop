@@ -17,13 +17,9 @@
         <jsp:include page="/WEB-INF/header/header.jsp"/>
         <div class="container">
             <div class="row">
-                <div class="col-md-8">
+                <div class="col-md-7">
                     <h3>Herb Detail</h3>
                     <table>
-                        <tr>
-                            <td>Herb ID :  &nbsp; </td>
-                            <td><input type="text" class="form-control" name="herbId" value="${h.herbId}" ></td>
-                        </tr>
                         <tr>
                             <td>Name :  &nbsp; </td>
                             <td><input type="text" class="form-control" name="herbName" value="${h.herbName}" ></td>
@@ -41,7 +37,7 @@
                             <td><textarea  style="width: 500px" rows="3" class="form-control">${h.herbDetail}</textarea>  </td>
                         </tr><br>
                         <tr>
-                            <td>Disease :</td>
+                            <td>Disease :&nbsp;</td>
                             <td>
                                 <c:forEach items="${dise}" var="d">
                                     <a href='ViewDiseasesDetail?id=${d.diseId}'>${d.diseName}</a>,
@@ -59,8 +55,9 @@
                     </table><br><br>
                     <button class="btn btn-inverse" onclick="history.back()">Back </button>
                 </div>
-                <div class="col-md-4 text-center">
-                    <img src='images/${h.herbType.toLowerCase()}/${h.herbId}.jpg' alt="pic" height="400">
+                <div class="col-md-3 text-center">
+                    <br><br><br>
+                    <img src='images/${h.herbType.toLowerCase()}/${h.herbId}.jpg' alt="pic" height="300" class="img-rounded">
                 </div>
             </div>
         </div>

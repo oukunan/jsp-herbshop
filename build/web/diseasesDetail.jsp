@@ -17,13 +17,9 @@
         <jsp:include page="/WEB-INF/header/header.jsp"/>
         <div class="container">
             <div class="row">
-                <div class="col-md-8">
+                <div class="col-md-7">
                     <h3>Disease Detail</h3>
                     <table>
-                        <tr>
-                            <td>Disease ID :  &nbsp; </td>
-                            <td><input type="text" class="form-control" name="diseId" value="${d.diseId}" ></td>
-                        </tr>
                         <tr>
                             <td>Name :  &nbsp; </td>
                             <td><input type="text" class="form-control" name="diseName" value="${d.diseName}" ></td>
@@ -33,7 +29,7 @@
                             <td><input type="text" class="form-control" name="diseType" value="${d.diseType}" ></td>
                         </tr>
                         <tr>
-                            <td>Position :  &nbsp; </td>
+                            <td>Position : &nbsp; </td>
                             <td><input type="text" class="form-control" name="positionInBody" value="${d.positionInBody}" ></td>
                         </tr>
                         <tr>
@@ -44,6 +40,7 @@
                             <td>Herb :  &nbsp; </td>
                             <td>
                                 <c:forEach items="${herb}" var="h">
+                                    <br>
                                     <a href='ViewHerbDetail?id=${h.herbId}'>${h.herbName}</a>,
                                 </c:forEach>
                             </td>
@@ -51,8 +48,9 @@
                     </table><br><br>
                     <button class="btn btn-inverse" onclick="history.back()">Back </button>
                 </div>
-                <div class="col-md-4">
-                    <img src='images/diseases/${d.diseId}.png' alt="pic" height="400">
+                <div class="col-md-3">
+                    <br><br><br>
+                    <img src='images/diseases/${d.diseId}.png' alt="pic" height="250" class="img-rounded">
                 </div>
             </div>
         </div>

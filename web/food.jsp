@@ -31,7 +31,7 @@
             <div class="row">
                 <c:forEach items="${food}" var="f">
                     <div class="col-md-4 text-center">
-                        <img src='images/food/${f.foodId}.jpg' alt="pic" height="200"><br><br>
+                        <img src='images/food/${f.foodId}.jpg' alt="pic" height="200" class="img-rounded"><br><br>
                         <p> Name : ${f.foodName} </p>
                         <a href="ViewFoodDetail?id=${f.foodId}"><p class="btn btn-primary ">Detail</p></a>
                     </div>
