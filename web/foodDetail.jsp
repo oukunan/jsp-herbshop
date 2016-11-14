@@ -25,11 +25,11 @@
                         </tr>
                         <tr>
                             <td>Ingredient :  &nbsp; </td>
-                            <td><textarea  style="width: 500px" rows="10" class="form-control">${f.foodRecipe}</textarea></td>
+                            <td><textarea  style="width: 500px" rows="10" class="form-control">${f.foodIngredient}</textarea></td>
                         </tr>
                         <tr>
                             <td>Detail :  &nbsp; </td>
-                            <td><textarea  style="width: 500px" rows="10" class="form-control">${f.foodDetail}</textarea>  </td>
+                            <td><textarea  style="width: 500px" rows="10" class="form-control">${f.foodRecipe}</textarea>  </td>
                         </tr>
 
                     </table><br><br>

@@ -24,7 +24,7 @@ public class Food {
     private int foodId;
     private String foodName;
     private String foodRecipe;
-    private String foodDetail;
+    private String foodIngredient;
     private final static String SQL_SEARCH_FOOD_BY_NAME = "SELECT * FROM FOOD WHERE LOWER(foodName) LIKE ?";
     private final static String SQL_FIND_FOOD_BY_ID = "SELECT * FROM FOOD WHERE foodId = ?";
     private final static String SQL_FIND_FOOD_BY_HERB_ID = "SELECT * FROM FOOD f JOIN HERBFORFOOD h ON h.Food_foodId = f.foodId AND h.Herb_herbId = ?";
@@ -32,11 +32,11 @@ public class Food {
     public Food() {
     }
 
-    public Food(int foodId, String foodName, String foodRecipe, String foodDetail) {
+    public Food(int foodId, String foodName, String foodRecipe, String foodIngredient) {
         this.foodId = foodId;
         this.foodName = foodName;
         this.foodRecipe = foodRecipe;
-        this.foodDetail = foodDetail;
+        this.foodIngredient = foodIngredient;
     }
 
     public int getFoodId() {
@@ -63,12 +63,12 @@ public class Food {
         this.foodRecipe = foodRecipe;
     }
 
-    public String getFoodDetail() {
-        return foodDetail;
+    public String getFoodIngredient() {
+        return foodIngredient;
     }
 
-    public void setFoodDetail(String foodDetail) {
-        this.foodDetail = foodDetail;
+    public void setFoodIngredient(String foodIngredient) {
+        this.foodIngredient = foodIngredient;
     }
 
     public static List<Food> searchFoodByName(String name) {
@@ -156,7 +156,7 @@ public class Food {
         f.setFoodId(rs.getInt("foodId"));
         f.setFoodName(rs.getString("foodName"));
         f.setFoodRecipe(rs.getString("foodRecipe"));
-        f.setFoodDetail(rs.getString("foodDetail"));
+        f.setFoodIngredient(rs.getString("foodIngredient"));
     }
 
 }
