@@ -22,7 +22,7 @@
                 <form action="SearchHerbTypeFruit" method="post" class="form-inline">
                     <div class="form-group">
 
-                        <label for="name">Fruit Name : </label>
+                        <label for="name"><strong>Fruit Name</strong> : </label>
                         <input type="text" class="form-control" id="name" name="searchText" placeholder="Search">
                     </div>
                     <button type="submit" class="btn btn-primary">Go</button>
@@ -38,9 +38,9 @@
                             <c:forEach items="${fruit}" var="f">
 
                                 <div class="col-md-4 text-center" style="margin-bottom: 50px;">
-                                    <img src='images/vegetable/${f.herbId}.jpg' alt="pic" height="200">
-                                    <p> Name : ${f.herbName} </p>
-                                    <p> Price :  <fmt:formatNumber value="${f.herbPrice}" type="currency" /> </p>
+                                    <img src='images/vegetable/${f.herbId}.jpg' alt="pic" height="200" class="img-rounded"><br><br>
+                                    <p> <strong>Name</strong> : ${f.herbName} </p>
+                                    <p> <strong>Price</strong> :  <fmt:formatNumber value="${f.herbPrice}" type="currency" /> </p>
                                     <a href="ViewHerbDetail?id=${f.herbId}"><p class="btn btn-success "> Detail</p></a>
                                     <button class="btn btn-inverse" type="submit" name="pid" value="${f.herbId}" ${f.herbAmount == 0 ? "disabled" : ""}>Add to Cart</button>                                    
                                     <input type="hidden" name="type" value="fruit"> 

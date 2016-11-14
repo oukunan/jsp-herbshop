@@ -22,7 +22,7 @@
                 <form action="SearchHerbTypeVegetable" method="post" class="form-inline">
                     <div class="form-group">
 
-                        <label for="name">Vegetable Name : </label>
+                        <label for="name"><strong>Vegetable Name</strong> : </label>
                         <input type="text" class="form-control" id="name" name="searchText" placeholder="Search">
                     </div>
                     <button type="submit" class="btn btn-primary">Go</button>
@@ -39,8 +39,8 @@
 
                                 <div class="col-md-4 text-center" style="margin-bottom: 50px">
                                     <img src='images/vegetable/${v.herbId}.jpg' alt="pic" height="200" class="img-rounded"><br><br>
-                                    <p> Name : ${v.herbName} </p>
-                                    <p> Price :  <fmt:formatNumber value="${v.herbPrice}" type="currency" /> </p>
+                                    <p> <strong>Name</strong> : ${v.herbName} </p>
+                                    <p> <strong>Price</strong> :  <fmt:formatNumber value="${v.herbPrice}" type="currency" /> </p>
                                     <a href="ViewHerbDetail?id=${v.herbId}"><p class="btn btn-success "> Detail</p></a>
                                     <button class="btn btn-inverse"  type="submit" name="pid" value="${v.herbId}"  ${v.herbAmount == 0 ? "disabled" : ""}>${v.herbAmount == 0 ? "Out of Stock" : "Add to Cart"}</button>                                    
                                     <input type="hidden" name="type" value="vegetable"> 

@@ -21,23 +21,23 @@
                     <h3>Disease Detail</h3>
                     <table>
                         <tr>
-                            <td>Name :  &nbsp; </td>
+                            <td><strong>Name</strong> :  &nbsp; </td>
                             <td><input type="text" class="form-control" name="diseName" value="${d.diseName}" ></td>
                         </tr>
                         <tr>
-                            <td>Type :  &nbsp; </td>
+                            <td><strong>Type</strong> :  &nbsp; </td>
                             <td><input type="text" class="form-control" name="diseType" value="${d.diseType}" ></td>
                         </tr>
                         <tr>
-                            <td>Position : &nbsp; </td>
+                            <td><strong>Position</strong> : &nbsp; </td>
                             <td><input type="text" class="form-control" name="positionInBody" value="${d.positionInBody}" ></td>
                         </tr>
                         <tr>
-                            <td>Detail :  &nbsp; </td>
+                            <td><strong>Detail</strong> :  &nbsp; </td>
                             <td><textarea  style="width: 500px" rows="4" class="form-control">${d.diseDetail}</textarea>  </td>
                         </tr>
                         <tr>
-                            <td>Herb :  &nbsp; </td>
+                            <td><strong>Herb</strong> :  &nbsp; </td>
                             <td>
                                 <c:forEach items="${herb}" var="h">
                                     <br>
