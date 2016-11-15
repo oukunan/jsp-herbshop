@@ -34,6 +34,7 @@ public class Customer {
     private long custTel;
     private final static String SQL_ADD_MEMBER = "INSERT INTO CUSTOMER(custUsername,custPassword,custName,custSurname,custAddress,custState,custCity,custPostal,custTel)"
             + " VALUES(?,?,?,?,?,?,?,?,?)";
+    private final static String SQL_EDIT_MEMBER = "UPDATE customer SET custName = ?, custSurname=?,custAddress=?,custState=?,custCity=?,custPostal=?,custTel=? WHERE custId = ?";
 
     public Customer(ResultSet rs) throws SQLException {
         this.custId = rs.getInt("custId");
@@ -180,6 +181,25 @@ public class Customer {
             }
             ps.close();
             con.close();
+        } catch (SQLException ex) {
+            Logger.getLogger(Customer.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return affect;
+    }
+    
+    public static int editMember(String name,String surname,String address,String state,String city,long postal,long tel){
+        Connection con = ConnectionBuilder.getConnection();
+        int affect = 0;
+        try {
+            PreparedStatement ps = con.prepareStatement(SQL_ADD_MEMBER);
+            ps.setString(1, name);
+            ps.setString(2, surname);
+            ps.setString(3, address);
+            ps.setString(4, state);
+            ps.setString(5, city);
+            ps.setLong(6, postal);
+            ps.setLong(7, tel);
+            affect = ps.executeUpdate();
         } catch (SQLException ex) {
             Logger.getLogger(Customer.class.getName()).log(Level.SEVERE, null, ex);
         }

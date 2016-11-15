@@ -3,14 +3,8 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/D:/Web%20Programming%20Project/HerbShop/web/index.jsp</file>
-            <file>file:/D:/Web%20Programming%20Project/HerbShop/src/java/controller/SearchHerbTypeVegetableServlet.java</file>
-            <file>file:/D:/Web%20Programming%20Project/HerbShop/src/java/controller/SearchHerbTypeFruitServlet.java</file>
-            <file>file:/D:/Web%20Programming%20Project/HerbShop/src/java/model/Diseases.java</file>
-            <file>file:/D:/Web%20Programming%20Project/HerbShop/src/java/model/Herb.java</file>
-            <file>file:/D:/Web%20Programming%20Project/HerbShop/src/java/controller/AddToCartServlet.java</file>
-            <file>file:/D:/Web%20Programming%20Project/HerbShop/web/fruit.jsp</file>
-            <file>file:/D:/Web%20Programming%20Project/HerbShop/src/java/model/CartDetail.java</file>
+            <file>file:/D:/Web%20Programming%20Project/HerbShop/src/java/controller/UpdateMemberServlet.java</file>
+            <file>file:/D:/Web%20Programming%20Project/HerbShop/src/java/model/Customer.java</file>
         </group>
     </open-files>
 </project-private>

@@ -98,6 +98,10 @@
         <servlet-name>RegisterMemberServlet</servlet-name>
         <servlet-class>controller.RegisterMemberServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>UpdateMemberServlet</servlet-name>
+        <servlet-class>controller.UpdateMemberServlet</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>LoginServlet</servlet-name>
         <url-pattern>/Login</url-pattern>
@@ -161,6 +165,10 @@
     <servlet-mapping>
         <servlet-name>RegisterMemberServlet</servlet-name>
         <url-pattern>/RegisterMember</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>UpdateMemberServlet</servlet-name>
+        <url-pattern>/UpdateMember</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
