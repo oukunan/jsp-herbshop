@@ -26,9 +26,9 @@ public class Diseases {
     private String diseType;
     private String positionInBody;
     private String diseDetail;
-    private final static String SQL_SEARCH_DISEASES_BY_NAME = "SELECT * FROM DISEASES WHERE LOWER(diseName) LIKE ?";
-    private final static String SQL_FIND_DISEASES_BY_ID = "SELECT * FROM DISEASES WHERE diseId = ?";
-    private final static String SQL_FIND_DISEASES_BY_HERB_ID = "SELECT diseId,diseName FROM DISEASES d JOIN HERBFORDISEASE h ON d.diseId = h.Diseases_diseId AND Herb_herbId = ?";
+    private final static String SQL_SEARCH_DISEASES_BY_NAME = "SELECT * FROM DISEASES d JOIN disetype dt ON dt.diseTypeId = d.DiseType_diseTypeId JOIN positioninbody pib ON pib.positionInBodyId = d.PositionInBody_positionInBodyId WHERE LOWER(d.diseName) LIKE ?";
+    private final static String SQL_FIND_DISEASES_BY_ID = "SELECT * FROM DISEASES d JOIN disetype dt ON dt.diseTypeId = d.DiseType_diseTypeId JOIN positioninbody pib ON pib.positionInBodyId = d.PositionInBody_positionInBodyId WHERE d.diseId = ?";
+    private final static String SQL_FIND_DISEASES_BY_HERB_ID = "SELECT d.diseId,d.diseName FROM DISEASES d JOIN disetype dt ON dt.diseTypeId = d.DiseType_diseTypeId JOIN positioninbody pib ON pib.positionInBodyId = d.PositionInBody_positionInBodyId JOIN HERBFORDISEASE h ON d.diseId = h.Diseases_diseId AND Herb_herbId = ?";
 
     public Diseases() {
     }

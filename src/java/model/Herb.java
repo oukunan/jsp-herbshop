@@ -28,10 +28,10 @@ public class Herb {
     private String herbType;
     private String herbDetail;
     private String herbUnit;
-    private final static String SQL_SEARCH_HERB_BY_NAME = "SELECT * FROM HERB WHERE UPPER(herbName) LIKE ? AND UPPER(herbType) LIKE ?";
-    private final static String SQL_FIND_HERB_BY_ID = "SELECT * FROM HERB WHERE herbId = ?";
-    private final static String SQL_LISTING_HERB_BY_TYPE = "SELECT * FROM HERB WHERE herbType LIKE ?";
-    private final static String SQL_FIND_HERB_BY_DISEASES_ID = "SELECT herbId,herbName,herbType FROM HERB h JOIN HERBFORDISEASE hf ON h.herbId = hf.Herb_herbId AND Diseases_diseId = ?";
+    private final static String SQL_SEARCH_HERB_BY_NAME = "SELECT * FROM HERB h JOIN HERBTYPE ht ON ht.herbTypeId = h.HerbType_herbTypeId JOIN HERBUNIT hu ON hu.herbUnitId = h.HerbUnit_herbUnitId WHERE UPPER(h.herbName) LIKE ? AND UPPER(ht.herbType) LIKE ?";
+    private final static String SQL_FIND_HERB_BY_ID = "SELECT * FROM HERB h JOIN HERBTYPE ht ON ht.herbTypeId = h.HerbType_herbTypeId JOIN HERBUNIT hu ON hu.herbUnitId = h.HerbUnit_herbUnitId WHERE h.herbId = ?";
+    private final static String SQL_LISTING_HERB_BY_TYPE = "SELECT * FROM HERB h JOIN HERBTYPE ht ON ht.herbTypeId = h.HerbType_herbTypeId JOIN HERBUNIT hu ON hu.herbUnitId = h.HerbUnit_herbUnitId WHERE ht.herbType LIKE ?";
+    private final static String SQL_FIND_HERB_BY_DISEASES_ID = "SELECT h.herbId,h.herbName,ht.herbType FROM HERB h JOIN HERBTYPE ht ON ht.herbTypeId = h.HerbType_herbTypeId JOIN HERBUNIT hu ON hu.herbUnitId = h.HerbUnit_herbUnitId JOIN HERBFORDISEASE hf ON h.herbId = hf.Herb_herbId AND Diseases_diseId = ?";
 
     public Herb() {
     }
@@ -102,7 +102,7 @@ public class Herb {
         this.herbDetail = herbDetail;
     }
 
-    public static List<Herb> searchHerbByName(String name, String type) {
+    public static List<Herb> searchHerbByName(String name,String type) {
         List<Herb> herbs = null;
         ResultSet rs = null;
         Herb h = null;
@@ -110,7 +110,7 @@ public class Herb {
         try {
             PreparedStatement ps = con.prepareStatement(SQL_SEARCH_HERB_BY_NAME);
             ps.setString(1, name.toUpperCase() + "%");
-            ps.setString(2, "%" + type.toUpperCase() + "%");
+            ps.setString(2, type.toUpperCase() + "%");
             rs = ps.executeQuery();
             if (rs != null) {
                 while (rs.next()) {
