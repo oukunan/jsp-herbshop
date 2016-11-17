@@ -11,6 +11,8 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Map;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -28,6 +30,7 @@ public class CartDetail {
     private final static String SQL_STORE_HISTORY = "INSERT INTO CARTDETAIL(quantityOfHerb,price,Cart_cartId,Herb_herbId)"
             + " VALUES(?,?,?,?);";
     private final static String SQL_UPDATE_HERB_AMOUNT = "UPDATE herb SET herbAmount=? WHERE herbId = ?";
+    private final static String SQL_GET_CARTDETAIL = "SELECT * FROM CARTDETAIL WHERE Cart_cartId = ?";
 
     public CartDetail() {
     }
@@ -40,6 +43,13 @@ public class CartDetail {
         quantityOfHerb = quantity;
         herb = Herb.findHerbById(herbId);
         calculatePrice();
+    }
+    
+    public CartDetail(ResultSet rs,Herb h) throws SQLException{
+        this.herb = h;
+        this.cartDetailId = rs.getInt("cartDetailId");
+        this.quantityOfHerb = rs.getDouble("quantityOfHerb");
+        this.price = rs.getDouble("price");
     }
 
     public Herb getHerb() {
@@ -120,5 +130,37 @@ public class CartDetail {
             Logger.getLogger(CartDetail.class.getName()).log(Level.SEVERE, null, ex);
         }
         return id;
+    }
+    
+    public static List<CartDetail> getCartDetail(int cartId){
+        List<CartDetail> lists = new ArrayList<CartDetail>();
+        Connection con = ConnectionBuilder.getConnection();
+        CartDetail cd;
+        Herb h;
+        try {
+            PreparedStatement ps = con.prepareStatement(SQL_GET_CARTDETAIL);
+            ps.setInt(1, cartId);
+            ResultSet rs = ps.executeQuery();
+            if(rs!=null){
+                cd = new CartDetail();
+                while(rs.next()){
+                    h = Herb.findHerbById(rs.getInt("Herb_herbId"));
+                    cd = new CartDetail(rs, h);
+                    lists.add(cd);
+                }
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(CartDetail.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return lists;
+    }
+    
+    public static void main(String[] args) {
+        List<CartDetail> lists = getCartDetail(1);
+        for (CartDetail list : lists) {
+            System.out.println(list.getHerb().getHerbName());
+            System.out.println(list.getPrice());
+            System.out.println(list.getQuantityOfHerb());
+        }
     }
 }

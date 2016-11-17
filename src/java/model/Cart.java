@@ -8,8 +8,11 @@ package model;
 import connection.ConnectionBuilder;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -41,8 +44,10 @@ public class Cart {
     private double totalMoney = 0;
     private double vatAmount = 0;
     private double money = 0;
+    private String date;
     private static String SQL_INSERT = "INSERT INTO CART(money,vatAmount,totalMoney,Customer_custId)"
             + "VALUES (?,?,?,?)";
+    private static String SQL_GET_CART = "SELECT * FROM CART WHERE Customer_custId = ?";
 
     public double getMoney() {
         money = 0;
@@ -61,6 +66,14 @@ public class Cart {
         return vatAmount;
     }
 
+    public String getDate() {
+        return date;
+    }
+
+    public void setDate(String date) {
+        this.date = date;
+    }
+
     public void setVatAmount(double vatAmount) {
         this.vatAmount = vatAmount;
     }
@@ -76,6 +89,14 @@ public class Cart {
 
     public Cart() {
         items = new HashMap<>();
+    }
+    
+    public Cart(ResultSet rs) throws SQLException{
+        this.cartId = rs.getInt("cartId");
+        this.money = rs.getDouble("money");
+        this.totalMoney = rs.getDouble("totalMoney");
+        this.vatAmount = rs.getDouble("vatAmount");
+        this.date = rs.getString("orderDate");
     }
 
     public int getSize() {
@@ -138,7 +159,33 @@ public class Cart {
         } catch (SQLException ex) {
             Logger.getLogger(Cart.class.getName()).log(Level.SEVERE, null, ex);
         }
-
     }
-
+    
+    public static List<Cart> getCartByCustomerId(int custId){
+        List<Cart> lists = new ArrayList<Cart>();
+        Connection con = ConnectionBuilder.getConnection();
+        Cart c;
+        try {
+            PreparedStatement ps = con.prepareStatement(SQL_GET_CART);
+            ps.setInt(1, custId);
+            ResultSet rs = ps.executeQuery();
+            if(rs!=null){
+                while(rs.next()){
+                    c = new Cart(rs);
+                    lists.add(c);
+                }
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(Cart.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return lists;
+    }
+    public static void main(String[] args) {
+        List<Cart> lists = getCartByCustomerId(2);
+        for (Cart list : lists) {
+            System.out.println(list.getCartId());
+            System.out.println(list.getTotalMoney());
+            System.out.println(list.getDate());
+        }
+    }
 }
