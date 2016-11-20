@@ -14,6 +14,15 @@
         <link rel="stylesheet" href="css/animate.css">
 
         <title>Search Vegetable </title>
+        <style>
+            body {
+                background:url("images/bg.png");
+                -webkit-background-size: cover;
+                -moz-background-size: cover;
+                -o-background-size: cover;
+                background-size: cover;
+            }
+        </style>
     </head>
     <body>
         <jsp:include page="/WEB-INF/header/header.jsp"/>
