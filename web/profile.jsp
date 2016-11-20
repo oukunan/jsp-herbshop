@@ -12,18 +12,23 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>.:: Customer Detail ::.</title>
+        <style>
+            body {
+                background:url("images/login.png");
+                -webkit-background-size: cover;
+                -moz-background-size: cover;
+                -o-background-size: cover;
+                background-size: cover;
+            }
+        </style>
     </head>
     <body>
-        <jsp:include page="/WEB-INF/header/header.jsp"/>
+            <jsp:include page="/WEB-INF/header/header.jsp"/>
         <div class="container">
             <div class="row">
                 <div class="col-md-7">
                     <h3>Profile</h3>
                     <table>
-                        <tr>
-                            <td><strong>ID</strong>  :  &nbsp; </td>
-                            <td>${user.custId}</td>
-                        </tr>
                         <tr>
                             <td><strong>Name</strong> :  &nbsp; </td>
                             <td>${user.custName}</td>
