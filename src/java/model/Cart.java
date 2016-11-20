@@ -186,7 +186,7 @@ public class Cart {
         Cart cart = null;
         Connection con = ConnectionBuilder.getConnection();
         try {
-            PreparedStatement ps = con.prepareStatement(SQL_GET_CART);
+            PreparedStatement ps = con.prepareStatement(SQL_GET_CART_BY_CART_ID);
             ps.setInt(1, cartId);
             ResultSet rs = ps.executeQuery();
             if (rs != null) {

@@ -37,7 +37,7 @@ public class ViewHistoryDetailServlet extends HttpServlet {
         Cart cart = Cart.getCartByCartId(cartId);
         if(cds!=null){
             request.getSession().setAttribute("cds", cds);
-            request.setAttribute("cart", cart);
+            request.setAttribute("ca", cart);
         }
         getServletContext().getRequestDispatcher("/historyDetail.jsp").forward(request, response);
     }
