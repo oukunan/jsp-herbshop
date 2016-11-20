@@ -51,6 +51,10 @@ public class Cart {
     }
 
     public double getMoney() {
+        return money;
+    }
+    
+    public double getCalculateMoney(){
         money = 0;
         for (CartDetail cd : items.values()) {
             money += cd.getPrice();
@@ -142,7 +146,7 @@ public class Cart {
     }
 
     public void calculate() {
-        getMoney();
+        getCalculateMoney();
         getVatAmount();
         getTotalMoney();
     }
@@ -151,7 +155,7 @@ public class Cart {
         Connection con = ConnectionBuilder.getConnection();
         try {
             PreparedStatement ps = con.prepareStatement(SQL_INSERT);
-            ps.setDouble(1, c.getMoney());
+            ps.setDouble(1, c.getCalculateMoney());
             ps.setDouble(2, c.vatAmount);
             ps.setDouble(3, c.totalMoney);
             ps.setInt(4, cust.getCustId());
@@ -186,7 +190,7 @@ public class Cart {
         Cart cart = null;
         Connection con = ConnectionBuilder.getConnection();
         try {
-            PreparedStatement ps = con.prepareStatement(SQL_GET_CART);
+            PreparedStatement ps = con.prepareStatement(SQL_GET_CART_BY_CART_ID);
             ps.setInt(1, cartId);
             ResultSet rs = ps.executeQuery();
             if (rs != null) {

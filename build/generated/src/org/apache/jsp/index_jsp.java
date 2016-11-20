@@ -72,7 +72,7 @@ public final class index_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("        <br>\r\n");
       out.write("        <div class=\"row\">\r\n");
       out.write("            <div class=\"col-md-4 text-center animated fadeIn\">\r\n");
-      out.write("                <img src=\"images/7.png\"  height=\"250\" alt=\"pic1\" /><br><br>\r\n");
+      out.write("                <img src=\"images/herb.png\"  height=\"250\" alt=\"pic1\" /><br><br>\r\n");
       out.write("                <a href=\"typeHerb.jsp\" class=\"btn  btn-primary btn-hg \">Herb (สมุนไพร)</a>\r\n");
       out.write("            </div>\r\n");
       out.write("            <div class=\"col-md-4 text-center animated fadeIn\">\r\n");
@@ -80,7 +80,7 @@ public final class index_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("                <a href=\"SearchDisease\" class=\"btn btn-primary btn-hg \">Diseases (อาการ)</a>\r\n");
       out.write("            </div>\r\n");
       out.write("            <div class=\"col-md-4 text-center animated fadeIn\">\r\n");
-      out.write("                <img src=\"images/5.png\" height=\"250\"  alt=\"pic3\" width=\"300\" height=\"300\" /><br><br>\r\n");
+      out.write("                <img src=\"images/food.png\" height=\"250\"  alt=\"pic3\" width=\"300\" height=\"300\" /><br><br>\r\n");
       out.write("                <a href=\"SearchFood\" class=\"btn btn-primary btn-hg \">Food (อาหาร)</a>\r\n");
       out.write("            </div>\r\n");
       out.write("        </div>\r\n");

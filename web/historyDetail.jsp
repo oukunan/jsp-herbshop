@@ -41,8 +41,9 @@
                     </c:forEach>
                 </table>  
                 <div class="pull-right">
-                    <p class="text"><b>Vat :</b> ${cart.vatAmount} Baht</p>
-                    <p class="text-info"><b>Total Money : </b> ${cart.totalMoney} Bath</p>
+                    <p class="text"><b>Money : </b> ${ca.money} Bath</p>
+                    <p class="text"><b>Vat :</b> ${ca.vatAmount} Baht</p>
+                    <p class="text-info"><b>Total Money : </b> ${ca.totalMoney} Bath</p>
                 </div>
                 <a href="typeHerb.jsp"><input type="button" value="Continue Shopping" class="btn btn-info"/></a>
                 <button type="button" onclick="history.back()" class="btn btn-inverse">Back</button>
