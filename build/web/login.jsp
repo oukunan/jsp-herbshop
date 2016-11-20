@@ -21,6 +21,7 @@
             button {
                 margin: 10px;
             }
+   
         </style>
     </head>
 
@@ -34,7 +35,7 @@
                         <input type="password" class="form-control pad" name="password" value="" placeholder="Password"><br>
                         <button type="submit" class="btn btn-primary">Login</button>
                         <a href="register.jsp"><button type="button" class="btn btn-inverse">Register</button></a>
-                                            <a href="index.jsp"><button type="button" class="btn btn-default" >Back</button></a>
+                        <a href="index.jsp"><button type="button" class="btn btn-default" >Back</button></a>
 
                     </form>
 

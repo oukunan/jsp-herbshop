@@ -24,27 +24,28 @@
             <form action="UpdateCart" method="post">
                 <table class="table table-bordered table-striped">
                     <tr>
-                        <td>No</td>
-                        <td>Name</td>
-                        <td>Price</td>
-                        <td>Quantity</td>
-                        <td>Total</td>
+                        <th>No</th>
+                        <th>Name</th>
+                        <th>Price</th>
+                        <th>Quantity</th>
+                        <th>Total</th>
                     </tr>
                     <c:forEach items="${cds}" var="cd" varStatus="vs">
                         <tr>
                             <td>${vs.count}</td>
                             <td>${cd.herb.herbName}</td>
-                            <td>${cd.price}</td>
+                            <td>${cd.herb.herbPrice}</td>
                             <td>${cd.quantityOfHerb}</td>
-                            <td>${cd.price*cd.quantityOfHerb}</td>
+                            <td>${cd.price}</td>
                         </tr>
                     </c:forEach>
                 </table>  
                 <div class="pull-right">
-                    <p class="text">${cart.vatAmount}</p>
-                    <p class="text-info">${cart.totalMoney}</p>
+                    <p class="text"><b>Vat :</b> ${cart.vatAmount} Baht</p>
+                    <p class="text-info"><b>Total Money : </b> ${cart.totalMoney} Bath</p>
                 </div>
                 <a href="typeHerb.jsp"><input type="button" value="Continue Shopping" class="btn btn-info"/></a>
+                  <a href="" <button type="button" class="btn btn-inverse">Back</button></a>
             </form>
         </div>    
     </body>

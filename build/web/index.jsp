@@ -31,7 +31,7 @@
         <br>
         <div class="row">
             <div class="col-md-4 text-center animated fadeIn">
-                <img src="images/7.png"  height="250" alt="pic1" /><br><br>
+                <img src="images/herb.png"  height="250" alt="pic1" /><br><br>
                 <a href="typeHerb.jsp" class="btn  btn-primary btn-hg ">Herb (สมุนไพร)</a>
             </div>
             <div class="col-md-4 text-center animated fadeIn">
@@ -39,7 +39,7 @@
                 <a href="SearchDisease" class="btn btn-primary btn-hg ">Diseases (อาการ)</a>
             </div>
             <div class="col-md-4 text-center animated fadeIn">
-                <img src="images/5.png" height="250"  alt="pic3" width="300" height="300" /><br><br>
+                <img src="images/food.png" height="250"  alt="pic3" width="300" height="300" /><br><br>
                 <a href="SearchFood" class="btn btn-primary btn-hg ">Food (อาหาร)</a>
             </div>
         </div>

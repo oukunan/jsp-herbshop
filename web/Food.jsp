@@ -12,9 +12,18 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <link rel="stylesheet" href="css/animate.css">
-
         <title>Search food</title>
+        <style>
+            body {
+                background:url("images/bgLogin.png");
+                -webkit-background-size: cover;
+                -moz-background-size: cover;
+                -o-background-size: cover;
+                background-size: cover;
+            }
+        </style>
     </head>
+
     <body>
         <jsp:include page="/WEB-INF/header/header.jsp"/>
         <div class="container animated fadeIn">
@@ -32,8 +41,8 @@
                 <c:forEach items="${food}" var="f">
                     <div class="col-md-4 text-center" style="margin-bottom: 50px">
                         <img src='images/food/${f.foodId}.jpg' alt="pic" height="200" class="img-rounded"><br><br>
-                        <p> Name : ${f.foodName} </p>
-                        <a href="ViewFoodDetail?id=${f.foodId}"><p class="btn btn-primary ">Detail</p></a>
+                        <p> <b>Name :</b> ${f.foodName} </p>
+                        <a href="ViewFoodDetail?id=${f.foodId}"><p class="btn btn-inverse ">Detail</p></a>
                     </div>
                 </c:forEach>
             </div>

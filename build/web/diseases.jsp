@@ -12,8 +12,16 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <link rel="stylesheet" href="css/animate.css">
-
         <title>Search diseases </title>
+        <style>
+            body {
+                background:url("images/bg.png");
+                -webkit-background-size: cover;
+                -moz-background-size: cover;
+                -o-background-size: cover;
+                background-size: cover;
+            }
+        </style>
     </head>
     <body>
         <jsp:include page="/WEB-INF/header/header.jsp"/>
@@ -41,7 +49,7 @@
                                     <img src='images/diseases/${d.diseId}.jpg' alt="pic" height="200" class="img-rounded"><br><br>
                                     <p> <strong>Name</strong> : ${d.diseName} </p>
                                     <p> <strong>Position</strong> : ${d.positionInBody} </p>
-                                    <a href="ViewDiseasesDetail?id=${d.diseId}"><p class="btn btn-success "> Detail </p></a>
+                                    <a href="ViewDiseasesDetail?id=${d.diseId}"><p class="btn btn-inverse "> Detail </p></a>
                                     <input type="hidden" name="type" value="vegetable"> 
                                 </div>
                             </c:forEach>

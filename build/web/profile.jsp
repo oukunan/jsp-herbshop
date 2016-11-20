@@ -27,7 +27,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-7">
-                    <h3>Profile</h3>
+                    <h1>Profile</h1>
                     <table>
                         <tr>
                             <td><strong>Name</strong> :  &nbsp; </td>
