@@ -28,19 +28,17 @@
             <div class="row">
                 <div class="col-md-12">
                     <h3>History</h3>
-                    <table>
+                    <table class="table table-striped">
                         <tr>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                        </tr
-                        <c:forEach items="">
+                            <th>Cart Id</th>
+                            <th>Total Money (Baht)</th>
+                            <th>Date</th>
+                        </tr>
+                        <c:forEach items="${carts}" var="c" varStatus="vs">
                             <tr>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
+                                <td><a href="ViewHistoryDetail?cartId=${c.cartId}">${c.cartId}</a></td>
+                                <td>${c.totalMoney}</td>
+                                <td>${c.date}</td>
                             </tr>
                         </c:forEach>
 

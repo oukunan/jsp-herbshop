@@ -60,7 +60,7 @@
                     </table><br><br>
                     <button class="btn btn-inverse" onclick="history.back()">Back </button>
                     <a href="editProfile.jsp"><button class="btn btn-info">Edit Profile</button></a>
-                    <a href="history.jsp"><button class="btn btn-primary">History</button></a>
+                    <a href="ViewHistory?id=${user.custId}"><button class="btn btn-primary">History</button></a>
                 </div><br>
             </div>
         </div>
