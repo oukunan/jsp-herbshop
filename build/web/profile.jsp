@@ -50,7 +50,7 @@
                         </tr>
                         <tr>
                             <td><strong>Tel</strong> :  &nbsp; </td>
-                            <td>${user.custTel}it</td>
+                            <td>${user.custTel}</td>
                         </tr>
                     </table><br><br>
                     <button class="btn btn-inverse" onclick="history.back()">Back </button>

@@ -188,7 +188,7 @@ public class Customer {
         return affect;
     }
     
-    public static int editMember(String name,String surname,String address,String state,String city,long postal,long tel){
+    public static int editMember(String name,String surname,String address,String state,String city,long postal,String tel){
         Connection con = ConnectionBuilder.getConnection();
         int affect = 0;
         try {
@@ -199,7 +199,7 @@ public class Customer {
             ps.setString(4, state);
             ps.setString(5, city);
             ps.setLong(6, postal);
-            ps.setLong(7, tel);
+            ps.setString(7, tel);
             affect = ps.executeUpdate();
         } catch (SQLException ex) {
             Logger.getLogger(Customer.class.getName()).log(Level.SEVERE, null, ex);

@@ -36,7 +36,7 @@ public class UpdateMemberServlet extends HttpServlet {
         String state = request.getParameter("state");
         String city = request.getParameter("city");
         long postal = Long.parseLong(request.getParameter("postal"));
-        long tel = Long.parseLong(request.getParameter("tel"));
+        String tel = request.getParameter("tel");
         int affect = Customer.editMember(name, surname, address, state, city, postal, tel);
         if(affect == 0){
             request.setAttribute("mes", "Error! can't update your profile!");
