@@ -50,6 +50,7 @@ public final class profile_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("<html>\r\n");
       out.write("    <head>\r\n");
       out.write("        <meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\">\r\n");
+      out.write("                <link rel=\"stylesheet\" href=\"css/animate.css\">\r\n");
       out.write("        <title>.:: Customer Detail ::.</title>\r\n");
       out.write("        <style>\r\n");
       out.write("            body {\r\n");
@@ -61,14 +62,14 @@ public final class profile_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("            }\r\n");
       out.write("        </style>\r\n");
       out.write("    </head>\r\n");
-      out.write("    <body>\r\n");
+      out.write("    <body class=\"animated fadeIn\">\r\n");
       out.write("            ");
       org.apache.jasper.runtime.JspRuntimeLibrary.include(request, response, "/WEB-INF/header/header.jsp", out, false);
       out.write("\r\n");
       out.write("        <div class=\"container\">\r\n");
       out.write("            <div class=\"row\">\r\n");
       out.write("                <div class=\"col-md-7\">\r\n");
-      out.write("                    <h3>Profile</h3>\r\n");
+      out.write("                    <h1>Profile</h1>\r\n");
       out.write("                    <table>\r\n");
       out.write("                        <tr>\r\n");
       out.write("                            <td><strong>Name</strong> :  &nbsp; </td>\r\n");
@@ -115,7 +116,9 @@ public final class profile_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("                    </table><br><br>\r\n");
       out.write("                    <button class=\"btn btn-inverse\" onclick=\"history.back()\">Back </button>\r\n");
       out.write("                    <a href=\"editProfile.jsp\"><button class=\"btn btn-info\">Edit Profile</button></a>\r\n");
-      out.write("                    <a href=\"history.jsp\"><button class=\"btn btn-primary\">History</button></a>\r\n");
+      out.write("                    <a href=\"ViewHistory?id=");
+      out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${user.custId}", java.lang.String.class, (PageContext)_jspx_page_context, null));
+      out.write("\"><button class=\"btn btn-primary\">History</button></a>\r\n");
       out.write("                </div><br>\r\n");
       out.write("            </div>\r\n");
       out.write("        </div>\r\n");

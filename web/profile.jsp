@@ -11,6 +11,7 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <link rel="stylesheet" href="css/animate.css">
         <title>.:: Customer Detail ::.</title>
         <style>
             body {
@@ -22,9 +23,9 @@
             }
         </style>
     </head>
-    <body>
+    <body >
             <jsp:include page="/WEB-INF/header/header.jsp"/>
-        <div class="container">
+        <div class="container animated  fadeIn">
             <div class="row">
                 <div class="col-md-7">
                     <h1>Profile</h1>

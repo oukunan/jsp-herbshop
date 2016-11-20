@@ -15,7 +15,7 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <link rel="stylesheet" href="css/bootstrap.min.css">
 
-        <title>JSP Page</title>
+        <title>History ${cart.cartId}</title>
     </head>
     <body >
         <jsp:include page="/WEB-INF/header/header.jsp"/>
@@ -45,7 +45,7 @@
                     <p class="text-info"><b>Total Money : </b> ${cart.totalMoney} Bath</p>
                 </div>
                 <a href="typeHerb.jsp"><input type="button" value="Continue Shopping" class="btn btn-info"/></a>
-                  <a href="" <button type="button" class="btn btn-inverse">Back</button></a>
+                <button type="button" onclick="history.back()" class="btn btn-inverse">Back</button>
             </form>
         </div>    
     </body>

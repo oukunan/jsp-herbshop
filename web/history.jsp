@@ -11,11 +11,12 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>.:: Customer Detail ::.</title>
+          <link rel="stylesheet" href="css/animate.css">
+        <title>History</title>
     </head>
     <body>
         <jsp:include page="/WEB-INF/header/header.jsp"/>
-        <div class="container">
+        <div class="container animated fadeIn">
             <div class="row">
                 <div class="col-md-12">
                     <h1>History</h1>
@@ -28,7 +29,7 @@
                         <c:forEach items="${carts}" var="c" varStatus="vs">
                             <tr>
                                 <td><a href="ViewHistoryDetail?cartId=${c.cartId}">${c.cartId}</a></td>
-                                <td>${c.totalMoney}</td>
+                                <td >${c.totalMoney}</td>
                                 <td>${c.date}</td>
                             </tr>
                         </c:forEach>
