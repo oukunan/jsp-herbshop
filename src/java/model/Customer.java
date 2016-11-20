@@ -31,10 +31,11 @@ public class Customer {
     private String custState;
     private String custCity;
     private long custPostal;
-    private long custTel;
+    private String custTel;
     private final static String SQL_ADD_MEMBER = "INSERT INTO CUSTOMER(custUsername,custPassword,custName,custSurname,custAddress,custState,custCity,custPostal,custTel)"
             + " VALUES(?,?,?,?,?,?,?,?,?)";
-    private final static String SQL_EDIT_MEMBER = "UPDATE customer SET custName = ?, custSurname=?,custAddress=?,custState=?,custCity=?,custPostal=?,custTel=? WHERE custId = ?";
+    private final static String SQL_EDIT_MEMBER = "UPDATE customer SET custName = ?, custSurname=?,custAddress=?,"
+            + "custState=?,custCity=?,custPostal=?,custTel=? WHERE custId = ?";
 
     public Customer(ResultSet rs) throws SQLException {
         this.custId = rs.getInt("custId");
@@ -46,7 +47,7 @@ public class Customer {
         this.custState = rs.getString("custState");
         this.custCity = rs.getString("custCity");
         this.custPostal = rs.getLong("custPostal");
-        this.custTel = rs.getLong("custTel");
+        this.custTel = rs.getString("custTel");
     }
 
     public Customer() {
@@ -125,11 +126,11 @@ public class Customer {
         this.custPostal = custPostal;
     }
 
-    public long getCustTel() {
+    public String getCustTel() {
         return custTel;
     }
 
-    public void setCustTel(long custTel) {
+    public void setCustTel(String custTel) {
         this.custTel = custTel;
     }
 
@@ -170,7 +171,7 @@ public class Customer {
             ps.setString(6, c.getCustState());
             ps.setString(7, c.getCustCity());
             ps.setLong(8, c.getCustPostal());
-            ps.setLong(9, c.getCustTel());
+            ps.setString(9, c.getCustTel());
             ResultSet rs = getAllUsername();
             if(rs!=null){
                 while(rs.next()){

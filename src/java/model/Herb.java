@@ -28,10 +28,15 @@ public class Herb {
     private String herbType;
     private String herbDetail;
     private String herbUnit;
-    private final static String SQL_SEARCH_HERB_BY_NAME = "SELECT * FROM HERB h JOIN HERBTYPE ht ON ht.herbTypeId = h.HerbType_herbTypeId JOIN HERBUNIT hu ON hu.herbUnitId = h.HerbUnit_herbUnitId WHERE UPPER(h.herbName) LIKE ? AND UPPER(ht.herbType) LIKE ?";
-    private final static String SQL_FIND_HERB_BY_ID = "SELECT * FROM HERB h JOIN HERBTYPE ht ON ht.herbTypeId = h.HerbType_herbTypeId JOIN HERBUNIT hu ON hu.herbUnitId = h.HerbUnit_herbUnitId WHERE h.herbId = ?";
-    private final static String SQL_LISTING_HERB_BY_TYPE = "SELECT * FROM HERB h JOIN HERBTYPE ht ON ht.herbTypeId = h.HerbType_herbTypeId JOIN HERBUNIT hu ON hu.herbUnitId = h.HerbUnit_herbUnitId WHERE ht.herbType LIKE ?";
-    private final static String SQL_FIND_HERB_BY_DISEASES_ID = "SELECT h.herbId,h.herbName,ht.herbType FROM HERB h JOIN HERBTYPE ht ON ht.herbTypeId = h.HerbType_herbTypeId JOIN HERBUNIT hu ON hu.herbUnitId = h.HerbUnit_herbUnitId JOIN HERBFORDISEASE hf ON h.herbId = hf.Herb_herbId AND Diseases_diseId = ?";
+    private final static String SQL_SEARCH_HERB_BY_NAME = "SELECT * FROM HERB h JOIN HERBTYPE ht ON ht.herbTypeId = h.HerbType_herbTypeId "
+            + "JOIN HERBUNIT hu ON hu.herbUnitId = h.HerbUnit_herbUnitId WHERE UPPER(h.herbName) LIKE ? AND UPPER(ht.herbType) LIKE ?";
+    private final static String SQL_FIND_HERB_BY_ID = "SELECT * FROM HERB h JOIN HERBTYPE ht ON ht.herbTypeId = h.HerbType_herbTypeId "
+            + "JOIN HERBUNIT hu ON hu.herbUnitId = h.HerbUnit_herbUnitId WHERE h.herbId = ?";
+    private final static String SQL_LISTING_HERB_BY_TYPE = "SELECT * FROM HERB h JOIN HERBTYPE ht ON ht.herbTypeId = h.HerbType_herbTypeId "
+            + "JOIN HERBUNIT hu ON hu.herbUnitId = h.HerbUnit_herbUnitId WHERE ht.herbType LIKE ?";
+    private final static String SQL_FIND_HERB_BY_DISEASES_ID = "SELECT h.herbId,h.herbName,ht.herbType FROM HERB h JOIN HERBTYPE ht "
+            + "ON ht.herbTypeId = h.HerbType_herbTypeId JOIN HERBUNIT hu ON hu.herbUnitId = h.HerbUnit_herbUnitId "
+            + "JOIN HERBFORDISEASE hf ON h.herbId = hf.Herb_herbId AND Diseases_diseId = ?";
 
     public Herb() {
     }

@@ -27,7 +27,8 @@ public class Food {
     private String foodIngredient;
     private final static String SQL_SEARCH_FOOD_BY_NAME = "SELECT * FROM FOOD WHERE LOWER(foodName) LIKE ?";
     private final static String SQL_FIND_FOOD_BY_ID = "SELECT * FROM FOOD WHERE foodId = ?";
-    private final static String SQL_FIND_FOOD_BY_HERB_ID = "SELECT * FROM FOOD f JOIN HERBFORFOOD h ON h.Food_foodId = f.foodId AND h.Herb_herbId = ?";
+    private final static String SQL_FIND_FOOD_BY_HERB_ID = "SELECT * FROM FOOD f JOIN HERBFORFOOD h ON h.Food_foodId = f.foodId "
+            + "AND h.Herb_herbId = ?";
 
     public Food() {
     }
