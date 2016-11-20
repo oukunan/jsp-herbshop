@@ -34,6 +34,18 @@
         <dispatcher>REQUEST</dispatcher>
         <dispatcher>FORWARD</dispatcher>
     </filter-mapping>
+    <filter-mapping>
+        <filter-name>AuthenticationFilter</filter-name>
+        <servlet-name>ViewHistoryServlet</servlet-name>
+        <dispatcher>REQUEST</dispatcher>
+        <dispatcher>FORWARD</dispatcher>
+    </filter-mapping>
+    <filter-mapping>
+        <filter-name>AuthenticationFilter</filter-name>
+        <servlet-name>ViewHistoryDetailServlet</servlet-name>
+        <dispatcher>REQUEST</dispatcher>
+        <dispatcher>FORWARD</dispatcher>
+    </filter-mapping>
     <servlet>
         <servlet-name>LoginServlet</servlet-name>
         <servlet-class>controller.LoginServlet</servlet-class>
@@ -102,6 +114,14 @@
         <servlet-name>UpdateMemberServlet</servlet-name>
         <servlet-class>controller.UpdateMemberServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>ViewHistoryServlet</servlet-name>
+        <servlet-class>controller.ViewHistoryServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ViewHistoryDetailServlet</servlet-name>
+        <servlet-class>controller.ViewHistoryDetailServlet</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>LoginServlet</servlet-name>
         <url-pattern>/Login</url-pattern>
@@ -169,6 +189,14 @@
     <servlet-mapping>
         <servlet-name>UpdateMemberServlet</servlet-name>
         <url-pattern>/UpdateMember</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ViewHistoryServlet</servlet-name>
+        <url-pattern>/ViewHistory</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ViewHistoryDetailServlet</servlet-name>
+        <url-pattern>/ViewHistoryDetail</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
