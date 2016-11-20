@@ -25,6 +25,14 @@ public class Cart {
 
     Map<Integer, CartDetail> items = null;
     private int cartId;
+    private double totalMoney = 0;
+    private double vatAmount = 0;
+    private double money = 0;
+    private String date;
+    private static String SQL_INSERT = "INSERT INTO CART(money,vatAmount,totalMoney,Customer_custId)"
+            + "VALUES (?,?,?,?)";
+    private static String SQL_GET_CART = "SELECT * FROM CART WHERE Customer_custId = ?";
+    private static String SQL_GET_CART_BY_CART_ID = "SELECT * FROM CART WHERE cartId = ?";
 
     public int getCartId() {
         return cartId;
@@ -41,13 +49,6 @@ public class Cart {
     public static void setSQL_INSERT(String SQL_INSERT) {
         Cart.SQL_INSERT = SQL_INSERT;
     }
-    private double totalMoney = 0;
-    private double vatAmount = 0;
-    private double money = 0;
-    private String date;
-    private static String SQL_INSERT = "INSERT INTO CART(money,vatAmount,totalMoney,Customer_custId)"
-            + "VALUES (?,?,?,?)";
-    private static String SQL_GET_CART = "SELECT * FROM CART WHERE Customer_custId = ?";
 
     public double getMoney() {
         money = 0;
@@ -90,8 +91,8 @@ public class Cart {
     public Cart() {
         items = new HashMap<>();
     }
-    
-    public Cart(ResultSet rs) throws SQLException{
+
+    public Cart(ResultSet rs) throws SQLException {
         this.cartId = rs.getInt("cartId");
         this.money = rs.getDouble("money");
         this.totalMoney = rs.getDouble("totalMoney");
@@ -160,8 +161,8 @@ public class Cart {
             Logger.getLogger(Cart.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
-    
-    public static List<Cart> getCartByCustomerId(int custId){
+
+    public static List<Cart> getCartByCustomerId(int custId) {
         List<Cart> lists = new ArrayList<Cart>();
         Connection con = ConnectionBuilder.getConnection();
         Cart c;
@@ -169,8 +170,8 @@ public class Cart {
             PreparedStatement ps = con.prepareStatement(SQL_GET_CART);
             ps.setInt(1, custId);
             ResultSet rs = ps.executeQuery();
-            if(rs!=null){
-                while(rs.next()){
+            if (rs != null) {
+                while (rs.next()) {
                     c = new Cart(rs);
                     lists.add(c);
                 }
@@ -180,6 +181,26 @@ public class Cart {
         }
         return lists;
     }
+    
+    public static Cart getCartByCartId(int cartId) {
+        Cart cart = null;
+        Connection con = ConnectionBuilder.getConnection();
+        try {
+            PreparedStatement ps = con.prepareStatement(SQL_GET_CART);
+            ps.setInt(1, cartId);
+            ResultSet rs = ps.executeQuery();
+            if (rs != null) {
+                while (rs.next()) {
+                    cart = new Cart(rs);
+                }
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(Cart.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return cart;
+    }
+
+
     public static void main(String[] args) {
         List<Cart> lists = getCartByCustomerId(2);
         for (Cart list : lists) {

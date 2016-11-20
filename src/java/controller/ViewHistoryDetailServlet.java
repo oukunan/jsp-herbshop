@@ -12,6 +12,7 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import model.Cart;
 import model.CartDetail;
 
 /**
@@ -33,8 +34,10 @@ public class ViewHistoryDetailServlet extends HttpServlet {
             throws ServletException, IOException {
         int cartId = Integer.parseInt(request.getParameter("cartId"));
         List<CartDetail> cds = CartDetail.getCartDetail(cartId);
+        Cart cart = Cart.getCartByCartId(cartId);
         if(cds!=null){
             request.getSession().setAttribute("cds", cds);
+            request.getSession().setAttribute("cart", cart);
         }
         getServletContext().getRequestDispatcher("/historyDetail.jsp").forward(request, response);
     }
