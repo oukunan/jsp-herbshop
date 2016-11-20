@@ -46,6 +46,7 @@
                         <tr>
                             <td><strong>Tel</strong> :  &nbsp; </td>
                             <td><input type="text" class="form-control" name="tel" value="${user.custTel}" >  </td>
+                        <input type="hidden" name="id" value="${user.custId}" />
                         </tr>
                     </table><br><br>
                     <input type="submit" value="Update ProFile" class="btn btn-primary" />

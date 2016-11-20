@@ -36,6 +36,7 @@ public class Customer {
             + " VALUES(?,?,?,?,?,?,?,?,?)";
     private final static String SQL_EDIT_MEMBER = "UPDATE customer SET custName = ?, custSurname=?,custAddress=?,"
             + "custState=?,custCity=?,custPostal=?,custTel=? WHERE custId = ?";
+    private final static String SQL_FIND_MEMBER_BY_ID = "SELECT * FROM CUSTOMER WHERE custId = ?";
 
     public Customer(ResultSet rs) throws SQLException {
         this.custId = rs.getInt("custId");
@@ -188,11 +189,11 @@ public class Customer {
         return affect;
     }
     
-    public static int editMember(String name,String surname,String address,String state,String city,long postal,String tel){
+    public static int editMember(String name,String surname,String address,String state,String city,long postal,String tel,int id){
         Connection con = ConnectionBuilder.getConnection();
         int affect = 0;
         try {
-            PreparedStatement ps = con.prepareStatement(SQL_ADD_MEMBER);
+            PreparedStatement ps = con.prepareStatement(SQL_EDIT_MEMBER);
             ps.setString(1, name);
             ps.setString(2, surname);
             ps.setString(3, address);
@@ -200,6 +201,7 @@ public class Customer {
             ps.setString(5, city);
             ps.setLong(6, postal);
             ps.setString(7, tel);
+            ps.setInt(8, id);
             affect = ps.executeUpdate();
         } catch (SQLException ex) {
             Logger.getLogger(Customer.class.getName()).log(Level.SEVERE, null, ex);
@@ -218,5 +220,24 @@ public class Customer {
             Logger.getLogger(Customer.class.getName()).log(Level.SEVERE, null, ex);
         }
         return rs;
+    }
+    
+    public static Customer findCustomerById(int id){
+        Customer cust = null;
+        Connection con = ConnectionBuilder.getConnection();
+        try {
+            PreparedStatement ps = con.prepareStatement(SQL_FIND_MEMBER_BY_ID);
+            ps.setInt(1, id);
+            ResultSet rs = ps.executeQuery();
+            if(rs != null){
+                while(rs.next()){
+                    cust = new Customer(rs);
+                }
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(Customer.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+        return cust;
     }
 }
