@@ -29,11 +29,6 @@
         <div class="container animated fadeIn">
             <div class="row">
                 <form action="SearchFood" method="post" class="form-inline">
-                    <div class="form-group">
-                        <label for="name"><strong>Food Name</strong> : </label>
-                        <input type="text" class="form-control" id="name" name="searchText" placeholder="Search">
-                    </div>
-                    <button type="submit" class="btn btn-primary">Go</button>
                     <a href="index.jsp" <button type="button" class="btn btn-inverse">Back</button></a>
                 </form>
             </div><br><br>
@@ -42,7 +37,7 @@
                     <div class="col-md-4 text-center" style="margin-bottom: 50px">
                         <img src='images/food/${f.foodId}.jpg' alt="pic" height="200" class="img-rounded"><br><br>
                         <p> <b>Name :</b> ${f.foodName} </p>
-                        <a href="ViewFoodDetail?id=${f.foodId}"><p class="btn btn-inverse ">Detail</p></a>
+                        <a href="ViewFoodDetail?id=${f.foodId}"><p class="btn btn-primary ">Detail</p></a>
                     </div>
                 </c:forEach>
             </div>

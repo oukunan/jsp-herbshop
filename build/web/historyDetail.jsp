@@ -27,6 +27,7 @@
                 <table class="table table-bordered table-striped">
                     <tr>
                         <th>No</th>
+                        <th>Picture</th>
                         <th>Name</th>
                         <th>Price</th>
                         <th>Quantity</th>
@@ -35,6 +36,7 @@
                     <c:forEach items="${cds}" var="cd" varStatus="vs">
                         <tr>
                             <td>${vs.count}</td>
+                            <td style="text-align: center"><img src="images/vegetable/${cd.herb.herbId}.jpg" class="img img-rounded" style="height: 150px"></td>
                             <td>${cd.herb.herbName}</td>
                             <td>${cd.herb.herbPrice}</td>
                             <td>${cd.quantityOfHerb}</td>

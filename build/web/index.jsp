@@ -21,7 +21,7 @@
                     <div>
                         <div id="typed-strings">
                             <span>WelCome To</span>
-                            <span>HerbShop </span>
+                            <span>DoctorHerb </span>
                         </div>
                         <span id="typed" style="white-space:pre; font-size: 80px"></span>
                     </div>

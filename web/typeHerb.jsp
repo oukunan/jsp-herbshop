@@ -18,11 +18,11 @@
         <div class="container"> <br><br>
             <div class="row">
                 <div class="col-md-6 text-center animated bounceIn">
-                    <img src="images/1.png"   alt="veget" height="250"><br><br>
+                    <img src="images/7.jpg"   alt="veget" height="400"><br><br>
                     <a href="SearchHerbTypeVegetable" class="btn btn btn-inverse btn-hg ">Vegetable (ผัก)</a><br>
                 </div>
                 <div class="col-md-6 text-center animated bounceIn">
-                    <img src="images/2.png" alt="fruit"  height="250"><br><br>
+                    <img src="images/8.jpg" alt="fruit"  height="400"><br><br>
                     <a href="SearchHerbTypeFruit" class="btn btn-inverse btn-hg "> Fruit (ผลไม้)</a>
                 </div>
             </div>

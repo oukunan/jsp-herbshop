@@ -22,7 +22,7 @@
             <div class="navbar-header">
                 <button data-target="#navbar-collapse-08" data-toggle="collapse" class="navbar-toggle" type="button">
                 </button>
-                <a href="index.jsp" class="navbar-brand">IT21- HerbShop</a>
+                <a href="index.jsp" class="navbar-brand">IT21- DoctorHerb</a>
             </div>  
 
             <div class="col-md-3 col-md-offset-7 ">      
