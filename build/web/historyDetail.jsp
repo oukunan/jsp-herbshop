@@ -21,6 +21,8 @@
         <jsp:include page="/WEB-INF/header/header.jsp"/>
         <br>
         <div class="container">
+            <h1>Cart ID: ${ca.cartId}</h1>
+            <h4>Date: ${ca.date.substring(0,19)}</h4>
             <form action="UpdateCart" method="post">
                 <table class="table table-bordered table-striped">
                     <tr>

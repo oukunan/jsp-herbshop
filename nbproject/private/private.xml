@@ -4,11 +4,8 @@
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
             <file>file:/D:/Web%20Programming%20Project/HerbShop/web/index.jsp</file>
-            <file>file:/D:/Web%20Programming%20Project/HerbShop/web/historyDetail.jsp</file>
-            <file>file:/D:/Web%20Programming%20Project/HerbShop/web/history.jsp</file>
-            <file>file:/D:/Web%20Programming%20Project/HerbShop/src/java/model/Cart.java</file>
-            <file>file:/D:/Web%20Programming%20Project/HerbShop/src/java/controller/ViewHistoryDetailServlet.java</file>
-            <file>file:/D:/Web%20Programming%20Project/HerbShop/src/java/model/CartDetail.java</file>
+            <file>file:/D:/Web%20Programming%20Project/HerbShop/web/login.jsp</file>
+            <file>file:/D:/Web%20Programming%20Project/HerbShop/src/java/connection/ConnectionBuilder.java</file>
         </group>
     </open-files>
 </project-private>

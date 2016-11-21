@@ -31,8 +31,8 @@
                 <div class="col-md-4 col-md-offset-4">
                     <h2> Login  | </h2><br>
                     <form action="Login" method="post">
-                        <input type="text" class="form-control pad" name="userName" value="" placeholder="User Name">
-                        <input type="password" class="form-control pad" name="password" value="" placeholder="Password"><br>
+                        <input type="text" class="form-control pad" name="userName" required="true" value="" placeholder="User Name">
+                        <input type="password" class="form-control pad" name="password" required="true" value="" placeholder="Password"><br>
                         <button type="submit" class="btn btn-primary">Login</button>
                         <a href="register.jsp"><button type="button" class="btn btn-inverse">Register</button></a>
                         <a href="index.jsp"><button type="button" class="btn btn-default" >Back</button></a>

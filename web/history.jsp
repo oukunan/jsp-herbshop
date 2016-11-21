@@ -30,7 +30,7 @@
                             <tr>
                                 <td><a href="ViewHistoryDetail?cartId=${c.cartId}">${c.cartId}</a></td>
                                 <td >${c.totalMoney}</td>
-                                <td>${c.date}</td>
+                                <td>${c.date.substring(0,19)}</td>
                             </tr>
                         </c:forEach>
 

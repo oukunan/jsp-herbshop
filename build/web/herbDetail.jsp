@@ -26,7 +26,7 @@
                         </tr>
                         <tr>
                             <td><strong>Price</strong> :  &nbsp; </td>
-                            <td><input type="text" class="form-control" name="herbPrice" value="<fmt:formatNumber value="${h.herbPrice}" type="currency" />" ></td>
+                            <td><input type="text" class="form-control" name="herbPrice" value="${h.herbPrice}฿" type="currency" /></td>
                         </tr>
                         <tr>
                             <td><strong>Type</strong> :  &nbsp; </td>

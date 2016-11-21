@@ -50,7 +50,7 @@ public final class profile_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("<html>\r\n");
       out.write("    <head>\r\n");
       out.write("        <meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\">\r\n");
-      out.write("                <link rel=\"stylesheet\" href=\"css/animate.css\">\r\n");
+      out.write("        <link rel=\"stylesheet\" href=\"css/animate.css\">\r\n");
       out.write("        <title>.:: Customer Detail ::.</title>\r\n");
       out.write("        <style>\r\n");
       out.write("            body {\r\n");
@@ -62,11 +62,11 @@ public final class profile_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("            }\r\n");
       out.write("        </style>\r\n");
       out.write("    </head>\r\n");
-      out.write("    <body class=\"animated fadeIn\">\r\n");
+      out.write("    <body >\r\n");
       out.write("            ");
       org.apache.jasper.runtime.JspRuntimeLibrary.include(request, response, "/WEB-INF/header/header.jsp", out, false);
       out.write("\r\n");
-      out.write("        <div class=\"container\">\r\n");
+      out.write("        <div class=\"container animated  fadeIn\">\r\n");
       out.write("            <div class=\"row\">\r\n");
       out.write("                <div class=\"col-md-7\">\r\n");
       out.write("                    <h1>Profile</h1>\r\n");

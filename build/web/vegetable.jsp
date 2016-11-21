@@ -49,7 +49,7 @@
                                 <div class="col-md-4 text-center" style="margin-bottom: 50px">
                                     <img src='images/vegetable/${v.herbId}.jpg' alt="pic" height="200" class="img-rounded"><br><br>
                                     <p> <strong>Name</strong> : ${v.herbName} </p>
-                                    <p> <strong>Price</strong> :  <fmt:formatNumber value="${v.herbPrice}" type="currency" /> </p>
+                                    <p> <strong>Price</strong> :  ${v.herbPrice}฿</p>
                                     <a href="ViewHerbDetail?id=${v.herbId}"><p class="btn btn-success "> Detail</p></a>
                                     <button class="btn btn-inverse"  type="submit" name="pid" value="${v.herbId}"  ${v.herbAmount == 0 ? "disabled" : ""}>${v.herbAmount == 0 ? "Out of Stock" : "Add to Cart"}</button>                                    
                                     <input type="hidden" name="type" value="vegetable"> 
